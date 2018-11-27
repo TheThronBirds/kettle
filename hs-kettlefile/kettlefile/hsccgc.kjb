@@ -374,7 +374,7 @@ declare
 out_procode varchar2(20);
 other_procode varchar2(1000);
 begin    
-sp_8020_hs_import(out_procode,other_procode);
+sp_8020_hs_import(out_procode,other_procode,0);
 
 end;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
