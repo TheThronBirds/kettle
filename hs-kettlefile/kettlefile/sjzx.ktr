@@ -430,70 +430,53 @@
     <created_date>2018/10/16 19:44:35.422</created_date>
     <modified_user>-</modified_user>
     <modified_date>2018/10/16 19:44:35.422</modified_date>
-    <key_for_session_key />
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
+    <notepad>
+      <note>基金活期存款信息</note>
+      <xloc>384</xloc>
+      <yloc>256</yloc>
+      <width>106</width>
+      <heigth>26</heigth>
+      <fontname>微软雅黑</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>基金因子偏离度；注意不能剪切表</note>
+      <xloc>384</xloc>
+      <yloc>416</yloc>
+      <width>190</width>
+      <heigth>26</heigth>
+      <fontname>微软雅黑</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
   </notepads>
-  <connection>
-    <name>business</name>
-    <server />
-    <type>GENERIC</type>
-    <access>Native</access>
-    <database />
-    <port>1521</port>
-    <username>${business_generic_user}</username>
-    <password>${business_generic_password}</password>
-    <servername />
-    <data_tablespace />
-    <index_tablespace />
-    <attributes>
-      <attribute>
-        <code>CUSTOM_DRIVER_CLASS</code>
-        <attribute>${business_generic_driver}</attribute>
-      </attribute>
-      <attribute>
-        <code>CUSTOM_URL</code>
-        <attribute>${business_generic_url}</attribute>
-      </attribute>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>IS_CLUSTERED</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>PORT_NUMBER</code>
-        <attribute>1521</attribute>
-      </attribute>
-      <attribute>
-        <code>PRESERVE_RESERVED_WORD_CASE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>QUOTE_ALL_FIELDS</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>USE_POOLING</code>
-        <attribute>N</attribute>
-      </attribute>
-    </attributes>
-  </connection>
   <connection>
     <name>risk</name>
     <server />
@@ -559,6 +542,21 @@
       <to>jsz_jjhzgzb表输出</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>活期存款时间点输入</from>
+      <to>jsz_jjhzgzb表输入</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>偏离度信息时间点输入</from>
+      <to>表输入</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>表输入</from>
+      <to>表输出</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name>jsz_jjhzgzb表输入</name>
@@ -571,17 +569,14 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <connection>business</connection>
+    <connection>risk</connection>
     <sql>select c.fjjdm,c.fdate,c.fkmbm,c.EN_ASSETCURR_VALUE from (
-select b.fjjdm,a.fdate,b.fkmbm,to_char(b.fzqsz) as EN_ASSETCURR_VALUE from jsz_jjhzgzb b inner join  (select a.fjjdm,a.fkmbm, fdate from jsz_jjhzgzb a  where a.fkmbm = '100201' and a.fdate > to_number(to_char(sysdate,'yyyy')||'0101')) a
-on b.fjjdm = a.fjjdm and b.fdate = a.fdate and b.fkmbm = a.fkmbm
-union all
-select b.fjjdm,a.fdate,b.fkmbm,b.fkmmc as EN_ASSETCURR_VALUE from jsz_jjhzgzb b inner join  (select a.fjjdm,a.fkmbm,max(a.fdate) fdate from jsz_jjhzgzb a  where a.fkmbm like '%922与影子价估值的偏离度%' and a.fdate> 20150101 group by a.fjjdm,a.fkmbm) a
-on b.fjjdm = a.fjjdm and b.fdate = a.fdate and b.fkmbm = a.fkmbm) c</sql>
+select b.fjjdm,a.fdate,b.fkmbm,to_char(b.fzqsz) as EN_ASSETCURR_VALUE from businessorg.jsz_jjhzgzb b inner join  (select a.fjjdm,a.fkmbm, fdate from businessorg.jsz_jjhzgzb a  where a.fkmbm = '100201' and a.fdate > to_number(to_char(sysdate,'yyyy')||'0101')) a
+on b.fjjdm = a.fjjdm and b.fdate = a.fdate and b.fkmbm = a.fkmbm where b.fdate > ?) c</sql>
     <limit>0</limit>
-    <lookup />
+    <lookup>活期存款时间点输入</lookup>
     <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
+    <variables_active>Y</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
     <cluster_schema />
     <remotesteps>
@@ -591,7 +586,7 @@ on b.fjjdm = a.fjjdm and b.fdate = a.fdate and b.fkmbm = a.fkmbm) c</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>320</xloc>
+      <xloc>400</xloc>
       <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
@@ -652,6 +647,160 @@ on b.fjjdm = a.fjjdm and b.fdate = a.fdate and b.fkmbm = a.fkmbm) c</sql>
     <GUI>
       <xloc>720</xloc>
       <yloc>320</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>偏离度信息时间点输入</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <sql>select nvl(max(t.i_navdate),0) as vc_compare  from his_netvalue t where t.vc_type = 'M'</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>160</xloc>
+      <yloc>480</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>活期存款时间点输入</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <sql>select nvl(max(t.i_navdate),0) as vc_compare from his_netvalue t where t.vc_type = 'L'</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>160</xloc>
+      <yloc>320</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>表输入</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <sql>select c.fjjdm,c.fdate,c.fkmbm,c.EN_ASSETCURR_VALUE from (
+select b.fjjdm,a.fdate,b.fkmbm,b.fkmmc as EN_ASSETCURR_VALUE from businessorg.jsz_jjhzgzb b inner join  (select a.fjjdm,a.fkmbm,max(a.fdate) fdate from businessorg.jsz_jjhzgzb a  where a.fkmbm like '%922与影子价估值的偏离度%' and a.fdate> 20150101 group by a.fjjdm,a.fkmbm) a
+on b.fjjdm = a.fjjdm and b.fdate = a.fdate and b.fkmbm = a.fkmbm where b.fdate > ?) c</sql>
+    <limit>0</limit>
+    <lookup>偏离度信息时间点输入</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>400</xloc>
+      <yloc>480</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>表输出</name>
+    <type>TableOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <schema />
+    <table>mid_jsz_jjhzgzb</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+      <field>
+        <column_name>FJJDM</column_name>
+        <stream_name>FJJDM</stream_name>
+      </field>
+      <field>
+        <column_name>FDATE</column_name>
+        <stream_name>FDATE</stream_name>
+      </field>
+      <field>
+        <column_name>FKMBM</column_name>
+        <stream_name>FKMBM</stream_name>
+      </field>
+      <field>
+        <column_name>EN_ASSETCURR_VALUE</column_name>
+        <stream_name>EN_ASSETCURR_VALUE</stream_name>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>720</xloc>
+      <yloc>480</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
