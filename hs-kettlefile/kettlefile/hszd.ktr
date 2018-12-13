@@ -750,6 +750,48 @@
       <bordercolorblue>100</bordercolorblue>
       <drawshadow>Y</drawshadow>
     </notepad>
+    <notepad>
+      <note>交易流水信息</note>
+      <xloc>304</xloc>
+      <yloc>3760</yloc>
+      <width>82</width>
+      <heigth>26</heigth>
+      <fontname>微软雅黑</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>历史交易流水信息</note>
+      <xloc>328</xloc>
+      <yloc>3904</yloc>
+      <width>106</width>
+      <heigth>26</heigth>
+      <fontname>微软雅黑</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
   </notepads>
   <connection>
     <name>begin</name>
@@ -926,11 +968,6 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>DEPOSITRECEIPT表输入</from>
-      <to>DEPOSITRECEIPT表输出</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>fundasset表输入</from>
       <to>fundasset表输出</to>
       <enabled>Y</enabled>
@@ -1018,6 +1055,31 @@
     <hop>
       <from>TSPECSTOCK表输入</from>
       <to>TSPECSTOCK表输出</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>tradesummary表输入</from>
+      <to>tradesummary表输出</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>his_tradesummary表输入</from>
+      <to>his_tradesummary表输入 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>his_tradesummary表输入 2</from>
+      <to>表输出</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>DEPOSITRECEIPT表输入</from>
+      <to>字段选择 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>字段选择 2</from>
+      <to>DEPOSITRECEIPT表输出</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -2103,7 +2165,7 @@ FROM ${searchzdname}.TDEPOSITRECEIPT t
       </output>
     </remotesteps>
     <GUI>
-      <xloc>576</xloc>
+      <xloc>784</xloc>
       <yloc>1744</yloc>
       <draw>Y</draw>
     </GUI>
@@ -3984,6 +4046,170 @@ FROM ${searchzdname}.TTRADESTOCK t inner join ${searchzdname}.tstockinfo m on t.
     </GUI>
   </step>
   <step>
+    <name>TSPECSTOCK表输入</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>begin</connection>
+    <sql>    
+ select distinct d.vc_inter_code,c.* from ${searchzdname}.tspecstock c,${searchzdname}.tunitstock d      
+ where c.l_unit_id = d.l_unit_id      </sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>320</xloc>
+      <yloc>3664</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>TSPECSTOCK表输出</name>
+    <type>TableOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <schema />
+    <table>SPECSTOCK</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+      <field>
+        <column_name>L_DATE</column_name>
+        <stream_name>L_DATE</stream_name>
+      </field>
+      <field>
+        <column_name>L_UNIT_ID</column_name>
+        <stream_name>L_UNIT_ID</stream_name>
+      </field>
+      <field>
+        <column_name>EN_TODAY_DIVIDEND</column_name>
+        <stream_name>EN_TODAY_DIVIDEND</stream_name>
+      </field>
+      <field>
+        <column_name>EN_TOTAL_DIVIDEND</column_name>
+        <stream_name>EN_TOTAL_DIVIDEND</stream_name>
+      </field>
+      <field>
+        <column_name>L_DIVIDEND_RIGHT_AMOUNT</column_name>
+        <stream_name>L_DIVIDEND_RIGHT_AMOUNT</stream_name>
+      </field>
+      <field>
+        <column_name>L_SHAREOUT_RIGHT</column_name>
+        <stream_name>L_SHAREOUT_RIGHT</stream_name>
+      </field>
+      <field>
+        <column_name>EN_SHAREOUT_PRICE</column_name>
+        <stream_name>EN_SHAREOUT_PRICE</stream_name>
+      </field>
+      <field>
+        <column_name>L_TODAY_SHAREOUT</column_name>
+        <stream_name>L_TODAY_SHAREOUT</stream_name>
+      </field>
+      <field>
+        <column_name>L_TOTAL_SHAREOUT</column_name>
+        <stream_name>L_TOTAL_SHAREOUT</stream_name>
+      </field>
+      <field>
+        <column_name>L_NEW_RIGHT_AMOUNT</column_name>
+        <stream_name>L_NEW_RIGHT_AMOUNT</stream_name>
+      </field>
+      <field>
+        <column_name>L_INCREASE_RIGHT_AMOUNT</column_name>
+        <stream_name>L_INCREASE_RIGHT_AMOUNT</stream_name>
+      </field>
+      <field>
+        <column_name>EN_NEW_PRICE</column_name>
+        <stream_name>EN_NEW_PRICE</stream_name>
+      </field>
+      <field>
+        <column_name>L_UNCIRCULATED_AMOUNT</column_name>
+        <stream_name>L_UNCIRCULATED_AMOUNT</stream_name>
+      </field>
+      <field>
+        <column_name>L_YJUNCIRCULATED_AMOUNT</column_name>
+        <stream_name>L_YJUNCIRCULATED_AMOUNT</stream_name>
+      </field>
+      <field>
+        <column_name>EN_NEW_PROFIT</column_name>
+        <stream_name>EN_NEW_PROFIT</stream_name>
+      </field>
+      <field>
+        <column_name>EN_BOND_INTEREST_INVEST</column_name>
+        <stream_name>EN_BOND_INTEREST_INVEST</stream_name>
+      </field>
+      <field>
+        <column_name>EN_BOND_INTEREST_PROFIT</column_name>
+        <stream_name>EN_BOND_INTEREST_PROFIT</stream_name>
+      </field>
+      <field>
+        <column_name>EN_REMARK</column_name>
+        <stream_name>EN_REMARK</stream_name>
+      </field>
+      <field>
+        <column_name>VC_REMARK</column_name>
+        <stream_name>VC_REMARK</stream_name>
+      </field>
+      <field>
+        <column_name>EN_ONTHEWAY_DIVIDEND</column_name>
+        <stream_name>EN_ONTHEWAY_DIVIDEND</stream_name>
+      </field>
+      <field>
+        <column_name>L_TODAY_DIVIDEND_RIGHT_AMOUNT</column_name>
+        <stream_name>L_TODAY_DIVIDEND_RIGHT_AMOUNT</stream_name>
+      </field>
+      <field>
+        <column_name>L_DISTRIBUTION_LIMIT_AMOUNT</column_name>
+        <stream_name>L_DISTRIBUTION_LIMIT_AMOUNT</stream_name>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>592</xloc>
+      <yloc>3664</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>asset表输入</name>
     <type>TableInput</type>
     <description />
@@ -5815,6 +6041,106 @@ FROM ${searchzdname}.thgratio
     </GUI>
   </step>
   <step>
+    <name>his_tradesummary表输入</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <sql>select nvl(MAX(a.i_date),0) as l_date from his_tradesummary a</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>320</xloc>
+      <yloc>3968</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>his_tradesummary表输入 2</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>begin</connection>
+    <sql>SELECT
+  L_DATE
+, L_FUND_ID
+, to_char(L_BASECOMBI_ID) L_BASECOMBI_ID
+, C_MARKET_NO
+, VC_STOCKHOLDER_ID
+, VC_SEAT_ID
+, C_ENTRUST_DIRECTION
+, VC_INTER_CODE
+, L_DEAL_AMOUNT
+, EN_DEAL_BALANCE
+, EN_LIQUIDATE_BALANCE
+, EN_FEE_JY
+, EN_FEE_YH
+, EN_FEE_GH
+, EN_FEE_YJ
+, EN_FEE_JS
+, EN_FEE_ZG
+, EN_FEE_QT
+, EN_HGPROFIT
+, EN_RISK_FUND
+, C_INVEST_TYPE
+, EN_FEE_JS2
+, EN_FEE_JG
+, C_CLOSE_TYPE
+, VC_CURRENCY_NO
+, C_BUSIN_CLASS
+, L_BUSIN_FLAG
+, EN_SUBJECT_BALANCE
+, EN_BOND_INTEREST
+, L_SUBJECT_NO
+, L_SETTLE_SPEED
+, EN_FEE_JY_TRUE
+, EN_FEE_YJ_TRUE
+, EN_FEE_GH_TOTAL
+FROM ${searchzdname}.THISBUSINESSSUMMARY where 
+L_DATE > 20150101 and
+L_DATE>=?
+</sql>
+    <limit>0</limit>
+    <lookup>his_tradesummary表输入</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>592</xloc>
+      <yloc>3968</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>issuer表输入</name>
     <type>TableInput</type>
     <description />
@@ -6743,6 +7069,251 @@ FROM ${searchzdname}.tsysteminfo
     </GUI>
   </step>
   <step>
+    <name>tradesummary表输入</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>begin</connection>
+    <sql>SELECT
+  L_DATE
+, L_FUND_ID
+, to_char(L_BASECOMBI_ID)L_BASECOMBI_ID
+, C_MARKET_NO
+, VC_STOCKHOLDER_ID
+, VC_SEAT_ID
+, C_ENTRUST_DIRECTION
+, VC_INTER_CODE
+, L_DEAL_AMOUNT
+, EN_DEAL_BALANCE
+, EN_LIQUIDATE_BALANCE
+, EN_FEE_JY
+, EN_FEE_YH
+, EN_FEE_GH
+, EN_FEE_YJ
+, EN_FEE_JS
+, EN_FEE_ZG
+, EN_FEE_QT
+, EN_HGPROFIT
+, EN_RISK_FUND
+, C_INVEST_TYPE
+, EN_FEE_JS2
+, EN_FEE_JG
+, C_CLOSE_TYPE
+, VC_CURRENCY_NO
+, C_BUSIN_CLASS
+, L_BUSIN_FLAG
+, EN_SUBJECT_BALANCE
+, EN_BOND_INTEREST
+, L_SUBJECT_NO
+, L_SETTLE_SPEED
+, EN_FEE_JY_TRUE
+, EN_FEE_YJ_TRUE
+, EN_FEE_GH_TOTAL
+FROM ${searchzdname}.TBUSINESSSUMMARY</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>320</xloc>
+      <yloc>3824</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>tradesummary表输出</name>
+    <type>TableOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <schema />
+    <table>T_MID_HS_BUSINESSSUMMARY</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+      <field>
+        <column_name>L_DATE</column_name>
+        <stream_name>L_DATE</stream_name>
+      </field>
+      <field>
+        <column_name>L_FUND_ID</column_name>
+        <stream_name>L_FUND_ID</stream_name>
+      </field>
+      <field>
+        <column_name>L_BASECOMBI_ID</column_name>
+        <stream_name>L_BASECOMBI_ID</stream_name>
+      </field>
+      <field>
+        <column_name>C_MARKET_NO</column_name>
+        <stream_name>C_MARKET_NO</stream_name>
+      </field>
+      <field>
+        <column_name>VC_STOCKHOLDER_ID</column_name>
+        <stream_name>VC_STOCKHOLDER_ID</stream_name>
+      </field>
+      <field>
+        <column_name>VC_SEAT_ID</column_name>
+        <stream_name>VC_SEAT_ID</stream_name>
+      </field>
+      <field>
+        <column_name>C_ENTRUST_DIRECTION</column_name>
+        <stream_name>C_ENTRUST_DIRECTION</stream_name>
+      </field>
+      <field>
+        <column_name>VC_INTER_CODE</column_name>
+        <stream_name>VC_INTER_CODE</stream_name>
+      </field>
+      <field>
+        <column_name>L_DEAL_AMOUNT</column_name>
+        <stream_name>L_DEAL_AMOUNT</stream_name>
+      </field>
+      <field>
+        <column_name>EN_DEAL_BALANCE</column_name>
+        <stream_name>EN_DEAL_BALANCE</stream_name>
+      </field>
+      <field>
+        <column_name>EN_LIQUIDATE_BALANCE</column_name>
+        <stream_name>EN_LIQUIDATE_BALANCE</stream_name>
+      </field>
+      <field>
+        <column_name>EN_FEE_JY</column_name>
+        <stream_name>EN_FEE_JY</stream_name>
+      </field>
+      <field>
+        <column_name>EN_FEE_YH</column_name>
+        <stream_name>EN_FEE_YH</stream_name>
+      </field>
+      <field>
+        <column_name>EN_FEE_GH</column_name>
+        <stream_name>EN_FEE_GH</stream_name>
+      </field>
+      <field>
+        <column_name>EN_FEE_YJ</column_name>
+        <stream_name>EN_FEE_YJ</stream_name>
+      </field>
+      <field>
+        <column_name>EN_FEE_JS</column_name>
+        <stream_name>EN_FEE_JS</stream_name>
+      </field>
+      <field>
+        <column_name>EN_FEE_ZG</column_name>
+        <stream_name>EN_FEE_ZG</stream_name>
+      </field>
+      <field>
+        <column_name>EN_FEE_QT</column_name>
+        <stream_name>EN_FEE_QT</stream_name>
+      </field>
+      <field>
+        <column_name>EN_HGPROFIT</column_name>
+        <stream_name>EN_HGPROFIT</stream_name>
+      </field>
+      <field>
+        <column_name>EN_RISK_FUND</column_name>
+        <stream_name>EN_RISK_FUND</stream_name>
+      </field>
+      <field>
+        <column_name>C_INVEST_TYPE</column_name>
+        <stream_name>C_INVEST_TYPE</stream_name>
+      </field>
+      <field>
+        <column_name>EN_FEE_JS2</column_name>
+        <stream_name>EN_FEE_JS2</stream_name>
+      </field>
+      <field>
+        <column_name>EN_FEE_JG</column_name>
+        <stream_name>EN_FEE_JG</stream_name>
+      </field>
+      <field>
+        <column_name>C_CLOSE_TYPE</column_name>
+        <stream_name>C_CLOSE_TYPE</stream_name>
+      </field>
+      <field>
+        <column_name>VC_CURRENCY_NO</column_name>
+        <stream_name>VC_CURRENCY_NO</stream_name>
+      </field>
+      <field>
+        <column_name>C_BUSIN_CLASS</column_name>
+        <stream_name>C_BUSIN_CLASS</stream_name>
+      </field>
+      <field>
+        <column_name>L_BUSIN_FLAG</column_name>
+        <stream_name>L_BUSIN_FLAG</stream_name>
+      </field>
+      <field>
+        <column_name>EN_SUBJECT_BALANCE</column_name>
+        <stream_name>EN_SUBJECT_BALANCE</stream_name>
+      </field>
+      <field>
+        <column_name>EN_BOND_INTEREST</column_name>
+        <stream_name>EN_BOND_INTEREST</stream_name>
+      </field>
+      <field>
+        <column_name>L_SUBJECT_NO</column_name>
+        <stream_name>L_SUBJECT_NO</stream_name>
+      </field>
+      <field>
+        <column_name>L_SETTLE_SPEED</column_name>
+        <stream_name>L_SETTLE_SPEED</stream_name>
+      </field>
+      <field>
+        <column_name>EN_FEE_JY_TRUE</column_name>
+        <stream_name>EN_FEE_JY_TRUE</stream_name>
+      </field>
+      <field>
+        <column_name>EN_FEE_YJ_TRUE</column_name>
+        <stream_name>EN_FEE_YJ_TRUE</stream_name>
+      </field>
+      <field>
+        <column_name>EN_FEE_GH_TOTAL</column_name>
+        <stream_name>EN_FEE_GH_TOTAL</stream_name>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>592</xloc>
+      <yloc>3824</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>tradetypes表输入</name>
     <type>TableInput</type>
     <description />
@@ -6974,59 +7545,85 @@ FROM ${searchzdname}.tsysteminfo
     <fields>
       <field>
         <name>L_ENTRUST_SERIAL_NO</name>
+        <rename />
       </field>
       <field>
         <name>L_HG_DATE</name>
+        <rename />
       </field>
       <field>
         <name>L_BASECOMBI_ID</name>
+        <rename />
       </field>
       <field>
         <name>C_MARKET_NO</name>
+        <rename />
       </field>
       <field>
         <name>VC_INTER_CODE</name>
+        <rename />
       </field>
       <field>
         <name>VC_STOCKHOLDER_ID</name>
+        <rename />
       </field>
       <field>
         <name>VC_SEAT_ID</name>
+        <rename />
       </field>
       <field>
         <name>C_ENTRUST_DIRECTION</name>
+        <rename />
       </field>
       <field>
         <name>C_REDEAL_FLAG</name>
+        <rename />
       </field>
       <field>
         <name>L_REDEEM_DAYS</name>
+        <rename />
       </field>
       <field>
         <name>L_REDEEM_LAWDATE</name>
+        <rename />
       </field>
       <field>
         <name>L_REDEEM_LIQUIDATE</name>
+        <rename />
       </field>
       <field>
         <name>L_DEAL_AMOUNT</name>
+        <rename />
       </field>
       <field>
         <name>EN_DEAL_PRICE</name>
+        <rename />
         <length>16</length>
         <precision>8</precision>
       </field>
       <field>
         <name>EN_DEAL_BALANCE</name>
+        <rename />
+        <length>16</length>
+        <precision>2</precision>
       </field>
       <field>
         <name>EN_FEE</name>
+        <rename />
+        <length>12</length>
+        <precision>2</precision>
       </field>
       <field>
         <name>EN_REDEEM_INTEREST</name>
+        <rename />
+        <length>12</length>
+        <precision>2</precision>
       </field>
       <field>
         <name>EN_BALANCE2</name>
+        <rename />
+        <length>16</length>
+        <precision>2</precision>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -7044,40 +7641,7 @@ FROM ${searchzdname}.tsysteminfo
     </GUI>
   </step>
   <step>
-    <name>TSPECSTOCK表输入</name>
-    <type>TableInput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>begin</connection>
-    <sql>    
- select distinct d.vc_inter_code,c.* from ${searchzdname}.tspecstock c,${searchzdname}.tunitstock d      
- where c.l_unit_id = d.l_unit_id      </sql>
-    <limit>0</limit>
-    <lookup />
-    <execute_each_row>N</execute_each_row>
-    <variables_active>Y</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>320</xloc>
-      <yloc>3664</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>TSPECSTOCK表输出</name>
+    <name>表输出</name>
     <type>TableOutput</type>
     <description />
     <distribute>Y</distribute>
@@ -7089,7 +7653,7 @@ FROM ${searchzdname}.tsysteminfo
     </partitioning>
     <connection>risk</connection>
     <schema />
-    <table>SPECSTOCK</table>
+    <table>T_MID_HS_ZL_BUSINESSSUMMARY</table>
     <commit>1000</commit>
     <truncate>Y</truncate>
     <ignore_errors>N</ignore_errors>
@@ -7110,88 +7674,136 @@ FROM ${searchzdname}.tsysteminfo
         <stream_name>L_DATE</stream_name>
       </field>
       <field>
-        <column_name>L_UNIT_ID</column_name>
-        <stream_name>L_UNIT_ID</stream_name>
+        <column_name>L_FUND_ID</column_name>
+        <stream_name>L_FUND_ID</stream_name>
       </field>
       <field>
-        <column_name>EN_TODAY_DIVIDEND</column_name>
-        <stream_name>EN_TODAY_DIVIDEND</stream_name>
+        <column_name>L_BASECOMBI_ID</column_name>
+        <stream_name>L_BASECOMBI_ID</stream_name>
       </field>
       <field>
-        <column_name>EN_TOTAL_DIVIDEND</column_name>
-        <stream_name>EN_TOTAL_DIVIDEND</stream_name>
+        <column_name>C_MARKET_NO</column_name>
+        <stream_name>C_MARKET_NO</stream_name>
       </field>
       <field>
-        <column_name>L_DIVIDEND_RIGHT_AMOUNT</column_name>
-        <stream_name>L_DIVIDEND_RIGHT_AMOUNT</stream_name>
+        <column_name>VC_STOCKHOLDER_ID</column_name>
+        <stream_name>VC_STOCKHOLDER_ID</stream_name>
       </field>
       <field>
-        <column_name>L_SHAREOUT_RIGHT</column_name>
-        <stream_name>L_SHAREOUT_RIGHT</stream_name>
+        <column_name>VC_SEAT_ID</column_name>
+        <stream_name>VC_SEAT_ID</stream_name>
       </field>
       <field>
-        <column_name>EN_SHAREOUT_PRICE</column_name>
-        <stream_name>EN_SHAREOUT_PRICE</stream_name>
+        <column_name>C_ENTRUST_DIRECTION</column_name>
+        <stream_name>C_ENTRUST_DIRECTION</stream_name>
       </field>
       <field>
-        <column_name>L_TODAY_SHAREOUT</column_name>
-        <stream_name>L_TODAY_SHAREOUT</stream_name>
+        <column_name>VC_INTER_CODE</column_name>
+        <stream_name>VC_INTER_CODE</stream_name>
       </field>
       <field>
-        <column_name>L_TOTAL_SHAREOUT</column_name>
-        <stream_name>L_TOTAL_SHAREOUT</stream_name>
+        <column_name>L_DEAL_AMOUNT</column_name>
+        <stream_name>L_DEAL_AMOUNT</stream_name>
       </field>
       <field>
-        <column_name>L_NEW_RIGHT_AMOUNT</column_name>
-        <stream_name>L_NEW_RIGHT_AMOUNT</stream_name>
+        <column_name>EN_DEAL_BALANCE</column_name>
+        <stream_name>EN_DEAL_BALANCE</stream_name>
       </field>
       <field>
-        <column_name>L_INCREASE_RIGHT_AMOUNT</column_name>
-        <stream_name>L_INCREASE_RIGHT_AMOUNT</stream_name>
+        <column_name>EN_LIQUIDATE_BALANCE</column_name>
+        <stream_name>EN_LIQUIDATE_BALANCE</stream_name>
       </field>
       <field>
-        <column_name>EN_NEW_PRICE</column_name>
-        <stream_name>EN_NEW_PRICE</stream_name>
+        <column_name>EN_FEE_JY</column_name>
+        <stream_name>EN_FEE_JY</stream_name>
       </field>
       <field>
-        <column_name>L_UNCIRCULATED_AMOUNT</column_name>
-        <stream_name>L_UNCIRCULATED_AMOUNT</stream_name>
+        <column_name>EN_FEE_YH</column_name>
+        <stream_name>EN_FEE_YH</stream_name>
       </field>
       <field>
-        <column_name>L_YJUNCIRCULATED_AMOUNT</column_name>
-        <stream_name>L_YJUNCIRCULATED_AMOUNT</stream_name>
+        <column_name>EN_FEE_GH</column_name>
+        <stream_name>EN_FEE_GH</stream_name>
       </field>
       <field>
-        <column_name>EN_NEW_PROFIT</column_name>
-        <stream_name>EN_NEW_PROFIT</stream_name>
+        <column_name>EN_FEE_YJ</column_name>
+        <stream_name>EN_FEE_YJ</stream_name>
       </field>
       <field>
-        <column_name>EN_BOND_INTEREST_INVEST</column_name>
-        <stream_name>EN_BOND_INTEREST_INVEST</stream_name>
+        <column_name>EN_FEE_JS</column_name>
+        <stream_name>EN_FEE_JS</stream_name>
       </field>
       <field>
-        <column_name>EN_BOND_INTEREST_PROFIT</column_name>
-        <stream_name>EN_BOND_INTEREST_PROFIT</stream_name>
+        <column_name>EN_FEE_ZG</column_name>
+        <stream_name>EN_FEE_ZG</stream_name>
       </field>
       <field>
-        <column_name>EN_REMARK</column_name>
-        <stream_name>EN_REMARK</stream_name>
+        <column_name>EN_FEE_QT</column_name>
+        <stream_name>EN_FEE_QT</stream_name>
       </field>
       <field>
-        <column_name>VC_REMARK</column_name>
-        <stream_name>VC_REMARK</stream_name>
+        <column_name>EN_HGPROFIT</column_name>
+        <stream_name>EN_HGPROFIT</stream_name>
       </field>
       <field>
-        <column_name>EN_ONTHEWAY_DIVIDEND</column_name>
-        <stream_name>EN_ONTHEWAY_DIVIDEND</stream_name>
+        <column_name>EN_RISK_FUND</column_name>
+        <stream_name>EN_RISK_FUND</stream_name>
       </field>
       <field>
-        <column_name>L_TODAY_DIVIDEND_RIGHT_AMOUNT</column_name>
-        <stream_name>L_TODAY_DIVIDEND_RIGHT_AMOUNT</stream_name>
+        <column_name>C_INVEST_TYPE</column_name>
+        <stream_name>C_INVEST_TYPE</stream_name>
       </field>
       <field>
-        <column_name>L_DISTRIBUTION_LIMIT_AMOUNT</column_name>
-        <stream_name>L_DISTRIBUTION_LIMIT_AMOUNT</stream_name>
+        <column_name>EN_FEE_JS2</column_name>
+        <stream_name>EN_FEE_JS2</stream_name>
+      </field>
+      <field>
+        <column_name>EN_FEE_JG</column_name>
+        <stream_name>EN_FEE_JG</stream_name>
+      </field>
+      <field>
+        <column_name>C_CLOSE_TYPE</column_name>
+        <stream_name>C_CLOSE_TYPE</stream_name>
+      </field>
+      <field>
+        <column_name>VC_CURRENCY_NO</column_name>
+        <stream_name>VC_CURRENCY_NO</stream_name>
+      </field>
+      <field>
+        <column_name>C_BUSIN_CLASS</column_name>
+        <stream_name>C_BUSIN_CLASS</stream_name>
+      </field>
+      <field>
+        <column_name>L_BUSIN_FLAG</column_name>
+        <stream_name>L_BUSIN_FLAG</stream_name>
+      </field>
+      <field>
+        <column_name>EN_SUBJECT_BALANCE</column_name>
+        <stream_name>EN_SUBJECT_BALANCE</stream_name>
+      </field>
+      <field>
+        <column_name>EN_BOND_INTEREST</column_name>
+        <stream_name>EN_BOND_INTEREST</stream_name>
+      </field>
+      <field>
+        <column_name>L_SUBJECT_NO</column_name>
+        <stream_name>L_SUBJECT_NO</stream_name>
+      </field>
+      <field>
+        <column_name>L_SETTLE_SPEED</column_name>
+        <stream_name>L_SETTLE_SPEED</stream_name>
+      </field>
+      <field>
+        <column_name>EN_FEE_JY_TRUE</column_name>
+        <stream_name>EN_FEE_JY_TRUE</stream_name>
+      </field>
+      <field>
+        <column_name>EN_FEE_YJ_TRUE</column_name>
+        <stream_name>EN_FEE_YJ_TRUE</stream_name>
+      </field>
+      <field>
+        <column_name>EN_FEE_GH_TOTAL</column_name>
+        <stream_name>EN_FEE_GH_TOTAL</stream_name>
       </field>
     </fields>
     <cluster_schema />
@@ -7202,8 +7814,251 @@ FROM ${searchzdname}.tsysteminfo
       </output>
     </remotesteps>
     <GUI>
-      <xloc>592</xloc>
-      <yloc>3664</yloc>
+      <xloc>848</xloc>
+      <yloc>3968</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>字段选择 2</name>
+    <type>SelectValues</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <name>L_DATE</name>
+        <rename />
+      </field>
+      <field>
+        <name>L_FUND_ID</name>
+        <rename />
+      </field>
+      <field>
+        <name>L_BASECOMBI_ID</name>
+        <rename />
+      </field>
+      <field>
+        <name>VC_INTER_CODE</name>
+        <rename />
+      </field>
+      <field>
+        <name>VC_INTER_NO</name>
+        <rename />
+      </field>
+      <field>
+        <name>VC_RECEIPT_NO</name>
+        <rename />
+      </field>
+      <field>
+        <name>VC_ACCOUNT_NO</name>
+        <rename />
+      </field>
+      <field>
+        <name>VC_ACCOUNT_NAME</name>
+        <rename />
+      </field>
+      <field>
+        <name>VC_PLACE</name>
+        <rename />
+      </field>
+      <field>
+        <name>L_BANK</name>
+        <rename />
+      </field>
+      <field>
+        <name>VC_MINOR_BANK</name>
+        <rename />
+      </field>
+      <field>
+        <name>VC_DEPOSIT_OWNER</name>
+        <rename />
+      </field>
+      <field>
+        <name>EN_BALANCE</name>
+        <rename />
+        <length>16</length>
+        <precision>2</precision>
+      </field>
+      <field>
+        <name>EN_RATE</name>
+        <rename />
+        <length>9</length>
+        <precision>8</precision>
+      </field>
+      <field>
+        <name>L_LIMIT_TIME</name>
+        <rename />
+      </field>
+      <field>
+        <name>L_BEGIN_DATE</name>
+        <rename />
+      </field>
+      <field>
+        <name>L_END_DATE</name>
+        <rename />
+      </field>
+      <field>
+        <name>L_LAST_INTEREST_DATE</name>
+        <rename />
+      </field>
+      <field>
+        <name>L_LAST_MOD_INTEREST_DATE</name>
+        <rename />
+      </field>
+      <field>
+        <name>EN_TOTAL_INTEREST</name>
+        <rename />
+        <length>12</length>
+        <precision>2</precision>
+      </field>
+      <field>
+        <name>EN_INTEREST</name>
+        <rename />
+        <length>12</length>
+        <precision>2</precision>
+      </field>
+      <field>
+        <name>EN_PUNISH_INTEREST</name>
+        <rename />
+        <length>12</length>
+        <precision>2</precision>
+      </field>
+      <field>
+        <name>VC_REMARK</name>
+        <rename />
+      </field>
+      <field>
+        <name>C_STATUS</name>
+        <rename />
+      </field>
+      <field>
+        <name>L_OPERATOR_NO</name>
+        <rename />
+      </field>
+      <field>
+        <name>L_CONFIRM_NO</name>
+        <rename />
+      </field>
+      <field>
+        <name>L_DEPOSIT_CONFIRM_NO</name>
+        <rename />
+      </field>
+      <field>
+        <name>L_NOTIFY_DAYS</name>
+        <rename />
+      </field>
+      <field>
+        <name>EN_RECEIVABLE_INTEREST</name>
+        <rename />
+        <length>16</length>
+        <precision>2</precision>
+      </field>
+      <field>
+        <name>C_AUTO_REDEPOSIT</name>
+        <rename />
+      </field>
+      <field>
+        <name>C_INTEREST_DEPOSIT</name>
+        <rename />
+      </field>
+      <field>
+        <name>C_RATE_TYPE</name>
+        <rename />
+      </field>
+      <field>
+        <name>C_INTEREST_PAY_TYPE</name>
+        <rename />
+      </field>
+      <field>
+        <name>C_DEPOSIT_TYPE</name>
+        <rename />
+      </field>
+      <field>
+        <name>EN_BASIC_RATE</name>
+        <rename />
+        <length>9</length>
+        <precision>8</precision>
+      </field>
+      <field>
+        <name>C_DAY_TYPE</name>
+        <rename />
+      </field>
+      <field>
+        <name>C_FLOAT_TYPE</name>
+        <rename />
+      </field>
+      <field>
+        <name>L_INTEREST_PAY_DATE</name>
+        <rename />
+      </field>
+      <field>
+        <name>C_INTEREST_PAY_FREQ</name>
+        <rename />
+      </field>
+      <field>
+        <name>C_RATE_CHANGE_TYPE</name>
+        <rename />
+      </field>
+      <field>
+        <name>C_ADVANCE_LIMIT_FLAG</name>
+        <rename />
+      </field>
+      <field>
+        <name>C_LIMIT_UNIT</name>
+        <rename />
+      </field>
+      <field>
+        <name>EN_ADVANCE_RATE</name>
+        <rename />
+        <length>9</length>
+        <precision>8</precision>
+      </field>
+      <field>
+        <name>L_PAY_SETTLE_DATE</name>
+        <rename />
+        <length>16</length>
+        <precision>2</precision>
+      </field>
+      <field>
+        <name>EN_PAYIN_BALANCE</name>
+        <rename />
+        <length>16</length>
+        <precision>2</precision>
+      </field>
+      <field>
+        <name>EN_PRE_PAY_BALANCE</name>
+        <rename />
+      </field>
+      <field>
+        <name>C_INPUT_TYPE</name>
+        <rename />
+      </field>
+      <field>
+        <name>L_ADVANCE_DATE</name>
+        <rename />
+      </field>
+      <field>
+        <name>L_QS_CONFIRM_NO</name>
+        <rename />
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>576</xloc>
+      <yloc>1744</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
