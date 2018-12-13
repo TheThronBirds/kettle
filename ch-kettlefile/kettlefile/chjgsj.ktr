@@ -840,7 +840,7 @@ union all
 union all
  select t.companycode from itprofile t where t.itprofile4 like '001%' and t.itprofile5 = '0'
 union all
- select t.companycode from itprofile t where t.itprofile4 in ('002001','002003','002005','002006','002007','002008','002010','003001','003002','003008','004001','005001','005002','005008','005009','006001','006002','006003','006004') and t.itprofile5 = '0') x  group by companycode
+ select t.companycode from itprofile t where t.itprofile4 in ('002001','002003','002005','002006','002007','002008','002010','003001','003002','003008','004001','005001','005002','005008','005009','006001','006002','006003','006004','002002') and t.itprofile5 = '0') x  group by companycode
 )n
 on m.companycode=n.companycode
 where concat(to_char(m.ENTRYDATE,'yyyymmdd'),m.ENTRYTIME)>=?</sql>
