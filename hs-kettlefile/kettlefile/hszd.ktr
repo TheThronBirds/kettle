@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
     <name>hszd</name>
@@ -430,7 +429,7 @@
     <created_user>-</created_user>
     <created_date>2018/08/24 14:02:17.906</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2018/08/24 14:02:17.906</modified_date>
+    <modified_date>2018/12/14 18:19:42.544</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -968,6 +967,11 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
+      <from>DEPOSITRECEIPT表输入</from>
+      <to>DEPOSITRECEIPT表输出</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
       <from>fundasset表输入</from>
       <to>fundasset表输出</to>
       <enabled>Y</enabled>
@@ -1073,13 +1077,13 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>DEPOSITRECEIPT表输入</from>
-      <to>字段选择 2</to>
+      <from>his_fundasset表输入</from>
+      <to>his_fundasset表输入 2</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>字段选择 2</from>
-      <to>DEPOSITRECEIPT表输出</to>
+      <from>his_fundasset表输入 2</from>
+      <to>his_fundasset表输出</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -2165,7 +2169,7 @@ FROM ${searchzdname}.TDEPOSITRECEIPT t
       </output>
     </remotesteps>
     <GUI>
-      <xloc>784</xloc>
+      <xloc>576</xloc>
       <yloc>1744</yloc>
       <draw>Y</draw>
     </GUI>
@@ -4581,7 +4585,7 @@ where t.table_name=upper('t_mid_hs_zl_bondproperty')</sql>
     <connection>begin</connection>
     <sql>select 
 *
-from ${searchzdname}.tbondproperty t where vc_timestamp>= ?
+from ${searchzdname}.tbondproperty t where vc_timestamp>?
 </sql>
     <limit>0</limit>
     <lookup>bondproperty表输入</lookup>
@@ -5003,7 +5007,7 @@ from ${searchzdname}.tbondproperty t where vc_timestamp>= ?
     </remotesteps>
     <GUI>
       <xloc>320</xloc>
-      <yloc>1888</yloc>
+      <yloc>1856</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -5266,7 +5270,7 @@ from ${searchzdname}.tbondproperty t where vc_timestamp>= ?
     </remotesteps>
     <GUI>
       <xloc>576</xloc>
-      <yloc>1888</yloc>
+      <yloc>1856</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -7589,23 +7593,15 @@ FROM ${searchzdname}.TBUSINESSSUMMARY</sql>
       </field>
       <field>
         <name>EN_DEAL_BALANCE</name>
-        <length>16</length>
-        <precision>2</precision>
       </field>
       <field>
         <name>EN_FEE</name>
-        <length>12</length>
-        <precision>2</precision>
       </field>
       <field>
         <name>EN_REDEEM_INTEREST</name>
-        <length>12</length>
-        <precision>2</precision>
       </field>
       <field>
         <name>EN_BALANCE2</name>
-        <length>16</length>
-        <precision>2</precision>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -7619,200 +7615,6 @@ FROM ${searchzdname}.TBUSINESSSUMMARY</sql>
     <GUI>
       <xloc>448</xloc>
       <yloc>1616</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>字段选择 2</name>
-    <type>SelectValues</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <fields>
-      <field>
-        <name>L_DATE</name>
-      </field>
-      <field>
-        <name>L_FUND_ID</name>
-      </field>
-      <field>
-        <name>L_BASECOMBI_ID</name>
-      </field>
-      <field>
-        <name>VC_INTER_CODE</name>
-      </field>
-      <field>
-        <name>VC_INTER_NO</name>
-      </field>
-      <field>
-        <name>VC_RECEIPT_NO</name>
-      </field>
-      <field>
-        <name>VC_ACCOUNT_NO</name>
-      </field>
-      <field>
-        <name>VC_ACCOUNT_NAME</name>
-      </field>
-      <field>
-        <name>VC_PLACE</name>
-      </field>
-      <field>
-        <name>L_BANK</name>
-      </field>
-      <field>
-        <name>VC_MINOR_BANK</name>
-      </field>
-      <field>
-        <name>VC_DEPOSIT_OWNER</name>
-      </field>
-      <field>
-        <name>EN_BALANCE</name>
-        <length>16</length>
-        <precision>2</precision>
-      </field>
-      <field>
-        <name>EN_RATE</name>
-        <length>9</length>
-        <precision>8</precision>
-      </field>
-      <field>
-        <name>L_LIMIT_TIME</name>
-      </field>
-      <field>
-        <name>L_BEGIN_DATE</name>
-      </field>
-      <field>
-        <name>L_END_DATE</name>
-      </field>
-      <field>
-        <name>L_LAST_INTEREST_DATE</name>
-      </field>
-      <field>
-        <name>L_LAST_MOD_INTEREST_DATE</name>
-      </field>
-      <field>
-        <name>EN_TOTAL_INTEREST</name>
-        <length>12</length>
-        <precision>2</precision>
-      </field>
-      <field>
-        <name>EN_INTEREST</name>
-        <length>12</length>
-        <precision>2</precision>
-      </field>
-      <field>
-        <name>EN_PUNISH_INTEREST</name>
-        <length>12</length>
-        <precision>2</precision>
-      </field>
-      <field>
-        <name>VC_REMARK</name>
-      </field>
-      <field>
-        <name>C_STATUS</name>
-      </field>
-      <field>
-        <name>L_OPERATOR_NO</name>
-      </field>
-      <field>
-        <name>L_CONFIRM_NO</name>
-      </field>
-      <field>
-        <name>L_DEPOSIT_CONFIRM_NO</name>
-      </field>
-      <field>
-        <name>L_NOTIFY_DAYS</name>
-      </field>
-      <field>
-        <name>EN_RECEIVABLE_INTEREST</name>
-        <length>16</length>
-        <precision>2</precision>
-      </field>
-      <field>
-        <name>C_AUTO_REDEPOSIT</name>
-      </field>
-      <field>
-        <name>C_INTEREST_DEPOSIT</name>
-      </field>
-      <field>
-        <name>C_RATE_TYPE</name>
-      </field>
-      <field>
-        <name>C_INTEREST_PAY_TYPE</name>
-      </field>
-      <field>
-        <name>C_DEPOSIT_TYPE</name>
-      </field>
-      <field>
-        <name>EN_BASIC_RATE</name>
-        <length>9</length>
-        <precision>8</precision>
-      </field>
-      <field>
-        <name>C_DAY_TYPE</name>
-      </field>
-      <field>
-        <name>C_FLOAT_TYPE</name>
-      </field>
-      <field>
-        <name>L_INTEREST_PAY_DATE</name>
-      </field>
-      <field>
-        <name>C_INTEREST_PAY_FREQ</name>
-      </field>
-      <field>
-        <name>C_RATE_CHANGE_TYPE</name>
-      </field>
-      <field>
-        <name>C_ADVANCE_LIMIT_FLAG</name>
-      </field>
-      <field>
-        <name>C_LIMIT_UNIT</name>
-      </field>
-      <field>
-        <name>EN_ADVANCE_RATE</name>
-        <length>9</length>
-        <precision>8</precision>
-      </field>
-      <field>
-        <name>L_PAY_SETTLE_DATE</name>
-        <length>16</length>
-        <precision>2</precision>
-      </field>
-      <field>
-        <name>EN_PAYIN_BALANCE</name>
-        <length>16</length>
-        <precision>2</precision>
-      </field>
-      <field>
-        <name>EN_PRE_PAY_BALANCE</name>
-      </field>
-      <field>
-        <name>C_INPUT_TYPE</name>
-      </field>
-      <field>
-        <name>L_ADVANCE_DATE</name>
-      </field>
-      <field>
-        <name>L_QS_CONFIRM_NO</name>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>576</xloc>
-      <yloc>1744</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -7992,6 +7794,338 @@ FROM ${searchzdname}.TBUSINESSSUMMARY</sql>
     <GUI>
       <xloc>848</xloc>
       <yloc>3968</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>his_fundasset表输入</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <sql>SELECT NVL(MAX(A.VC_COMPARE),0) AS VC_COMPARE FROM DATA_IMPORT_RECORD A 
+WHERE UPPER(A.TABLE_NAME) = UPPER('T_MID_HS_ZL_FUNDASSET')
+</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>304</xloc>
+      <yloc>1952</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>his_fundasset表输入 2</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>begin</connection>
+    <sql>select A.*,A.L_DATE AS VC_COMPARE from ${searchbdname}.THISFUNDASSET A
+where TO_CHAR(A.L_DATE) > ?</sql>
+    <limit>0</limit>
+    <lookup>his_fundasset表输入</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>608</xloc>
+      <yloc>1952</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>his_fundasset表输出</name>
+    <type>TableOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <schema />
+    <table>T_MID_HS_ZL_FUNDASSET</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+      <field>
+        <column_name>L_DATE</column_name>
+        <stream_name>L_DATE</stream_name>
+      </field>
+      <field>
+        <column_name>L_FUND_ID</column_name>
+        <stream_name>L_FUND_ID</stream_name>
+      </field>
+      <field>
+        <column_name>EN_BEGIN_CASH</column_name>
+        <stream_name>EN_BEGIN_CASH</stream_name>
+      </field>
+      <field>
+        <column_name>EN_CURRENT_CASH</column_name>
+        <stream_name>EN_CURRENT_CASH</stream_name>
+      </field>
+      <field>
+        <column_name>EN_PREBUY_BALANCE</column_name>
+        <stream_name>EN_PREBUY_BALANCE</stream_name>
+      </field>
+      <field>
+        <column_name>EN_BUY_BALANCE</column_name>
+        <stream_name>EN_BUY_BALANCE</stream_name>
+      </field>
+      <field>
+        <column_name>EN_SALE_BALANCE</column_name>
+        <stream_name>EN_SALE_BALANCE</stream_name>
+      </field>
+      <field>
+        <column_name>EN_OTHER_EXPENSE</column_name>
+        <stream_name>EN_OTHER_EXPENSE</stream_name>
+      </field>
+      <field>
+        <column_name>EN_OTHER_PROFIT</column_name>
+        <stream_name>EN_OTHER_PROFIT</stream_name>
+      </field>
+      <field>
+        <column_name>EN_INTEREST_BALANCE</column_name>
+        <stream_name>EN_INTEREST_BALANCE</stream_name>
+      </field>
+      <field>
+        <column_name>EN_STOCK_ASSET</column_name>
+        <stream_name>EN_STOCK_ASSET</stream_name>
+      </field>
+      <field>
+        <column_name>EN_BOND_ASSET</column_name>
+        <stream_name>EN_BOND_ASSET</stream_name>
+      </field>
+      <field>
+        <column_name>EN_FUND_ASSET</column_name>
+        <stream_name>EN_FUND_ASSET</stream_name>
+      </field>
+      <field>
+        <column_name>EN_HG_ASSET</column_name>
+        <stream_name>EN_HG_ASSET</stream_name>
+      </field>
+      <field>
+        <column_name>EN_OTHER_ASSET</column_name>
+        <stream_name>EN_OTHER_ASSET</stream_name>
+      </field>
+      <field>
+        <column_name>EN_ACCUMULATE_PROFIT</column_name>
+        <stream_name>EN_ACCUMULATE_PROFIT</stream_name>
+      </field>
+      <field>
+        <column_name>EN_WARRANT_ASSET</column_name>
+        <stream_name>EN_WARRANT_ASSET</stream_name>
+      </field>
+      <field>
+        <column_name>EN_PRESALE_BALANCE</column_name>
+        <stream_name>EN_PRESALE_BALANCE</stream_name>
+      </field>
+      <field>
+        <column_name>EN_BUY_UNSETTLE_BALANCE</column_name>
+        <stream_name>EN_BUY_UNSETTLE_BALANCE</stream_name>
+      </field>
+      <field>
+        <column_name>EN_SALE_UNSETTLE_BALANCE</column_name>
+        <stream_name>EN_SALE_UNSETTLE_BALANCE</stream_name>
+      </field>
+      <field>
+        <column_name>EN_BASIC_FROZEN_BALANCE</column_name>
+        <stream_name>EN_BASIC_FROZEN_BALANCE</stream_name>
+      </field>
+      <field>
+        <column_name>EN_FUTURES_ASSET</column_name>
+        <stream_name>EN_FUTURES_ASSET</stream_name>
+      </field>
+      <field>
+        <column_name>EN_FUTURES_BALANCE</column_name>
+        <stream_name>EN_FUTURES_BALANCE</stream_name>
+      </field>
+      <field>
+        <column_name>EN_FUTURES_DEPOSIT</column_name>
+        <stream_name>EN_FUTURES_DEPOSIT</stream_name>
+      </field>
+      <field>
+        <column_name>EN_FUTURES_PREPARE</column_name>
+        <stream_name>EN_FUTURES_PREPARE</stream_name>
+      </field>
+      <field>
+        <column_name>EN_FUND_SHARE</column_name>
+        <stream_name>EN_FUND_SHARE</stream_name>
+      </field>
+      <field>
+        <column_name>EN_FUND_VALUE</column_name>
+        <stream_name>EN_FUND_VALUE</stream_name>
+      </field>
+      <field>
+        <column_name>EN_NAV</column_name>
+        <stream_name>EN_NAV</stream_name>
+      </field>
+      <field>
+        <column_name>EN_FUND_VALUE_YESTERDAY</column_name>
+        <stream_name>EN_FUND_VALUE_YESTERDAY</stream_name>
+      </field>
+      <field>
+        <column_name>VC_CURRENCY_NO</column_name>
+        <stream_name>VC_CURRENCY_NO</stream_name>
+      </field>
+      <field>
+        <column_name>EN_TOTAL_NAV</column_name>
+        <stream_name>EN_TOTAL_NAV</stream_name>
+      </field>
+      <field>
+        <column_name>EN_NAV_YESTERDAY</column_name>
+        <stream_name>EN_NAV_YESTERDAY</stream_name>
+      </field>
+      <field>
+        <column_name>D_LASTUPDATE</column_name>
+        <stream_name>D_LASTUPDATE</stream_name>
+      </field>
+      <field>
+        <column_name>EN_UNIT_DIVIDENDS</column_name>
+        <stream_name>EN_UNIT_DIVIDENDS</stream_name>
+      </field>
+      <field>
+        <column_name>EN_TOTAL_UNIT_DIVIDENDS</column_name>
+        <stream_name>EN_TOTAL_UNIT_DIVIDENDS</stream_name>
+      </field>
+      <field>
+        <column_name>EN_7DAYS_YIELD_RATE</column_name>
+        <stream_name>EN_7DAYS_YIELD_RATE</stream_name>
+      </field>
+      <field>
+        <column_name>EN_10K_UNIT_YIELD</column_name>
+        <stream_name>EN_10K_UNIT_YIELD</stream_name>
+      </field>
+      <field>
+        <column_name>EN_DEPOSIT_BALANCE</column_name>
+        <stream_name>EN_DEPOSIT_BALANCE</stream_name>
+      </field>
+      <field>
+        <column_name>EN_EXCHANGED_IN_QUOTA</column_name>
+        <stream_name>EN_EXCHANGED_IN_QUOTA</stream_name>
+      </field>
+      <field>
+        <column_name>EN_EXCHANGED_OUT_QUOTA</column_name>
+        <stream_name>EN_EXCHANGED_OUT_QUOTA</stream_name>
+      </field>
+      <field>
+        <column_name>EN_TODAY_EXCHANGE_IN_QUOTA</column_name>
+        <stream_name>EN_TODAY_EXCHANGE_IN_QUOTA</stream_name>
+      </field>
+      <field>
+        <column_name>EN_TODAY_EXCHANGE_OUT_QUOTA</column_name>
+        <stream_name>EN_TODAY_EXCHANGE_OUT_QUOTA</stream_name>
+      </field>
+      <field>
+        <column_name>EN_NEXT_EXCHANGE_OUT_QUOTA</column_name>
+        <stream_name>EN_NEXT_EXCHANGE_OUT_QUOTA</stream_name>
+      </field>
+      <field>
+        <column_name>EN_BOND_INTEREST</column_name>
+        <stream_name>EN_BOND_INTEREST</stream_name>
+      </field>
+      <field>
+        <column_name>EN_BEGIN_FUND_VALUE</column_name>
+        <stream_name>EN_BEGIN_FUND_VALUE</stream_name>
+      </field>
+      <field>
+        <column_name>EN_FUND_TOTAL_VALUE</column_name>
+        <stream_name>EN_FUND_TOTAL_VALUE</stream_name>
+      </field>
+      <field>
+        <column_name>EN_PAYABLE_BOND_ASSET</column_name>
+        <stream_name>EN_PAYABLE_BOND_ASSET</stream_name>
+      </field>
+      <field>
+        <column_name>VC_DIFF_DESCRIPTION</column_name>
+        <stream_name>VC_DIFF_DESCRIPTION</stream_name>
+      </field>
+      <field>
+        <column_name>EN_T1_PREBUY_BALANCE</column_name>
+        <stream_name>EN_T1_PREBUY_BALANCE</stream_name>
+      </field>
+      <field>
+        <column_name>EN_T1_PRESALE_BALANCE</column_name>
+        <stream_name>EN_T1_PRESALE_BALANCE</stream_name>
+      </field>
+      <field>
+        <column_name>EN_REC_SEC_ASSET</column_name>
+        <stream_name>EN_REC_SEC_ASSET</stream_name>
+      </field>
+      <field>
+        <column_name>EN_PAY_SEC_ASSET</column_name>
+        <stream_name>EN_PAY_SEC_ASSET</stream_name>
+      </field>
+      <field>
+        <column_name>EN_OPTION_ASSET</column_name>
+        <stream_name>EN_OPTION_ASSET</stream_name>
+      </field>
+      <field>
+        <column_name>EN_BUY_UNASSET_BALANCE</column_name>
+        <stream_name>EN_BUY_UNASSET_BALANCE</stream_name>
+      </field>
+      <field>
+        <column_name>EN_SALE_UNASSET_BALANCE</column_name>
+        <stream_name>EN_SALE_UNASSET_BALANCE</stream_name>
+      </field>
+      <field>
+        <column_name>VC_COMPARE</column_name>
+        <stream_name>VC_COMPARE</stream_name>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>928</xloc>
+      <yloc>1952</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
