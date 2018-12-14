@@ -4581,7 +4581,7 @@ where t.table_name=upper('t_mid_hs_zl_bondproperty')</sql>
     <connection>begin</connection>
     <sql>select 
 *
-from ${searchzdname}.tbondproperty t where vc_timestamp>?
+from ${searchzdname}.tbondproperty t where vc_timestamp>= ?
 </sql>
     <limit>0</limit>
     <lookup>bondproperty表输入</lookup>
@@ -7545,83 +7545,65 @@ FROM ${searchzdname}.TBUSINESSSUMMARY</sql>
     <fields>
       <field>
         <name>L_ENTRUST_SERIAL_NO</name>
-        <rename />
       </field>
       <field>
         <name>L_HG_DATE</name>
-        <rename />
       </field>
       <field>
         <name>L_BASECOMBI_ID</name>
-        <rename />
       </field>
       <field>
         <name>C_MARKET_NO</name>
-        <rename />
       </field>
       <field>
         <name>VC_INTER_CODE</name>
-        <rename />
       </field>
       <field>
         <name>VC_STOCKHOLDER_ID</name>
-        <rename />
       </field>
       <field>
         <name>VC_SEAT_ID</name>
-        <rename />
       </field>
       <field>
         <name>C_ENTRUST_DIRECTION</name>
-        <rename />
       </field>
       <field>
         <name>C_REDEAL_FLAG</name>
-        <rename />
       </field>
       <field>
         <name>L_REDEEM_DAYS</name>
-        <rename />
       </field>
       <field>
         <name>L_REDEEM_LAWDATE</name>
-        <rename />
       </field>
       <field>
         <name>L_REDEEM_LIQUIDATE</name>
-        <rename />
       </field>
       <field>
         <name>L_DEAL_AMOUNT</name>
-        <rename />
       </field>
       <field>
         <name>EN_DEAL_PRICE</name>
-        <rename />
         <length>16</length>
         <precision>8</precision>
       </field>
       <field>
         <name>EN_DEAL_BALANCE</name>
-        <rename />
         <length>16</length>
         <precision>2</precision>
       </field>
       <field>
         <name>EN_FEE</name>
-        <rename />
         <length>12</length>
         <precision>2</precision>
       </field>
       <field>
         <name>EN_REDEEM_INTEREST</name>
-        <rename />
         <length>12</length>
         <precision>2</precision>
       </field>
       <field>
         <name>EN_BALANCE2</name>
-        <rename />
         <length>16</length>
         <precision>2</precision>
       </field>
@@ -7637,6 +7619,200 @@ FROM ${searchzdname}.TBUSINESSSUMMARY</sql>
     <GUI>
       <xloc>448</xloc>
       <yloc>1616</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>字段选择 2</name>
+    <type>SelectValues</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <name>L_DATE</name>
+      </field>
+      <field>
+        <name>L_FUND_ID</name>
+      </field>
+      <field>
+        <name>L_BASECOMBI_ID</name>
+      </field>
+      <field>
+        <name>VC_INTER_CODE</name>
+      </field>
+      <field>
+        <name>VC_INTER_NO</name>
+      </field>
+      <field>
+        <name>VC_RECEIPT_NO</name>
+      </field>
+      <field>
+        <name>VC_ACCOUNT_NO</name>
+      </field>
+      <field>
+        <name>VC_ACCOUNT_NAME</name>
+      </field>
+      <field>
+        <name>VC_PLACE</name>
+      </field>
+      <field>
+        <name>L_BANK</name>
+      </field>
+      <field>
+        <name>VC_MINOR_BANK</name>
+      </field>
+      <field>
+        <name>VC_DEPOSIT_OWNER</name>
+      </field>
+      <field>
+        <name>EN_BALANCE</name>
+        <length>16</length>
+        <precision>2</precision>
+      </field>
+      <field>
+        <name>EN_RATE</name>
+        <length>9</length>
+        <precision>8</precision>
+      </field>
+      <field>
+        <name>L_LIMIT_TIME</name>
+      </field>
+      <field>
+        <name>L_BEGIN_DATE</name>
+      </field>
+      <field>
+        <name>L_END_DATE</name>
+      </field>
+      <field>
+        <name>L_LAST_INTEREST_DATE</name>
+      </field>
+      <field>
+        <name>L_LAST_MOD_INTEREST_DATE</name>
+      </field>
+      <field>
+        <name>EN_TOTAL_INTEREST</name>
+        <length>12</length>
+        <precision>2</precision>
+      </field>
+      <field>
+        <name>EN_INTEREST</name>
+        <length>12</length>
+        <precision>2</precision>
+      </field>
+      <field>
+        <name>EN_PUNISH_INTEREST</name>
+        <length>12</length>
+        <precision>2</precision>
+      </field>
+      <field>
+        <name>VC_REMARK</name>
+      </field>
+      <field>
+        <name>C_STATUS</name>
+      </field>
+      <field>
+        <name>L_OPERATOR_NO</name>
+      </field>
+      <field>
+        <name>L_CONFIRM_NO</name>
+      </field>
+      <field>
+        <name>L_DEPOSIT_CONFIRM_NO</name>
+      </field>
+      <field>
+        <name>L_NOTIFY_DAYS</name>
+      </field>
+      <field>
+        <name>EN_RECEIVABLE_INTEREST</name>
+        <length>16</length>
+        <precision>2</precision>
+      </field>
+      <field>
+        <name>C_AUTO_REDEPOSIT</name>
+      </field>
+      <field>
+        <name>C_INTEREST_DEPOSIT</name>
+      </field>
+      <field>
+        <name>C_RATE_TYPE</name>
+      </field>
+      <field>
+        <name>C_INTEREST_PAY_TYPE</name>
+      </field>
+      <field>
+        <name>C_DEPOSIT_TYPE</name>
+      </field>
+      <field>
+        <name>EN_BASIC_RATE</name>
+        <length>9</length>
+        <precision>8</precision>
+      </field>
+      <field>
+        <name>C_DAY_TYPE</name>
+      </field>
+      <field>
+        <name>C_FLOAT_TYPE</name>
+      </field>
+      <field>
+        <name>L_INTEREST_PAY_DATE</name>
+      </field>
+      <field>
+        <name>C_INTEREST_PAY_FREQ</name>
+      </field>
+      <field>
+        <name>C_RATE_CHANGE_TYPE</name>
+      </field>
+      <field>
+        <name>C_ADVANCE_LIMIT_FLAG</name>
+      </field>
+      <field>
+        <name>C_LIMIT_UNIT</name>
+      </field>
+      <field>
+        <name>EN_ADVANCE_RATE</name>
+        <length>9</length>
+        <precision>8</precision>
+      </field>
+      <field>
+        <name>L_PAY_SETTLE_DATE</name>
+        <length>16</length>
+        <precision>2</precision>
+      </field>
+      <field>
+        <name>EN_PAYIN_BALANCE</name>
+        <length>16</length>
+        <precision>2</precision>
+      </field>
+      <field>
+        <name>EN_PRE_PAY_BALANCE</name>
+      </field>
+      <field>
+        <name>C_INPUT_TYPE</name>
+      </field>
+      <field>
+        <name>L_ADVANCE_DATE</name>
+      </field>
+      <field>
+        <name>L_QS_CONFIRM_NO</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>576</xloc>
+      <yloc>1744</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -7816,249 +7992,6 @@ FROM ${searchzdname}.TBUSINESSSUMMARY</sql>
     <GUI>
       <xloc>848</xloc>
       <yloc>3968</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>字段选择 2</name>
-    <type>SelectValues</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <fields>
-      <field>
-        <name>L_DATE</name>
-        <rename />
-      </field>
-      <field>
-        <name>L_FUND_ID</name>
-        <rename />
-      </field>
-      <field>
-        <name>L_BASECOMBI_ID</name>
-        <rename />
-      </field>
-      <field>
-        <name>VC_INTER_CODE</name>
-        <rename />
-      </field>
-      <field>
-        <name>VC_INTER_NO</name>
-        <rename />
-      </field>
-      <field>
-        <name>VC_RECEIPT_NO</name>
-        <rename />
-      </field>
-      <field>
-        <name>VC_ACCOUNT_NO</name>
-        <rename />
-      </field>
-      <field>
-        <name>VC_ACCOUNT_NAME</name>
-        <rename />
-      </field>
-      <field>
-        <name>VC_PLACE</name>
-        <rename />
-      </field>
-      <field>
-        <name>L_BANK</name>
-        <rename />
-      </field>
-      <field>
-        <name>VC_MINOR_BANK</name>
-        <rename />
-      </field>
-      <field>
-        <name>VC_DEPOSIT_OWNER</name>
-        <rename />
-      </field>
-      <field>
-        <name>EN_BALANCE</name>
-        <rename />
-        <length>16</length>
-        <precision>2</precision>
-      </field>
-      <field>
-        <name>EN_RATE</name>
-        <rename />
-        <length>9</length>
-        <precision>8</precision>
-      </field>
-      <field>
-        <name>L_LIMIT_TIME</name>
-        <rename />
-      </field>
-      <field>
-        <name>L_BEGIN_DATE</name>
-        <rename />
-      </field>
-      <field>
-        <name>L_END_DATE</name>
-        <rename />
-      </field>
-      <field>
-        <name>L_LAST_INTEREST_DATE</name>
-        <rename />
-      </field>
-      <field>
-        <name>L_LAST_MOD_INTEREST_DATE</name>
-        <rename />
-      </field>
-      <field>
-        <name>EN_TOTAL_INTEREST</name>
-        <rename />
-        <length>12</length>
-        <precision>2</precision>
-      </field>
-      <field>
-        <name>EN_INTEREST</name>
-        <rename />
-        <length>12</length>
-        <precision>2</precision>
-      </field>
-      <field>
-        <name>EN_PUNISH_INTEREST</name>
-        <rename />
-        <length>12</length>
-        <precision>2</precision>
-      </field>
-      <field>
-        <name>VC_REMARK</name>
-        <rename />
-      </field>
-      <field>
-        <name>C_STATUS</name>
-        <rename />
-      </field>
-      <field>
-        <name>L_OPERATOR_NO</name>
-        <rename />
-      </field>
-      <field>
-        <name>L_CONFIRM_NO</name>
-        <rename />
-      </field>
-      <field>
-        <name>L_DEPOSIT_CONFIRM_NO</name>
-        <rename />
-      </field>
-      <field>
-        <name>L_NOTIFY_DAYS</name>
-        <rename />
-      </field>
-      <field>
-        <name>EN_RECEIVABLE_INTEREST</name>
-        <rename />
-        <length>16</length>
-        <precision>2</precision>
-      </field>
-      <field>
-        <name>C_AUTO_REDEPOSIT</name>
-        <rename />
-      </field>
-      <field>
-        <name>C_INTEREST_DEPOSIT</name>
-        <rename />
-      </field>
-      <field>
-        <name>C_RATE_TYPE</name>
-        <rename />
-      </field>
-      <field>
-        <name>C_INTEREST_PAY_TYPE</name>
-        <rename />
-      </field>
-      <field>
-        <name>C_DEPOSIT_TYPE</name>
-        <rename />
-      </field>
-      <field>
-        <name>EN_BASIC_RATE</name>
-        <rename />
-        <length>9</length>
-        <precision>8</precision>
-      </field>
-      <field>
-        <name>C_DAY_TYPE</name>
-        <rename />
-      </field>
-      <field>
-        <name>C_FLOAT_TYPE</name>
-        <rename />
-      </field>
-      <field>
-        <name>L_INTEREST_PAY_DATE</name>
-        <rename />
-      </field>
-      <field>
-        <name>C_INTEREST_PAY_FREQ</name>
-        <rename />
-      </field>
-      <field>
-        <name>C_RATE_CHANGE_TYPE</name>
-        <rename />
-      </field>
-      <field>
-        <name>C_ADVANCE_LIMIT_FLAG</name>
-        <rename />
-      </field>
-      <field>
-        <name>C_LIMIT_UNIT</name>
-        <rename />
-      </field>
-      <field>
-        <name>EN_ADVANCE_RATE</name>
-        <rename />
-        <length>9</length>
-        <precision>8</precision>
-      </field>
-      <field>
-        <name>L_PAY_SETTLE_DATE</name>
-        <rename />
-        <length>16</length>
-        <precision>2</precision>
-      </field>
-      <field>
-        <name>EN_PAYIN_BALANCE</name>
-        <rename />
-        <length>16</length>
-        <precision>2</precision>
-      </field>
-      <field>
-        <name>EN_PRE_PAY_BALANCE</name>
-        <rename />
-      </field>
-      <field>
-        <name>C_INPUT_TYPE</name>
-        <rename />
-      </field>
-      <field>
-        <name>L_ADVANCE_DATE</name>
-        <rename />
-      </field>
-      <field>
-        <name>L_QS_CONFIRM_NO</name>
-        <rename />
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>576</xloc>
-      <yloc>1744</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
