@@ -791,7 +791,7 @@ FROM ${searchbdname}.TBROKER
     <schema />
     <table>T_MID_HS_BROKER</table>
     <commit>1000</commit>
-    <truncate>Y</truncate>
+    <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
     <use_batch>Y</use_batch>
     <specify_fields>Y</specify_fields>
@@ -1216,7 +1216,7 @@ from ${searchbdname}.TUNITSTOCK t inner join ${searchbdname}.tstockinfo m on t.v
     <schema />
     <table>t_mid_hs_UNITSTOCK</table>
     <commit>1000</commit>
-    <truncate>Y</truncate>
+    <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
     <use_batch>Y</use_batch>
     <specify_fields>Y</specify_fields>
@@ -2568,7 +2568,7 @@ FROM ${searchbdname}.TTRADETYPES
     <schema />
     <table>t_mid_hs_fundinfo</table>
     <commit>1000</commit>
-    <truncate>Y</truncate>
+    <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
     <use_batch>Y</use_batch>
     <specify_fields>Y</specify_fields>
