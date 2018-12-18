@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
     <name>hsbd</name>
@@ -2249,7 +2250,7 @@ FROM ${searchbdname}.TTRADETYPES
       <schema_name />
     </partitioning>
     <connection>begin</connection>
-    <sql>select * from ${searchzdname}.tfundasset</sql>
+    <sql>select * from ${searchbdname}.tfundasset</sql>
     <limit>0</limit>
     <lookup />
     <execute_each_row>N</execute_each_row>
