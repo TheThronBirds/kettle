@@ -2996,7 +2996,7 @@ SYMBOL_COMP_EXCHANGE,
 to_number(to_char(BEGINDATE,'yyyymmdd')) BEGINDATE,
 to_number(to_char(ENDDATE,'yyyymmdd')) ENDDATE,
 concat(to_char(ENTRYDATE,'yyyymmdd'),ENTRYTIME) as   VC_COMPARE
-from SYMBOL_COMP where ENABLED=0
+from SYMBOL_COMP where ENABLED=0 and SYMBOL_COMP_CODE &lt;&gt; SYMBOL
 and concat(to_char(ENTRYDATE,'yyyymmdd'),ENTRYTIME) >?
 and   (enddate is null or enddate = to_date(19000101, 'yyyymmdd') or to_char(enddate,'yyyymmdd')>?)</sql>
     <limit>0</limit>
