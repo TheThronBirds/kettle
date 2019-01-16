@@ -1213,7 +1213,7 @@
       <schema_name />
     </partitioning>
     <connection>risk</connection>
-    <sql>select min(to_char(to_date(t1.I_TRADE_DATE, 'yyyymmdd'), 'yyyymmdd'))I_TRADE_DATE,
+    <sql>select 
        nvl(max(t.VC_COMPARE), 0) as VC_COMPARE
   from (select nvl(max(VC_COMPARE), 0) as VC_COMPARE
           from DATA_IMPORT_RECORD
@@ -1254,8 +1254,7 @@
    inner join 
    (select t.bcode,max(t.updatedate)updatedate  
     from BONDISSUE t 
-   where to_number(to_char(t.BONDISSUE13,'yyyymmdd'))>?
-   and concat(to_char(t.ENTRYDATE,'yyyymmdd'),t.ENTRYTIME)>? group by t.BCODE 
+   where  concat(to_char(t.ENTRYDATE,'yyyymmdd'),t.ENTRYTIME)>? group by t.BCODE 
    )b 
    on a.bcode=b.BCODE and a.updatedate=b.updatedate</sql>
     <limit>0</limit>
@@ -2996,7 +2995,7 @@ SYMBOL_COMP_EXCHANGE,
 to_number(to_char(BEGINDATE,'yyyymmdd')) BEGINDATE,
 to_number(to_char(ENDDATE,'yyyymmdd')) ENDDATE,
 concat(to_char(ENTRYDATE,'yyyymmdd'),ENTRYTIME) as   VC_COMPARE
-from SYMBOL_COMP where ENABLED=0
+from SYMBOL_COMP where ENABLED=0 and SYMBOL_COMP_CODE &lt;&gt; SYMBOL
 and concat(to_char(ENTRYDATE,'yyyymmdd'),ENTRYTIME) >?
 and   (enddate is null or enddate = to_date(19000101, 'yyyymmdd') or to_char(enddate,'yyyymmdd')>?)</sql>
     <limit>0</limit>
