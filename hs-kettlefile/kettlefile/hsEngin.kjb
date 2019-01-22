@@ -649,6 +649,7 @@
       <xloc>512</xloc>
       <yloc>496</yloc>
     </entry>
+
     <entry>
       <name>转换STOCKINFOS</name>
       <description />
@@ -758,6 +759,7 @@
     </hop>
     <hop>
       <from>hsccgc</from>
+<<<<<<< HEAD
       <to>转换STOCKINFOS</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -767,6 +769,8 @@
     </hop>
     <hop>
       <from>转换STOCKINFOS</from>
+=======
+>>>>>>> remotes/kettle/dev
       <to>成功</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
