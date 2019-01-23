@@ -6091,7 +6091,7 @@ WHERE UPPER(A.TABLE_NAME) = UPPER('T_MID_HS_ZL_FUNDASSET')
     </partitioning>
     <connection>begin</connection>
     <sql>select A.*,A.L_DATE AS VC_COMPARE from ${searchzdname}.THISFUNDASSET A
-where TO_CHAR(A.L_DATE) > ?</sql>
+where TO_CHAR(A.L_DATE) >= ?</sql>
     <limit>0</limit>
     <lookup>his_fundasset表输入</lookup>
     <execute_each_row>N</execute_each_row>
