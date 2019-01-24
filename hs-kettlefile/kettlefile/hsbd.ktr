@@ -3285,7 +3285,7 @@ where TO_CHAR(A.L_DATE) >= ?</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>608</xloc>
+      <xloc>624</xloc>
       <yloc>1088</yloc>
       <draw>Y</draw>
     </GUI>
@@ -3305,7 +3305,7 @@ where TO_CHAR(A.L_DATE) >= ?</sql>
     <schema />
     <table>T_MID_HS_ZL_FUNDASSET</table>
     <commit>1000</commit>
-    <truncate>Y</truncate>
+    <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
     <use_batch>Y</use_batch>
     <specify_fields>Y</specify_fields>
@@ -4072,7 +4072,7 @@ FROM ${searchbdname}.TSEAT
       </output>
     </remotesteps>
     <GUI>
-      <xloc>608</xloc>
+      <xloc>624</xloc>
       <yloc>1216</yloc>
       <draw>Y</draw>
     </GUI>
