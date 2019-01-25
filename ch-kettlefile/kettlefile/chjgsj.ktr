@@ -792,13 +792,18 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>SIBASEINFO表输入</from>
-      <to>SIBASEINFO表输入 2</to>
+      <from>SIBASEINFO表输入 2</from>
+      <to>字段选择</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>SIBASEINFO表输入 2</from>
+      <from>字段选择</from>
       <to>SIBASEINFO表输出</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>SIBASEINFO表输入</from>
+      <to>SIBASEINFO表输入 2</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -2056,7 +2061,7 @@ where t.table_name=upper('t_mid_ch_zl_SIBASEINFO')</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>544</xloc>
+      <xloc>768</xloc>
       <yloc>1200</yloc>
       <draw>Y</draw>
     </GUI>
@@ -2362,6 +2367,51 @@ where t.table_name=upper('t_mid_ch_zl_icrate')</sql>
     <GUI>
       <xloc>544</xloc>
       <yloc>1040</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>字段选择</name>
+    <type>SelectValues</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <name>DECLAREDATE</name>
+        <rename />
+      </field>
+      <field>
+        <name>COMPANYCODE</name>
+        <rename />
+      </field>
+      <field>
+        <name>SIBASEINFO10</name>
+        <rename />
+        <length>22</length>
+        <precision>4</precision>
+      </field>
+      <field>
+        <name>VC_COMPARE</name>
+        <rename />
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>560</xloc>
+      <yloc>1200</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
