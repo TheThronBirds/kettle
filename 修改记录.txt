@@ -1,0 +1,1 @@
+2018-11-26   修改kettle.properties文件，tradeqry数据库地址变化
