@@ -875,6 +875,27 @@
       <bordercolorblue>100</bordercolorblue>
       <drawshadow>Y</drawshadow>
     </notepad>
+    <notepad>
+      <note>股票承销信息</note>
+      <xloc>176</xloc>
+      <yloc>3312</yloc>
+      <width>82</width>
+      <heigth>26</heigth>
+      <fontname>微软雅黑</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
   </notepads>
   <connection>
     <name>fcdb</name>
@@ -1198,6 +1219,16 @@
     <hop>
       <from>表输入IRCHG2</from>
       <to>表输出</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>uwrt表输入</from>
+      <to>uwrt表输入 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>uwrt表输入 2</from>
+      <to>uwrt表输出 2</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -3425,6 +3456,7 @@ and to_char(WARRANTINFO20,'yyyymmdd')>=?</sql>
     <connection>fcdb</connection>
     <sql>select 
 bonddt68,
+bonddt3,
 bonddt54,
 bonddt77,
 bonddt69,
@@ -3475,6 +3507,7 @@ and concat(to_char(t.ENTRYDATE,'yyyymmdd'),t.ENTRYTIME) >=?
 union all
 select
 bonddt68,
+bonddt3,
 bonddt54,
 bonddt77,
 bonddt69,
@@ -3525,6 +3558,7 @@ and concat(to_char(t.ENTRYDATE,'yyyymmdd'),t.ENTRYTIME) >=?
 union all
 select
 bonddt68,
+bonddt3,
 bonddt54,
 bonddt77,
 bonddt69,
@@ -3575,6 +3609,7 @@ and concat(to_char(t.ENTRYDATE,'yyyymmdd'),t.ENTRYTIME) >=?
 union all
 select
 bonddt68,
+bonddt3,
 bonddt54,
 bonddt77,
 bonddt69,
@@ -3882,6 +3917,10 @@ where t.table_name=upper('t_mid_ch_zl_bonddt')</sql>
       <field>
         <column_name>BONDDT4</column_name>
         <stream_name>BONDDT4</stream_name>
+      </field>
+      <field>
+        <column_name>BONDDT3</column_name>
+        <stream_name>BONDDT3</stream_name>
       </field>
     </fields>
     <cluster_schema />
@@ -4637,6 +4676,192 @@ where concat(to_char(a.ENTRYDATE,'yyyymmdd'),a.ENTRYTIME) >?</sql>
     <GUI>
       <xloc>704</xloc>
       <yloc>2176</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>uwrt表输入</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <sql>select nvl(max(t.VC_COMPARE),0) as  VC_COMPARE,nvl(max(t.VC_COMPARE),0) as  VC_COMPARE1
+from DATA_IMPORT_RECORD t 
+where t.table_name=upper('t_mid_ch_zl_UWRT')</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>192</xloc>
+      <yloc>3376</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>uwrt表输入 2</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>fcdb</connection>
+    <sql>select
+ c.symbol||' '||'H' as vc_stock_code,
+ c.uwrt2 as VC_AFFCORPCODE,
+ c.uwrt3,
+ c.uwrt4,
+ c.uwrt5,
+ c.uwrt6,
+ c.uwrt7,
+ c.uwrt8,
+ c.uwrt9,
+ c.uwrt10,
+ c.uwrt11,
+ concat(to_char(ENTRYDATE,'yyyymmdd'),ENTRYTIME) as   VC_COMPARE
+ from uwrt c inner join (select a.symbol,max(a.publishdate) as max_date from uwrt a group by a.symbol) b
+on c.symbol = b.symbol and c.publishdate = b.max_date where c.symbol like '6%'
+and  to_char(c.entrydate,'yyyy-mm-dd')>='2007-01-01' 
+and  concat(to_char(c.ENTRYDATE,'yyyymmdd'),c.ENTRYTIME)>?
+union
+
+select
+ c.symbol||' '||'S' as vc_stock_code,
+ c.uwrt2 as VC_AFFCORPCODE,
+ c.uwrt3,
+ c.uwrt4,
+ c.uwrt5,
+ c.uwrt6,
+ c.uwrt7,
+ c.uwrt8,
+ c.uwrt9,
+ c.uwrt10,
+ c.uwrt11,
+ concat(to_char(ENTRYDATE,'yyyymmdd'),ENTRYTIME) as   VC_COMPARE
+ from uwrt c inner join (select a.symbol,max(a.publishdate) as max_date from uwrt a group by a.symbol) b
+on c.symbol = b.symbol and c.publishdate = b.max_date where c.symbol not like '6%'
+and  to_char(c.entrydate,'yyyy-mm-dd')>='2007-01-01' 
+and  concat(to_char(c.ENTRYDATE,'yyyymmdd'),c.ENTRYTIME)>?</sql>
+    <limit>0</limit>
+    <lookup>uwrt表输入</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>448</xloc>
+      <yloc>3376</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>uwrt表输出 2</name>
+    <type>TableOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <schema />
+    <table>T_MID_CH_ZL_UWRT</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+      <field>
+        <column_name>VC_STOCK_CODE</column_name>
+        <stream_name>VC_STOCK_CODE</stream_name>
+      </field>
+      <field>
+        <column_name>VC_AFFCORPCODE</column_name>
+        <stream_name>VC_AFFCORPCODE</stream_name>
+      </field>
+      <field>
+        <column_name>UWRT3</column_name>
+        <stream_name>UWRT3</stream_name>
+      </field>
+      <field>
+        <column_name>UWRT4</column_name>
+        <stream_name>UWRT4</stream_name>
+      </field>
+      <field>
+        <column_name>UWRT5</column_name>
+        <stream_name>UWRT5</stream_name>
+      </field>
+      <field>
+        <column_name>UWRT6</column_name>
+        <stream_name>UWRT6</stream_name>
+      </field>
+      <field>
+        <column_name>UWRT7</column_name>
+        <stream_name>UWRT7</stream_name>
+      </field>
+      <field>
+        <column_name>UWRT8</column_name>
+        <stream_name>UWRT8</stream_name>
+      </field>
+      <field>
+        <column_name>UWRT9</column_name>
+        <stream_name>UWRT9</stream_name>
+      </field>
+      <field>
+        <column_name>UWRT10</column_name>
+        <stream_name>UWRT10</stream_name>
+      </field>
+      <field>
+        <column_name>UWRT11</column_name>
+        <stream_name>UWRT11</stream_name>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>704</xloc>
+      <yloc>3376</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
