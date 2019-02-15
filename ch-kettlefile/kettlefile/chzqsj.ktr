@@ -2172,7 +2172,7 @@ where t.table_name=upper('t_mid_ch_zl_CBPROVISION')</sql>
        nvl(max(t.VC_COMPARE), 0) as VC_COMPARE,min(to_char(to_date(t1.I_TRADE_DATE, 'yyyymmdd'), 'yyyymmdd'))I_TRADE_DATE
   from (select nvl(max(VC_COMPARE), 0) as VC_COMPARE
           from DATA_IMPORT_RECORD
-         where table_name = upper('t_mid_chjc_CFProfile')) t,
+         where table_name = upper('t_mid_ch_zl_CFProfile')) t,
        systeminfo t1</sql>
     <limit>0</limit>
     <lookup />
