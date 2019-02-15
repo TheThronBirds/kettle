@@ -759,11 +759,6 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>CHDQUOTE表输入 2</from>
-      <to>CHDQUO表输出</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>HKHDQUO表输入</from>
       <to>HKHDQUOTE表输入</to>
       <enabled>Y</enabled>
@@ -794,11 +789,6 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>repo表输入 2</from>
-      <to>repo表输出</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>wrthdq表输入</from>
       <to>wrthdq表输入 2</to>
       <enabled>Y</enabled>
@@ -811,11 +801,6 @@
     <hop>
       <from>priceinfo_BHDQUOTE表输入2</from>
       <to>priceinfo_BHDQUOTE表输出</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>HKHDQUOTE表输入</from>
-      <to>HKHDQUOTE表输出</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -838,6 +823,36 @@
       <to>priceinfo_BESTIMATE表输出</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>CHDQUOTE表输入 2</from>
+      <to>字段选择 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>字段选择 2</from>
+      <to>CHDQUOTE表输出</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>HKHDQUOTE表输入</from>
+      <to>字段选择 3</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>字段选择 3</from>
+      <to>HKHDQUOTE表输出</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>repo表输入 2</from>
+      <to>字段选择 4</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>字段选择 4</from>
+      <to>repo表输出</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name>CHDQUOTE表输入 2</name>
@@ -856,6 +871,7 @@ SYMBOL ,
 EXCHANGE ,
 LCLOSE ,
 TOPEN ,
+TCLOSE,
 HIGH ,
 LOW ,
 VOTURNOVER ,
@@ -886,7 +902,7 @@ and concat(to_char(ENTRYDATE,'yyyymmdd'),ENTRYTIME)>?</sql>
     </GUI>
   </step>
   <step>
-    <name>CHDQUO表输出</name>
+    <name>CHDQUOTE表输出</name>
     <type>TableOutput</type>
     <description />
     <distribute>Y</distribute>
@@ -931,6 +947,10 @@ and concat(to_char(ENTRYDATE,'yyyymmdd'),ENTRYTIME)>?</sql>
         <stream_name>TOPEN</stream_name>
       </field>
       <field>
+        <column_name>TCLOSE</column_name>
+        <stream_name>TCLOSE</stream_name>
+      </field>
+      <field>
         <column_name>HIGH</column_name>
         <stream_name>HIGH</stream_name>
       </field>
@@ -967,7 +987,7 @@ and concat(to_char(ENTRYDATE,'yyyymmdd'),ENTRYTIME)>?</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>736</xloc>
+      <xloc>960</xloc>
       <yloc>416</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1162,10 +1182,12 @@ SYMBOL,
 EXCHANGE,
 Lclose,
 Topen,
+TCLOSE,
 High,
 Low,
 VaTurnover,
-VoTurnover
+VoTurnover,
+tdate
 ,concat(to_char(ENTRYDATE,'yyyymmdd'),ENTRYTIME) as   VC_COMPARE 
 from 
 HKHDQUOTE t
@@ -1236,6 +1258,10 @@ concat(to_char(ENTRYDATE,'yyyymmdd'),ENTRYTIME) >?</sql>
         <stream_name>TOPEN</stream_name>
       </field>
       <field>
+        <column_name>TCLOSE</column_name>
+        <stream_name>TCLOSE</stream_name>
+      </field>
+      <field>
         <column_name>HIGH</column_name>
         <stream_name>HIGH</stream_name>
       </field>
@@ -1252,6 +1278,10 @@ concat(to_char(ENTRYDATE,'yyyymmdd'),ENTRYTIME) >?</sql>
         <stream_name>VOTURNOVER</stream_name>
       </field>
       <field>
+        <column_name>TDATE</column_name>
+        <stream_name>TDATE</stream_name>
+      </field>
+      <field>
         <column_name>VC_COMPARE</column_name>
         <stream_name>VC_COMPARE</stream_name>
       </field>
@@ -1264,7 +1294,7 @@ concat(to_char(ENTRYDATE,'yyyymmdd'),ENTRYTIME) >?</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>736</xloc>
+      <xloc>960</xloc>
       <yloc>544</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1973,6 +2003,7 @@ Exchange ,
 symbol ,
 LClose,
 TOpen,
+TCLOSE,
 High,
 Low,
 VoTurnover,
@@ -2047,6 +2078,10 @@ and concat(to_char(ENTRYDATE,'yyyymmdd'),ENTRYTIME)>?</sql>
         <stream_name>TOPEN</stream_name>
       </field>
       <field>
+        <column_name>TCLOSE</column_name>
+        <stream_name>TCLOSE</stream_name>
+      </field>
+      <field>
         <column_name>HIGH</column_name>
         <stream_name>HIGH</stream_name>
       </field>
@@ -2083,7 +2118,7 @@ and concat(to_char(ENTRYDATE,'yyyymmdd'),ENTRYTIME)>?</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>736</xloc>
+      <xloc>976</xloc>
       <yloc>976</yloc>
       <draw>Y</draw>
     </GUI>
@@ -2270,44 +2305,133 @@ and concat(to_char(ENTRYDATE,'yyyymmdd'),ENTRYTIME) >?</sql>
     <fields>
       <field>
         <name>BCODE</name>
+        <rename />
+      </field>
+      <field>
+        <name>EXCHANGE</name>
+        <rename />
+      </field>
+      <field>
+        <name>SYMBOL</name>
+        <rename />
+      </field>
+      <field>
+        <name>SNAME</name>
+        <rename />
+      </field>
+      <field>
+        <name>STYPE</name>
+        <rename />
+      </field>
+      <field>
+        <name>ACCRUEDINTEREST</name>
+        <rename />
+      </field>
+      <field>
+        <name>DURATION</name>
+        <rename />
+      </field>
+      <field>
+        <name>CONVEXITY</name>
+        <rename />
+      </field>
+      <field>
+        <name>YIELD</name>
+        <rename />
+      </field>
+      <field>
+        <name>CLEARPRICE</name>
+        <rename />
+        <length>18</length>
+        <precision>6</precision>
+      </field>
+      <field>
+        <name>TDATE</name>
+        <rename />
+      </field>
+      <field>
+        <name>DURATION_DIS</name>
+        <rename />
+      </field>
+      <field>
+        <name>DURATION_MOD</name>
+        <rename />
+        <length>18</length>
+        <precision>6</precision>
+      </field>
+      <field>
+        <name>VC_COMPARE</name>
+        <rename />
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>736</xloc>
+      <yloc>272</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>字段选择 2</name>
+    <type>SelectValues</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <name>SYMBOL</name>
       </field>
       <field>
         <name>EXCHANGE</name>
       </field>
       <field>
-        <name>SYMBOL</name>
+        <name>LCLOSE</name>
+        <length>9</length>
+        <precision>4</precision>
       </field>
       <field>
-        <name>SNAME</name>
+        <name>TOPEN</name>
+        <length>9</length>
+        <precision>4</precision>
       </field>
       <field>
-        <name>STYPE</name>
+        <name>TCLOSE</name>
+        <length>9</length>
+        <precision>4</precision>
       </field>
       <field>
-        <name>ACCRUEDINTEREST</name>
+        <name>HIGH</name>
+        <length>9</length>
+        <precision>4</precision>
       </field>
       <field>
-        <name>DURATION</name>
+        <name>LOW</name>
+        <length>9</length>
+        <precision>4</precision>
       </field>
       <field>
-        <name>CONVEXITY</name>
+        <name>VOTURNOVER</name>
       </field>
       <field>
-        <name>YIELD</name>
+        <name>VATURNOVER</name>
       </field>
       <field>
-        <name>CLEARPRICE</name>
+        <name>AVGPRICE</name>
       </field>
       <field>
         <name>TDATE</name>
-      </field>
-      <field>
-        <name>DURATION_DIS</name>
-      </field>
-      <field>
-        <name>DURATION_MOD</name>
-        <length>18</length>
-        <precision>6</precision>
       </field>
       <field>
         <name>VC_COMPARE</name>
@@ -2323,7 +2447,77 @@ and concat(to_char(ENTRYDATE,'yyyymmdd'),ENTRYTIME) >?</sql>
     </remotesteps>
     <GUI>
       <xloc>736</xloc>
-      <yloc>272</yloc>
+      <yloc>416</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>字段选择 3</name>
+    <type>SelectValues</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <name>SYMBOL</name>
+      </field>
+      <field>
+        <name>EXCHANGE</name>
+      </field>
+      <field>
+        <name>LCLOSE</name>
+        <length>9</length>
+        <precision>4</precision>
+      </field>
+      <field>
+        <name>TOPEN</name>
+        <length>9</length>
+        <precision>4</precision>
+      </field>
+      <field>
+        <name>TCLOSE</name>
+        <length>9</length>
+        <precision>4</precision>
+      </field>
+      <field>
+        <name>HIGH</name>
+        <length>9</length>
+        <precision>4</precision>
+      </field>
+      <field>
+        <name>LOW</name>
+        <length>9</length>
+        <precision>4</precision>
+      </field>
+      <field>
+        <name>VATURNOVER</name>
+      </field>
+      <field>
+        <name>VOTURNOVER</name>
+      </field>
+      <field>
+        <name>TDATE</name>
+      </field>
+      <field>
+        <name>VC_COMPARE</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>736</xloc>
+      <yloc>544</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2415,6 +2609,91 @@ and concat(to_char(ENTRYDATE,'yyyymmdd'),ENTRYTIME) >?</sql>
     <GUI>
       <xloc>736</xloc>
       <yloc>1264</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>字段选择 4</name>
+    <type>SelectValues</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <name>EXCHANGE</name>
+        <rename />
+      </field>
+      <field>
+        <name>SYMBOL</name>
+        <rename />
+      </field>
+      <field>
+        <name>LCLOSE</name>
+        <rename />
+        <length>19</length>
+        <precision>10</precision>
+      </field>
+      <field>
+        <name>TOPEN</name>
+        <rename />
+        <length>19</length>
+        <precision>10</precision>
+      </field>
+      <field>
+        <name>TCLOSE</name>
+        <rename />
+        <length>19</length>
+        <precision>10</precision>
+      </field>
+      <field>
+        <name>HIGH</name>
+        <rename />
+        <length>19</length>
+        <precision>10</precision>
+      </field>
+      <field>
+        <name>LOW</name>
+        <rename />
+        <length>19</length>
+        <precision>10</precision>
+      </field>
+      <field>
+        <name>VOTURNOVER</name>
+        <rename />
+      </field>
+      <field>
+        <name>VATURNOVER</name>
+        <rename />
+      </field>
+      <field>
+        <name>LAVGPRICE</name>
+        <rename />
+      </field>
+      <field>
+        <name>TDATE</name>
+        <rename />
+      </field>
+      <field>
+        <name>VC_COMPARE</name>
+        <rename />
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>736</xloc>
+      <yloc>976</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
