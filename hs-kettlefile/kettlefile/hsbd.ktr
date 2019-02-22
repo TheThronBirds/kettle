@@ -3811,144 +3811,6 @@ FROM ${searchbdname}.TSEAT
     </GUI>
   </step>
   <step>
-    <name>插入 / 更新</name>
-    <type>InsertUpdate</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>risk</connection>
-    <commit>100</commit>
-    <update_bypassed>Y</update_bypassed>
-    <lookup>
-      <schema />
-      <table>t_mid_hs_seat</table>
-      <key>
-        <name>VC_SEAT_ID</name>
-        <field>VC_SEAT_ID</field>
-        <condition>=</condition>
-        <name2 />
-      </key>
-      <key>
-        <name>C_MARKET_NO</name>
-        <field>C_MARKET_NO</field>
-        <condition>=</condition>
-        <name2 />
-      </key>
-      <value>
-        <name>VC_SEAT_ID</name>
-        <rename>VC_SEAT_ID</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>C_MARKET_NO</name>
-        <rename>C_MARKET_NO</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>VC_SEAT_NAME</name>
-        <rename>VC_SEAT_NAME</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>VC_MAIN_SEAT</name>
-        <rename>VC_MAIN_SEAT</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>VC_COMPANY_NO</name>
-        <rename>VC_COMPANY_NO</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>VC_LINK_MAN</name>
-        <rename>VC_LINK_MAN</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>VC_LINK_TYPE</name>
-        <rename>VC_LINK_TYPE</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>VC_REMARK</name>
-        <rename>VC_REMARK</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>VC_FUND_IDS</name>
-        <rename>VC_FUND_IDS</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>C_STATUS</name>
-        <rename>C_STATUS</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>VC_MARKET_REMARK</name>
-        <rename>VC_MARKET_REMARK</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>C_TRADE_ATTRIBUTE</name>
-        <rename>C_TRADE_ATTRIBUTE</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>L_LOGOFF_DATE</name>
-        <rename>L_LOGOFF_DATE</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>VC_BUSINESS_CLASS</name>
-        <rename>VC_BUSINESS_CLASS</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>VC_PASSWORD</name>
-        <rename>VC_PASSWORD</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>VC_CYRJSZH</name>
-        <rename>VC_CYRJSZH</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>L_SECURITIES_BRANCH</name>
-        <rename>L_SECURITIES_BRANCH</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>L_VIRTUAL_KEY</name>
-        <rename>L_VIRTUAL_KEY</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>VC_TIMESTAMP</name>
-        <rename>VC_TIMESTAMP</rename>
-        <update>Y</update>
-      </value>
-    </lookup>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>592</xloc>
-      <yloc>176</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
     <name>历史资产信息</name>
     <type>InsertUpdate</type>
     <description />
@@ -4274,6 +4136,144 @@ FROM ${searchbdname}.TSEAT
     <GUI>
       <xloc>864</xloc>
       <yloc>1088</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>插入 / 更新</name>
+    <type>InsertUpdate</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <commit>100</commit>
+    <update_bypassed>Y</update_bypassed>
+    <lookup>
+      <schema />
+      <table>t_mid_hs_seat</table>
+      <key>
+        <name>VC_SEAT_ID</name>
+        <field>VC_SEAT_ID</field>
+        <condition>=</condition>
+        <name2 />
+      </key>
+      <key>
+        <name>C_MARKET_NO</name>
+        <field>C_MARKET_NO</field>
+        <condition>=</condition>
+        <name2 />
+      </key>
+      <value>
+        <name>VC_SEAT_ID</name>
+        <rename>VC_SEAT_ID</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>C_MARKET_NO</name>
+        <rename>C_MARKET_NO</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>VC_SEAT_NAME</name>
+        <rename>VC_SEAT_NAME</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>VC_MAIN_SEAT</name>
+        <rename>VC_MAIN_SEAT</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>VC_COMPANY_NO</name>
+        <rename>VC_COMPANY_NO</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>VC_LINK_MAN</name>
+        <rename>VC_LINK_MAN</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>VC_LINK_TYPE</name>
+        <rename>VC_LINK_TYPE</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>VC_REMARK</name>
+        <rename>VC_REMARK</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>VC_FUND_IDS</name>
+        <rename>VC_FUND_IDS</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>C_STATUS</name>
+        <rename>C_STATUS</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>VC_MARKET_REMARK</name>
+        <rename>VC_MARKET_REMARK</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>C_TRADE_ATTRIBUTE</name>
+        <rename>C_TRADE_ATTRIBUTE</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>L_LOGOFF_DATE</name>
+        <rename>L_LOGOFF_DATE</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>VC_BUSINESS_CLASS</name>
+        <rename>VC_BUSINESS_CLASS</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>VC_PASSWORD</name>
+        <rename>VC_PASSWORD</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>VC_CYRJSZH</name>
+        <rename>VC_CYRJSZH</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>L_SECURITIES_BRANCH</name>
+        <rename>L_SECURITIES_BRANCH</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>L_VIRTUAL_KEY</name>
+        <rename>L_VIRTUAL_KEY</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>VC_TIMESTAMP</name>
+        <rename>VC_TIMESTAMP</rename>
+        <update>Y</update>
+      </value>
+    </lookup>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>592</xloc>
+      <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
