@@ -652,15 +652,6 @@
   </entries>
   <hops>
     <hop>
-      <from>chsj</from>
-      <to>chccgc</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>chccgc</from>
       <to>成功</to>
       <from_nr>0</from_nr>
@@ -726,6 +717,15 @@
     <hop>
       <from>检查风控数据库连接</from>
       <to>chsj</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>chsj</from>
+      <to>chccgc</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
