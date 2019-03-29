@@ -1,7 +1,9 @@
-2018-11-26   修改kettle.properties文件，tradeqry数据库地址变化
+﻿2018-11-26   修改kettle.properties文件，tradeqry数据库地址变化
 
 2018-12-10   修改sjzx.ktr 实现估值表信息增量
 
 2018-12-10   修改chjgsj.ktr 增加租赁公司机构信息
 
 2018-12-14   修改hszd.ktr\hsbd.ktr 增加资产历史信息
+
+2019-03-29   修改hszd.ktr\hsbd.ktr添加待交割信息和未清算业务信息
