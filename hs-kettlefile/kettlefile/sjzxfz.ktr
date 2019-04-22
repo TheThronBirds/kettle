@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>sjzx</name>
+    <name>sjzxfz</name>
     <description />
     <extended_description />
     <trans_version />
@@ -427,144 +427,18 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2018/10/16 19:44:35.422</created_date>
+    <created_date>2019/04/02 10:02:42.861</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2018/10/16 19:44:35.422</modified_date>
-    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
+    <modified_date>2019/04/02 10:02:42.861</modified_date>
+    <key_for_session_key />
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
     <notepad>
-      <note>基金活期存款信息</note>
-      <xloc>368</xloc>
-      <yloc>64</yloc>
-      <width>106</width>
-      <heigth>26</heigth>
-      <fontname>微软雅黑</fontname>
-      <fontsize>9</fontsize>
-      <fontbold>N</fontbold>
-      <fontitalic>N</fontitalic>
-      <fontcolorred>0</fontcolorred>
-      <fontcolorgreen>0</fontcolorgreen>
-      <fontcolorblue>0</fontcolorblue>
-      <backgroundcolorred>255</backgroundcolorred>
-      <backgroundcolorgreen>205</backgroundcolorgreen>
-      <backgroundcolorblue>112</backgroundcolorblue>
-      <bordercolorred>100</bordercolorred>
-      <bordercolorgreen>100</bordercolorgreen>
-      <bordercolorblue>100</bordercolorblue>
-      <drawshadow>Y</drawshadow>
-    </notepad>
-    <notepad>
-      <note>基金因子偏离度；注意不能剪切表</note>
-      <xloc>352</xloc>
-      <yloc>176</yloc>
-      <width>190</width>
-      <heigth>26</heigth>
-      <fontname>微软雅黑</fontname>
-      <fontsize>9</fontsize>
-      <fontbold>N</fontbold>
-      <fontitalic>N</fontitalic>
-      <fontcolorred>0</fontcolorred>
-      <fontcolorgreen>0</fontcolorgreen>
-      <fontcolorblue>0</fontcolorblue>
-      <backgroundcolorred>255</backgroundcolorred>
-      <backgroundcolorgreen>205</backgroundcolorgreen>
-      <backgroundcolorblue>112</backgroundcolorblue>
-      <bordercolorred>100</bordercolorred>
-      <bordercolorgreen>100</bordercolorgreen>
-      <bordercolorblue>100</bordercolorblue>
-      <drawshadow>Y</drawshadow>
-    </notepad>
-    <notepad>
-      <note>存出保证金与结算保证金 不能剪切表 下同</note>
-      <xloc>352</xloc>
-      <yloc>320</yloc>
-      <width>234</width>
-      <heigth>26</heigth>
-      <fontname>微软雅黑</fontname>
-      <fontsize>9</fontsize>
-      <fontbold>N</fontbold>
-      <fontitalic>N</fontitalic>
-      <fontcolorred>0</fontcolorred>
-      <fontcolorgreen>0</fontcolorgreen>
-      <fontcolorblue>0</fontcolorblue>
-      <backgroundcolorred>255</backgroundcolorred>
-      <backgroundcolorgreen>205</backgroundcolorgreen>
-      <backgroundcolorblue>112</backgroundcolorblue>
-      <bordercolorred>100</bordercolorred>
-      <bordercolorgreen>100</bordercolorgreen>
-      <bordercolorblue>100</bordercolorblue>
-      <drawshadow>Y</drawshadow>
-    </notepad>
-    <notepad>
-      <note>证券清算款</note>
-      <xloc>368</xloc>
-      <yloc>480</yloc>
-      <width>70</width>
-      <heigth>26</heigth>
-      <fontname>微软雅黑</fontname>
-      <fontsize>9</fontsize>
-      <fontbold>N</fontbold>
-      <fontitalic>N</fontitalic>
-      <fontcolorred>0</fontcolorred>
-      <fontcolorgreen>0</fontcolorgreen>
-      <fontcolorblue>0</fontcolorblue>
-      <backgroundcolorred>255</backgroundcolorred>
-      <backgroundcolorgreen>205</backgroundcolorgreen>
-      <backgroundcolorblue>112</backgroundcolorblue>
-      <bordercolorred>100</bordercolorred>
-      <bordercolorgreen>100</bordercolorgreen>
-      <bordercolorblue>100</bordercolorblue>
-      <drawshadow>Y</drawshadow>
-    </notepad>
-    <notepad>
-      <note>结算备付金</note>
-      <xloc>368</xloc>
-      <yloc>656</yloc>
-      <width>70</width>
-      <heigth>26</heigth>
-      <fontname>微软雅黑</fontname>
-      <fontsize>9</fontsize>
-      <fontbold>N</fontbold>
-      <fontitalic>N</fontitalic>
-      <fontcolorred>0</fontcolorred>
-      <fontcolorgreen>0</fontcolorgreen>
-      <fontcolorblue>0</fontcolorblue>
-      <backgroundcolorred>255</backgroundcolorred>
-      <backgroundcolorgreen>205</backgroundcolorgreen>
-      <backgroundcolorblue>112</backgroundcolorblue>
-      <bordercolorred>100</bordercolorred>
-      <bordercolorgreen>100</bordercolorgreen>
-      <bordercolorblue>100</bordercolorblue>
-      <drawshadow>Y</drawshadow>
-    </notepad>
-    <notepad>
-      <note>基金净资产</note>
+      <note>估值数据 负债信息</note>
       <xloc>384</xloc>
-      <yloc>832</yloc>
-      <width>70</width>
-      <heigth>26</heigth>
-      <fontname>微软雅黑</fontname>
-      <fontsize>9</fontsize>
-      <fontbold>N</fontbold>
-      <fontitalic>N</fontitalic>
-      <fontcolorred>0</fontcolorred>
-      <fontcolorgreen>0</fontcolorgreen>
-      <fontcolorblue>0</fontcolorblue>
-      <backgroundcolorred>255</backgroundcolorred>
-      <backgroundcolorgreen>205</backgroundcolorgreen>
-      <backgroundcolorblue>112</backgroundcolorblue>
-      <bordercolorred>100</bordercolorred>
-      <bordercolorgreen>100</bordercolorgreen>
-      <bordercolorblue>100</bordercolorblue>
-      <drawshadow>Y</drawshadow>
-    </notepad>
-    <notepad>
-      <note>基金总资产</note>
-      <xloc>384</xloc>
-      <yloc>1040</yloc>
-      <width>70</width>
+      <yloc>32</yloc>
+      <width>110</width>
       <heigth>26</heigth>
       <fontname>微软雅黑</fontname>
       <fontsize>9</fontsize>
@@ -702,78 +576,235 @@
   </connection>
   <order>
     <hop>
-      <from>活期存款时间点输入</from>
-      <to>活期存款表输入</to>
+      <from>201应付款项表输入</from>
+      <to>201应付款项表输入 2</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>偏离度信息时间点输入</from>
-      <to>偏离度表输入</to>
+      <from>201应付款项表输入 2</from>
+      <to>负债类估值表表输出</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>偏离度表输入</from>
-      <to>估值表输出</to>
+      <from>202短期借款表输入</from>
+      <to>202短期借款表输入2</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>存出保证金表输入</from>
-      <to>存出保证金表输入2</to>
+      <from>202短期借款表输入2</from>
+      <to>负债类估值表表输出</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>证券清算款表输入</from>
-      <to>证券清算款表输入 2</to>
+      <from>203交易性金融负债表输入</from>
+      <to>203交易性金融负债表输入 2</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>清算备付金表输入</from>
-      <to>清算备付金表输入 2</to>
+      <from>203交易性金融负债表输入 2</from>
+      <to>负债类估值表表输出</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>基金净资产表输入</from>
-      <to>基金净资产表输入2</to>
+      <from>204融资回购表输入</from>
+      <to>融资回购表输入2</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>基金总资产表输入</from>
-      <to>基金总资产表输入 2</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>活期存款表输入</from>
-      <to>估值表输出</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>存出保证金表输入2</from>
-      <to>估值表输出</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>证券清算款表输入 2</from>
-      <to>估值表输出</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>清算备付金表输入 2</from>
-      <to>估值表输出</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>基金净资产表输入2</from>
-      <to>估值表输出</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>基金总资产表输入 2</from>
-      <to>估值表输出</to>
+      <from>融资回购表输入2</from>
+      <to>负债类估值表表输出</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>估值表输出</name>
+    <name>201应付款项表输入</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <sql>select nvl(max(a.vc_compare),0) as vc_compare  from  gzdata_import_record a where a.riskkmbm  = '201' and a.table_name = upper('jsz_jjhzgzb')</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>288</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>201应付款项表输入 2</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>business</connection>
+    <sql>select c.fjjdm,c.fdate,c.fkmbm,c.fzqsz as EN_ASSETCURR_VALUE from businessorg.jsz_jjhzgzb c  where c.fkmbm in ('2203','2204','2205','2206','2207',
+'2208','2209','2210','2211','2212','2213','2214','2216','2217','2218','2219','2220','2221','2231','2241','2232','2501','2601') and c.fdate > 20170101 and c.fdate > ?</sql>
+    <limit>0</limit>
+    <lookup>201应付款项表输入</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>512</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>202短期借款表输入</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <sql>select nvl(max(a.vc_compare),0) as vc_compare  from  gzdata_import_record a where a.riskkmbm  = '202' and a.table_name = upper('jsz_jjhzgzb')</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>288</xloc>
+      <yloc>320</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>202短期借款表输入2</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <sql>select c.fjjdm,c.fdate,c.fkmbm,c.fzqsz as EN_ASSETCURR_VALUE from businessorg.jsz_jjhzgzb c  where c.fkmbm = '2001' and c.fdate > 20170101 and c.fdate > ?</sql>
+    <limit>0</limit>
+    <lookup>202短期借款表输入</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>512</xloc>
+      <yloc>320</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>203交易性金融负债表输入</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <sql>select nvl(max(a.vc_compare),0) as vc_compare  from  gzdata_import_record a where a.riskkmbm  = '203' and a.table_name = upper('jsz_jjhzgzb')</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>288</xloc>
+      <yloc>480</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>203交易性金融负债表输入 2</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>business</connection>
+    <sql>select c.fjjdm,c.fdate,c.fkmbm,c.fzqsz as EN_ASSETCURR_VALUE from businessorg.jsz_jjhzgzb c  where c.fkmbm = '2101' and c.fdate > 20170101 and c.fdate > ?</sql>
+    <limit>0</limit>
+    <lookup>203交易性金融负债表输入</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>512</xloc>
+      <yloc>480</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>负债类估值表表输出</name>
     <type>TableOutput</type>
     <description />
     <distribute>Y</distribute>
@@ -826,13 +857,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>960</xloc>
-      <yloc>608</yloc>
+      <xloc>880</xloc>
+      <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>偏离度信息时间点输入</name>
+    <name>204融资回购表输入</name>
     <type>TableInput</type>
     <description />
     <distribute>Y</distribute>
@@ -843,7 +874,7 @@
       <schema_name />
     </partitioning>
     <connection>risk</connection>
-    <sql>select nvl(max(a.vc_compare),0) as vc_compare  from  gzdata_import_record a where a.riskkmbm  = 'M' and a.table_name = upper('jsz_jjhzgzb')</sql>
+    <sql>select nvl(max(a.vc_compare),0) as vc_compare  from  gzdata_import_record a where a.riskkmbm  = '204' and a.table_name = upper('jsz_jjhzgzb')</sql>
     <limit>0</limit>
     <lookup />
     <execute_each_row>N</execute_each_row>
@@ -857,202 +888,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>176</xloc>
-      <yloc>240</yloc>
+      <xloc>288</xloc>
+      <yloc>624</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>偏离度表输入</name>
-    <type>TableInput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>risk</connection>
-    <sql>select c.fjjdm,c.fdate,c.fkmbm,to_number(nvl(substr(c.fkmmc,1,length(c.fkmmc) - 1),0)) as EN_ASSETCURR_VALUE from businessorg.jsz_jjhzgzb c  where c.fkmbm like '%922与影子价估值的偏离度%' and c.fdate > 20170101 and c.fdate > ?
-</sql>
-    <limit>0</limit>
-    <lookup>偏离度信息时间点输入</lookup>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>Y</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>400</xloc>
-      <yloc>240</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>基金净资产表输入</name>
-    <type>TableInput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>risk</connection>
-    <sql>select nvl(max(a.vc_compare),0) as vc_compare  from  gzdata_import_record a where a.riskkmbm  = 'J' and a.table_name = upper('jsz_jjhzgzb')</sql>
-    <limit>0</limit>
-    <lookup />
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>176</xloc>
-      <yloc>912</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>基金净资产表输入2</name>
-    <type>TableInput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>risk</connection>
-    <sql>select c.fjjdm,c.fdate,c.fkmbm,c.fzqsz as EN_ASSETCURR_VALUE from businessorg.jsz_jjhzgzb c  where c.fkmbm = '701基金资产净值：' and c.fdate > 20170101 and c.fdate > ?
-</sql>
-    <limit>0</limit>
-    <lookup>基金净资产表输入</lookup>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>Y</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>400</xloc>
-      <yloc>912</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>基金总资产表输入</name>
-    <type>TableInput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>risk</connection>
-    <sql>select nvl(max(a.vc_compare),0) as vc_compare  from  gzdata_import_record a where a.riskkmbm  = 'Z' and a.table_name = upper('jsz_jjhzgzb')</sql>
-    <limit>0</limit>
-    <lookup />
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>176</xloc>
-      <yloc>1104</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>基金总资产表输入 2</name>
-    <type>TableInput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>risk</connection>
-    <sql>select c.fjjdm,c.fdate,c.fkmbm,c.fzqsz as EN_ASSETCURR_VALUE from businessorg.jsz_jjhzgzb c  where c.fkmbm = '604资产类合计：' and c.fdate > 20170101 and c.fdate > ?
-</sql>
-    <limit>0</limit>
-    <lookup>基金总资产表输入</lookup>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>Y</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>400</xloc>
-      <yloc>1104</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>存出保证金表输入</name>
-    <type>TableInput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>risk</connection>
-    <sql>select nvl(max(a.vc_compare),0) as vc_compare  from  gzdata_import_record a where a.riskkmbm  = 'N' and a.table_name = upper('jsz_jjhzgzb')</sql>
-    <limit>0</limit>
-    <lookup />
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>176</xloc>
-      <yloc>384</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>存出保证金表输入2</name>
+    <name>融资回购表输入2</name>
     <type>TableInput</type>
     <description />
     <distribute>Y</distribute>
@@ -1063,10 +905,9 @@
       <schema_name />
     </partitioning>
     <connection>business</connection>
-    <sql>select c.fjjdm,c.fdate,c.fkmbm,c.fzqsz as EN_ASSETCURR_VALUE from businessorg.jsz_jjhzgzb c  where c.fkmbm in ('1031','1041') and c.fdate > 20170101 and c.fdate > ?
-</sql>
+    <sql>select c.fjjdm,c.fdate,c.fkmbm,c.fzqsz as EN_ASSETCURR_VALUE from businessorg.jsz_jjhzgzb c  where c.fkmbm = '2202' and c.fdate > 20170101 and c.fdate > ?</sql>
     <limit>0</limit>
-    <lookup>存出保证金表输入</lookup>
+    <lookup>204融资回购表输入</lookup>
     <execute_each_row>N</execute_each_row>
     <variables_active>Y</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
@@ -1078,197 +919,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>400</xloc>
-      <yloc>384</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>活期存款时间点输入</name>
-    <type>TableInput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>risk</connection>
-    <sql>select nvl(max(a.vc_compare),0) as vc_compare  from  gzdata_import_record a where a.riskkmbm  = 'L' and a.table_name = upper('jsz_jjhzgzb')</sql>
-    <limit>0</limit>
-    <lookup />
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>176</xloc>
-      <yloc>112</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>活期存款表输入</name>
-    <type>TableInput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>risk</connection>
-    <sql>select c.fjjdm,c.fdate,c.fkmbm,c.fzqsz as EN_ASSETCURR_VALUE from businessorg.jsz_jjhzgzb c  where c.fkmbm = '100201' and c.fdate > 20170101 and c.fdate > ?
-</sql>
-    <limit>0</limit>
-    <lookup>活期存款时间点输入</lookup>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>Y</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>400</xloc>
-      <yloc>112</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>清算备付金表输入</name>
-    <type>TableInput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>risk</connection>
-    <sql>select nvl(max(a.vc_compare),0) as vc_compare  from  gzdata_import_record a where a.riskkmbm  = 'T' and a.table_name = upper('jsz_jjhzgzb')</sql>
-    <limit>0</limit>
-    <lookup />
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>176</xloc>
-      <yloc>720</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>清算备付金表输入 2</name>
-    <type>TableInput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>business</connection>
-    <sql>select c.fjjdm,c.fdate,c.fkmbm,c.fzqsz as EN_ASSETCURR_VALUE from businessorg.jsz_jjhzgzb c  where c.fkmbm = '1021' and c.fdate > 20170101 and c.fdate > ?
-</sql>
-    <limit>0</limit>
-    <lookup>清算备付金表输入</lookup>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>Y</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>400</xloc>
-      <yloc>720</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>证券清算款表输入</name>
-    <type>TableInput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>risk</connection>
-    <sql>select nvl(max(a.vc_compare),0) as vc_compare  from  gzdata_import_record a where a.riskkmbm  = 'S' and a.table_name = upper('jsz_jjhzgzb')</sql>
-    <limit>0</limit>
-    <lookup />
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>160</xloc>
-      <yloc>560</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>证券清算款表输入 2</name>
-    <type>TableInput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>business</connection>
-    <sql>select c.fjjdm,c.fdate,c.fkmbm,c.fzqsz as EN_ASSETCURR_VALUE from businessorg.jsz_jjhzgzb c  where c.fkmbm = '3003' and c.fdate > 20170101 and c.fdate > ?
-</sql>
-    <limit>0</limit>
-    <lookup>证券清算款表输入</lookup>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>Y</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>400</xloc>
-      <yloc>560</yloc>
+      <xloc>512</xloc>
+      <yloc>624</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
