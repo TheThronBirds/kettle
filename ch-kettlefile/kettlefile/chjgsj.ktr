@@ -1370,7 +1370,7 @@ and concat(to_char(t.ENTRYDATE,'yyyymmdd'),t.ENTRYTIME) >=?</sql>
     <connection>risk</connection>
     <sql>select nvl(max(t.VC_COMPARE),0) as  VC_COMPARE
 from DATA_IMPORT_RECORD t 
-where t.table_name=upper('T_MID_CHJC_CFST_I')</sql>
+where t.table_name=upper('T_MID_CH_ZL_CFST_I')</sql>
     <limit>0</limit>
     <lookup />
     <execute_each_row>N</execute_each_row>
@@ -1402,7 +1402,7 @@ where t.table_name=upper('T_MID_CHJC_CFST_I')</sql>
     </partitioning>
     <connection>risk</connection>
     <schema />
-    <table>T_MID_CHJC_CFST_I</table>
+    <table>T_MID_CH_ZL_CFST_I</table>
     <commit>1000</commit>
     <truncate>Y</truncate>
     <ignore_errors>N</ignore_errors>
@@ -1524,7 +1524,7 @@ and concat(to_char(t.ENTRYDATE,'yyyymmdd'),t.ENTRYTIME) >=?</sql>
     <connection>risk</connection>
     <sql>select nvl(max(t.VC_COMPARE),0) as  VC_COMPARE
 from DATA_IMPORT_RECORD t 
-where t.table_name=upper('T_MID_CHJC_CFST_NEW')</sql>
+where t.table_name=upper('T_MID_CH_ZL_CFST_NEW')</sql>
     <limit>0</limit>
     <lookup />
     <execute_each_row>N</execute_each_row>
@@ -1556,7 +1556,7 @@ where t.table_name=upper('T_MID_CHJC_CFST_NEW')</sql>
     </partitioning>
     <connection>risk</connection>
     <schema />
-    <table>T_MID_CHJC_CFST_NEW</table>
+    <table>T_MID_CH_ZL_CFST_NEW</table>
     <commit>1000</commit>
     <truncate>Y</truncate>
     <ignore_errors>N</ignore_errors>
@@ -1836,7 +1836,7 @@ and concat(to_char(t.ENTRYDATE,'yyyymmdd'),t.ENTRYTIME) >=?</sql>
     <connection>risk</connection>
     <sql>select nvl(max(t.VC_COMPARE),0) as  VC_COMPARE
 from DATA_IMPORT_RECORD t 
-where t.table_name=upper('T_MID_CHJC_FICFST_NEW')</sql>
+where t.table_name=upper('T_MID_CH_ZL_FICFST_NEW')</sql>
     <limit>0</limit>
     <lookup />
     <execute_each_row>N</execute_each_row>
@@ -1868,7 +1868,7 @@ where t.table_name=upper('T_MID_CHJC_FICFST_NEW')</sql>
     </partitioning>
     <connection>risk</connection>
     <schema />
-    <table>T_MID_CHJC_FICFST_NEW</table>
+    <table>T_MID_CH_ZL_FICFST_NEW</table>
     <commit>1000</commit>
     <truncate>Y</truncate>
     <ignore_errors>N</ignore_errors>
@@ -2312,6 +2312,47 @@ where t.table_name=upper('t_mid_ch_zl_icrate')</sql>
     </GUI>
   </step>
   <step>
+    <name>字段选择</name>
+    <type>SelectValues</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <name>DECLAREDATE</name>
+      </field>
+      <field>
+        <name>COMPANYCODE</name>
+      </field>
+      <field>
+        <name>SIBASEINFO10</name>
+        <length>22</length>
+        <precision>4</precision>
+      </field>
+      <field>
+        <name>VC_COMPARE</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>560</xloc>
+      <yloc>1200</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>表输出</name>
     <type>TableOutput</type>
     <description />
@@ -2367,51 +2408,6 @@ where t.table_name=upper('t_mid_ch_zl_icrate')</sql>
     <GUI>
       <xloc>544</xloc>
       <yloc>1040</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>字段选择</name>
-    <type>SelectValues</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <fields>
-      <field>
-        <name>DECLAREDATE</name>
-        <rename />
-      </field>
-      <field>
-        <name>COMPANYCODE</name>
-        <rename />
-      </field>
-      <field>
-        <name>SIBASEINFO10</name>
-        <rename />
-        <length>22</length>
-        <precision>4</precision>
-      </field>
-      <field>
-        <name>VC_COMPARE</name>
-        <rename />
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>560</xloc>
-      <yloc>1200</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
