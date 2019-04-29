@@ -1900,7 +1900,7 @@ FROM ${searchzdname}.TCURRENCYRATE</sql>
     <limit>0</limit>
     <lookup />
     <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
+    <variables_active>Y</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
     <cluster_schema />
     <remotesteps>
