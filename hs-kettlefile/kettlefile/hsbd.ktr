@@ -2656,7 +2656,7 @@ FROM ${searchbdname}.TTRADETYPES
       <schema_name />
     </partitioning>
     <connection>begin</connection>
-    <sql>SELECT * FROM ${searchbdname}.tfundinfo</sql>
+    <sql>SELECT * FROM ${searchbdname}.tfundinfo where L_FUND_ID != 180</sql>
     <limit>0</limit>
     <lookup />
     <execute_each_row>N</execute_each_row>
