@@ -5406,7 +5406,7 @@ from ${searchzdname}.tbondproperty t where vc_timestamp>?
       <schema_name />
     </partitioning>
     <connection>begin</connection>
-    <sql>SELECT * FROM ${searchzdname}.tfundinfo</sql>
+    <sql>SELECT * FROM ${searchzdname}.tfundinfo where L_FUND_ID != 180</sql>
     <limit>0</limit>
     <lookup />
     <execute_each_row>N</execute_each_row>
@@ -8283,89 +8283,70 @@ FROM ${searchzdname}.TBUSINESSSUMMARY</sql>
     <fields>
       <field>
         <name>L_ENTRUST_SERIAL_NO</name>
-        <rename />
       </field>
       <field>
         <name>L_HG_DATE</name>
-        <rename />
       </field>
       <field>
         <name>L_BASECOMBI_ID</name>
-        <rename />
       </field>
       <field>
         <name>C_MARKET_NO</name>
-        <rename />
       </field>
       <field>
         <name>VC_INTER_CODE</name>
-        <rename />
       </field>
       <field>
         <name>VC_STOCKHOLDER_ID</name>
-        <rename />
       </field>
       <field>
         <name>VC_SEAT_ID</name>
-        <rename />
       </field>
       <field>
         <name>C_ENTRUST_DIRECTION</name>
-        <rename />
       </field>
       <field>
         <name>C_REDEAL_FLAG</name>
-        <rename />
       </field>
       <field>
         <name>L_REDEEM_DAYS</name>
-        <rename />
       </field>
       <field>
         <name>L_REDEEM_LAWDATE</name>
-        <rename />
       </field>
       <field>
         <name>L_REDEEM_LIQUIDATE</name>
-        <rename />
       </field>
       <field>
         <name>L_DEAL_AMOUNT</name>
-        <rename />
         <length>18</length>
         <precision>4</precision>
       </field>
       <field>
         <name>EN_DEAL_PRICE</name>
-        <rename />
         <length>16</length>
         <precision>8</precision>
       </field>
       <field>
         <name>EN_DEAL_BALANCE</name>
-        <rename />
         <length>16</length>
         <precision>3</precision>
       </field>
       <field>
         <name>EN_FEE</name>
-        <rename />
         <length>16</length>
         <precision>3</precision>
       </field>
       <field>
         <name>EN_REDEEM_INTEREST</name>
-        <rename />
         <length>12</length>
         <precision>3</precision>
       </field>
       <field>
         <name>EN_BALANCE2</name>
-        <rename />
       </field>
       <field>
         <name>C_PURPOSE_TYPE</name>
-        <rename />
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
