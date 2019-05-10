@@ -735,7 +735,7 @@
 , C_FUTURE_ENTRUST_AUTO
 , L_SET_ID
 , VC_TIMESTAMP
-FROM ${searchbdname}.TASSET
+FROM ${searchbdname}.TASSET where L_FUND_ID != 180
 </sql>
     <limit>0</limit>
     <lookup />
@@ -997,7 +997,7 @@ FROM ${searchbdname}.TBROKER
 , L_BID_COMBI_ID
 , L_BAIL_COMBI_ID
 , VC_TIMESTAMP
-FROM ${searchbdname}.TCOMBI
+FROM ${searchbdname}.TCOMBI where L_FUND_ID != 180
 </sql>
     <limit>0</limit>
     <lookup />

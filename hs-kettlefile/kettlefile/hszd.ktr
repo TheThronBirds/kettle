@@ -1566,7 +1566,7 @@
       <schema_name />
     </partitioning>
     <connection>begin</connection>
-    <sql>SELECT * FROM ${searchzdname}.TCOMBI</sql>
+    <sql>SELECT * FROM ${searchzdname}.TCOMBI where L_FUND_ID != 180</sql>
     <limit>0</limit>
     <lookup />
     <execute_each_row>N</execute_each_row>
@@ -4345,7 +4345,7 @@ FROM ${searchzdname}.TTRADESTOCK t inner join ${searchzdname}.tstockinfo m on t.
       <schema_name />
     </partitioning>
     <connection>begin</connection>
-    <sql>SELECT * FROM ${searchzdname}.tasset</sql>
+    <sql>SELECT * FROM ${searchzdname}.tasset where L_FUND_ID != 180</sql>
     <limit>0</limit>
     <lookup />
     <execute_each_row>N</execute_each_row>
