@@ -2905,7 +2905,7 @@ FROM ${searchzdname}.TFUTURESINFO t inner join ${searchzdname}.tstockinfo m on t
       <schema_name />
     </partitioning>
     <connection>begin</connection>
-    <sql>SELECT * FROM ${searchzdname}.TGROUPFUNDCOMBI</sql>
+    <sql>SELECT * FROM ${searchzdname}.TGROUPFUNDCOMBI WHERE L_FUND_ID != 180</sql>
     <limit>0</limit>
     <lookup />
     <execute_each_row>N</execute_each_row>
@@ -6903,7 +6903,7 @@ L_DATE>=?
 ,t. EN_UNIT_BIND_PRICE
 ,t. L_ETF_OCCUPY_AMOUNT
 ,m.vc_report_code 
-from ${searchzdname}.TUNITSTOCK t inner join ${searchzdname}.tstockinfo m on t.vc_inter_code=m.vc_inter_code
+from ${searchzdname}.TUNITSTOCK t inner join ${searchzdname}.tstockinfo m on t.vc_inter_code=m.vc_inter_code WHERE t.L_FUND_ID != 180
 
 </sql>
     <limit>0</limit>

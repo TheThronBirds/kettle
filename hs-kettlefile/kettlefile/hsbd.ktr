@@ -1302,7 +1302,7 @@ FROM ${searchbdname}.TFUTUREDEPOSITRATIO t inner join ${searchbdname}.tstockinfo
 ,t. L_TODAY_LEFT_AMOUNT
 ,t. EN_AGRTMNT_IMPAWN_AMOUNT
 ,m.vc_report_code
-from ${searchbdname}.TUNITSTOCK t inner join ${searchbdname}.tstockinfo m on t.vc_inter_code=m.vc_inter_code
+from ${searchbdname}.TUNITSTOCK t inner join ${searchbdname}.tstockinfo m on t.vc_inter_code=m.vc_inter_code WHERE t.L_FUND_ID != 180
 
 </sql>
     <limit>0</limit>
