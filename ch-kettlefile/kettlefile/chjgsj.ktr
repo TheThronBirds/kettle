@@ -457,8 +457,8 @@
     </notepad>
     <notepad>
       <note>机构基本信息 只处理非分支机构</note>
-      <xloc>144</xloc>
-      <yloc>80</yloc>
+      <xloc>160</xloc>
+      <yloc>64</yloc>
       <width>182</width>
       <heigth>26</heigth>
       <fontname>微软雅黑</fontname>
@@ -479,7 +479,7 @@
     <notepad>
       <note>机构评级信息</note>
       <xloc>144</xloc>
-      <yloc>224</yloc>
+      <yloc>464</yloc>
       <width>82</width>
       <heigth>26</heigth>
       <fontname>微软雅黑</fontname>
@@ -499,8 +499,8 @@
     </notepad>
     <notepad>
       <note>机构资产信息 取报表类型REPORTSTYLE = '11'（11代表合并期末）</note>
-      <xloc>144</xloc>
-      <yloc>336</yloc>
+      <xloc>128</xloc>
+      <yloc>576</yloc>
       <width>374</width>
       <heigth>26</heigth>
       <fontname>微软雅黑</fontname>
@@ -521,7 +521,7 @@
     <notepad>
       <note>机构现金流信息  取ReportStyle报表类型=11,目前没用</note>
       <xloc>144</xloc>
-      <yloc>656</yloc>
+      <yloc>880</yloc>
       <width>303</width>
       <heigth>26</heigth>
       <fontname>微软雅黑</fontname>
@@ -541,8 +541,8 @@
     </notepad>
     <notepad>
       <note>银行信息</note>
-      <xloc>144</xloc>
-      <yloc>976</yloc>
+      <xloc>128</xloc>
+      <yloc>1184</yloc>
       <width>58</width>
       <heigth>26</heigth>
       <fontname>微软雅黑</fontname>
@@ -563,8 +563,50 @@
     <notepad>
       <note>公司融资情况</note>
       <xloc>144</xloc>
-      <yloc>1136</yloc>
+      <yloc>1360</yloc>
       <width>82</width>
+      <heigth>26</heigth>
+      <fontname>微软雅黑</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>导入机构数据 针对00704（其他类型） 因为这个数据量太大 所以需要单独特殊处理</note>
+      <xloc>128</xloc>
+      <yloc>192</yloc>
+      <width>453</width>
+      <heigth>26</heigth>
+      <fontname>微软雅黑</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>针对所有非分支结构，这个导数风控数据库表中仅用于查询</note>
+      <xloc>157</xloc>
+      <yloc>312</yloc>
+      <width>322</width>
       <heigth>26</heigth>
       <fontname>微软雅黑</fontname>
       <fontsize>9</fontsize>
@@ -806,6 +848,26 @@
       <to>SIBASEINFO表输入 2</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>AffiliatedCorp表输入3</from>
+      <to>AffiliatedCorp表输入4</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>AffiliatedCorp表输入4</from>
+      <to>AffiliatedCorp表输出2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>AffiliatedCorp表输入6</from>
+      <to>AffiliatedCorp表输入5</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>AffiliatedCorp表输入5</from>
+      <to>AFFILIATEDCORP表输出3</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name>AffiliatedCorp表输入</name>
@@ -863,8 +925,8 @@ where concat(to_char(m.ENTRYDATE,'yyyymmdd'),m.ENTRYTIME)>=?</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>352</xloc>
-      <yloc>144</yloc>
+      <xloc>368</xloc>
+      <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -896,8 +958,90 @@ where t.table_name=upper('t_mid_ch_zl_AffiliatedCorp')</sql>
       </output>
     </remotesteps>
     <GUI>
+      <xloc>160</xloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>AffiliatedCorp表输入3</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <sql>select nvl(max(t.VC_COMPARE),0) as  VC_COMPARE
+from DATA_IMPORT_RECORD t 
+where t.table_name=upper('t_mid_ch_zl_AffiliatedCorp')</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
       <xloc>144</xloc>
-      <yloc>144</yloc>
+      <yloc>240</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>AffiliatedCorp表输入4</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>fcdb</connection>
+    <sql>select 
+m.COMPANYCODE,
+m.COMPANYNAME ,
+m.ITProfile1,
+m.ITProfile2  ,
+m.ITProfile4  ,
+m.ITProfile5  ,
+m.ITPROFILE44 ,
+m.ITProfile18 ,
+m.ITProfile20  ,
+m.ITProfile21 ,
+m.ITProfile22 ,
+m.ITProfile40 ,
+m.ITProfile42 ,
+m.ITProfile43 ,
+concat(to_char(m.ENTRYDATE,'yyyymmdd'),m.ENTRYTIME) as   VC_COMPARE
+from ITPROFILE m 
+where m.itprofile4 = '007004' and m.itprofile5 = '0'
+and concat(to_char(m.ENTRYDATE,'yyyymmdd'),m.ENTRYTIME)>=?</sql>
+    <limit>0</limit>
+    <lookup>AffiliatedCorp表输入3</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>368</xloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -986,6 +1130,10 @@ where t.table_name=upper('t_mid_ch_zl_AffiliatedCorp')</sql>
         <column_name>VC_COMPARE</column_name>
         <stream_name>VC_COMPARE</stream_name>
       </field>
+      <field>
+        <column_name>ITPROFILE1</column_name>
+        <stream_name>ITPROFILE1</stream_name>
+      </field>
     </fields>
     <cluster_schema />
     <remotesteps>
@@ -996,7 +1144,110 @@ where t.table_name=upper('t_mid_ch_zl_AffiliatedCorp')</sql>
     </remotesteps>
     <GUI>
       <xloc>560</xloc>
-      <yloc>144</yloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>AffiliatedCorp表输出2</name>
+    <type>TableOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <schema />
+    <table>T_MID_CH_ZL_AFFILIATEDCORP_QT</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+      <field>
+        <column_name>COMPANYCODE</column_name>
+        <stream_name>COMPANYCODE</stream_name>
+      </field>
+      <field>
+        <column_name>COMPANYNAME</column_name>
+        <stream_name>COMPANYNAME</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE2</column_name>
+        <stream_name>ITPROFILE2</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE4</column_name>
+        <stream_name>ITPROFILE4</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE5</column_name>
+        <stream_name>ITPROFILE5</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE44</column_name>
+        <stream_name>ITPROFILE44</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE18</column_name>
+        <stream_name>ITPROFILE18</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE20</column_name>
+        <stream_name>ITPROFILE20</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE21</column_name>
+        <stream_name>ITPROFILE21</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE22</column_name>
+        <stream_name>ITPROFILE22</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE40</column_name>
+        <stream_name>ITPROFILE40</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE42</column_name>
+        <stream_name>ITPROFILE42</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE43</column_name>
+        <stream_name>ITPROFILE43</stream_name>
+      </field>
+      <field>
+        <column_name>VC_COMPARE</column_name>
+        <stream_name>VC_COMPARE</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE1</column_name>
+        <stream_name>ITPROFILE1</stream_name>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>560</xloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1041,7 +1292,7 @@ concat(to_char(ENTRYDATE,'yyyymmdd'),ENTRYTIME) >=?</sql>
     </remotesteps>
     <GUI>
       <xloc>352</xloc>
-      <yloc>560</yloc>
+      <yloc>800</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1074,7 +1325,7 @@ where t.table_name=upper('t_mid_ch_zl_BSHEET_I')</sql>
     </remotesteps>
     <GUI>
       <xloc>144</xloc>
-      <yloc>560</yloc>
+      <yloc>800</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1153,7 +1404,7 @@ where t.table_name=upper('t_mid_ch_zl_BSHEET_I')</sql>
     </remotesteps>
     <GUI>
       <xloc>560</xloc>
-      <yloc>560</yloc>
+      <yloc>800</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1199,7 +1450,7 @@ concat(to_char(ENTRYDATE,'yyyymmdd'),ENTRYTIME) >=?
     </remotesteps>
     <GUI>
       <xloc>352</xloc>
-      <yloc>480</yloc>
+      <yloc>720</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1232,7 +1483,7 @@ where t.table_name=upper('t_mid_ch_zl_CBSheet_New')</sql>
     </remotesteps>
     <GUI>
       <xloc>144</xloc>
-      <yloc>480</yloc>
+      <yloc>720</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1311,7 +1562,7 @@ where t.table_name=upper('t_mid_ch_zl_CBSheet_New')</sql>
     </remotesteps>
     <GUI>
       <xloc>560</xloc>
-      <yloc>480</yloc>
+      <yloc>720</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1352,8 +1603,8 @@ and concat(to_char(t.ENTRYDATE,'yyyymmdd'),t.ENTRYTIME) >=?</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>352</xloc>
-      <yloc>896</yloc>
+      <xloc>336</xloc>
+      <yloc>1120</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1386,7 +1637,7 @@ where t.table_name=upper('T_MID_CH_ZL_CFST_I')</sql>
     </remotesteps>
     <GUI>
       <xloc>144</xloc>
-      <yloc>896</yloc>
+      <yloc>1120</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1464,8 +1715,8 @@ where t.table_name=upper('T_MID_CH_ZL_CFST_I')</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>560</xloc>
-      <yloc>896</yloc>
+      <xloc>528</xloc>
+      <yloc>1120</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1506,8 +1757,8 @@ and concat(to_char(t.ENTRYDATE,'yyyymmdd'),t.ENTRYTIME) >=?</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>352</xloc>
-      <yloc>816</yloc>
+      <xloc>336</xloc>
+      <yloc>1040</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1540,7 +1791,7 @@ where t.table_name=upper('T_MID_CH_ZL_CFST_NEW')</sql>
     </remotesteps>
     <GUI>
       <xloc>144</xloc>
-      <yloc>816</yloc>
+      <yloc>1040</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1618,8 +1869,8 @@ where t.table_name=upper('T_MID_CH_ZL_CFST_NEW')</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>560</xloc>
-      <yloc>816</yloc>
+      <xloc>528</xloc>
+      <yloc>1040</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1665,7 +1916,7 @@ concat(to_char(ENTRYDATE,'yyyymmdd'),ENTRYTIME) >=?
     </remotesteps>
     <GUI>
       <xloc>352</xloc>
-      <yloc>400</yloc>
+      <yloc>640</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1698,7 +1949,7 @@ where t.table_name=upper('t_mid_ch_zl_FIBSHEET_NEW')</sql>
     </remotesteps>
     <GUI>
       <xloc>144</xloc>
-      <yloc>400</yloc>
+      <yloc>640</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1777,7 +2028,7 @@ where t.table_name=upper('t_mid_ch_zl_FIBSHEET_NEW')</sql>
     </remotesteps>
     <GUI>
       <xloc>560</xloc>
-      <yloc>400</yloc>
+      <yloc>640</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1818,8 +2069,8 @@ and concat(to_char(t.ENTRYDATE,'yyyymmdd'),t.ENTRYTIME) >=?</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>352</xloc>
-      <yloc>736</yloc>
+      <xloc>320</xloc>
+      <yloc>944</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1852,7 +2103,7 @@ where t.table_name=upper('T_MID_CH_ZL_FICFST_NEW')</sql>
     </remotesteps>
     <GUI>
       <xloc>144</xloc>
-      <yloc>736</yloc>
+      <yloc>944</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1930,8 +2181,8 @@ where t.table_name=upper('T_MID_CH_ZL_FICFST_NEW')</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>560</xloc>
-      <yloc>736</yloc>
+      <xloc>528</xloc>
+      <yloc>944</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1963,8 +2214,8 @@ where t.table_name=upper('t_mid_ch_zl_SIBASEINFO')</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>128</xloc>
-      <yloc>1200</yloc>
+      <xloc>144</xloc>
+      <yloc>1424</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2004,7 +2255,7 @@ where t.table_name=upper('t_mid_ch_zl_SIBASEINFO')</sql>
     </remotesteps>
     <GUI>
       <xloc>336</xloc>
-      <yloc>1200</yloc>
+      <yloc>1424</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2062,8 +2313,8 @@ where t.table_name=upper('t_mid_ch_zl_SIBASEINFO')</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>768</xloc>
-      <yloc>1200</yloc>
+      <xloc>736</xloc>
+      <yloc>1424</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2096,7 +2347,7 @@ where t.table_name=upper('t_mid_chjc_bank')</sql>
     </remotesteps>
     <GUI>
       <xloc>128</xloc>
-      <yloc>1040</yloc>
+      <yloc>1248</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2131,7 +2382,7 @@ and concat(to_char(ENTRYDATE,'yyyymmdd'),ENTRYTIME) >=?</sql>
     </remotesteps>
     <GUI>
       <xloc>336</xloc>
-      <yloc>1040</yloc>
+      <yloc>1248</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2180,7 +2431,7 @@ FROM ICRATE t where  to_char(t.ICRate1,'yyyymmdd')>='20150101'  and  concat(to_c
     </remotesteps>
     <GUI>
       <xloc>352</xloc>
-      <yloc>272</yloc>
+      <yloc>512</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2213,7 +2464,7 @@ where t.table_name=upper('t_mid_ch_zl_icrate')</sql>
     </remotesteps>
     <GUI>
       <xloc>144</xloc>
-      <yloc>272</yloc>
+      <yloc>512</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2308,7 +2559,7 @@ where t.table_name=upper('t_mid_ch_zl_icrate')</sql>
     </remotesteps>
     <GUI>
       <xloc>560</xloc>
-      <yloc>272</yloc>
+      <yloc>512</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2348,8 +2599,8 @@ where t.table_name=upper('t_mid_ch_zl_icrate')</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>560</xloc>
-      <yloc>1200</yloc>
+      <xloc>528</xloc>
+      <yloc>1424</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2407,8 +2658,193 @@ where t.table_name=upper('t_mid_ch_zl_icrate')</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>544</xloc>
-      <yloc>1040</yloc>
+      <xloc>528</xloc>
+      <yloc>1248</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>AffiliatedCorp表输入6</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <sql>select nvl(max(t.VC_COMPARE),0) as  VC_COMPARE
+from DATA_IMPORT_RECORD t 
+where t.table_name=upper('t_mid_ch_zl_AffiliatedCorp_all')</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>144</xloc>
+      <yloc>368</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>AffiliatedCorp表输入5</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>fcdb</connection>
+    <sql>select 
+m.COMPANYCODE,
+m.COMPANYNAME ,
+m.ITProfile1,
+m.ITProfile2  ,
+m.ITProfile4  ,
+m.ITProfile5  ,
+m.ITPROFILE44 ,
+m.ITProfile18 ,
+m.ITProfile20  ,
+m.ITProfile21 ,
+m.ITProfile22 ,
+m.ITProfile40 ,
+m.ITProfile42 ,
+m.ITProfile43 ,
+concat(to_char(m.ENTRYDATE,'yyyymmdd'),m.ENTRYTIME) as   VC_COMPARE
+from ITPROFILE m 
+where m.itprofile5 = '0'
+and concat(to_char(m.ENTRYDATE,'yyyymmdd'),m.ENTRYTIME)>=?</sql>
+    <limit>0</limit>
+    <lookup>AffiliatedCorp表输入6</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>352</xloc>
+      <yloc>368</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>AFFILIATEDCORP表输出3</name>
+    <type>TableOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <schema />
+    <table>T_MID_CH_ZL_AFFILIATEDCORP_ALL</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+      <field>
+        <column_name>COMPANYCODE</column_name>
+        <stream_name>COMPANYCODE</stream_name>
+      </field>
+      <field>
+        <column_name>COMPANYNAME</column_name>
+        <stream_name>COMPANYNAME</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE2</column_name>
+        <stream_name>ITPROFILE2</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE4</column_name>
+        <stream_name>ITPROFILE4</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE5</column_name>
+        <stream_name>ITPROFILE5</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE44</column_name>
+        <stream_name>ITPROFILE44</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE18</column_name>
+        <stream_name>ITPROFILE18</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE20</column_name>
+        <stream_name>ITPROFILE20</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE21</column_name>
+        <stream_name>ITPROFILE21</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE22</column_name>
+        <stream_name>ITPROFILE22</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE40</column_name>
+        <stream_name>ITPROFILE40</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE42</column_name>
+        <stream_name>ITPROFILE42</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE43</column_name>
+        <stream_name>ITPROFILE43</stream_name>
+      </field>
+      <field>
+        <column_name>VC_COMPARE</column_name>
+        <stream_name>VC_COMPARE</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE1</column_name>
+        <stream_name>ITPROFILE1</stream_name>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>560</xloc>
+      <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
