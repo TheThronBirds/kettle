@@ -430,7 +430,7 @@
     <created_date>2019/04/02 10:02:42.861</created_date>
     <modified_user>-</modified_user>
     <modified_date>2019/04/02 10:02:42.861</modified_date>
-    <key_for_session_key />
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -804,65 +804,6 @@
     </GUI>
   </step>
   <step>
-    <name>负债类估值表表输出</name>
-    <type>TableOutput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>risk</connection>
-    <schema />
-    <table>mid_jsz_jjhzgzb</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field />
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field />
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field />
-    <fields>
-      <field>
-        <column_name>FJJDM</column_name>
-        <stream_name>FJJDM</stream_name>
-      </field>
-      <field>
-        <column_name>FDATE</column_name>
-        <stream_name>FDATE</stream_name>
-      </field>
-      <field>
-        <column_name>FKMBM</column_name>
-        <stream_name>FKMBM</stream_name>
-      </field>
-      <field>
-        <column_name>EN_ASSETCURR_VALUE</column_name>
-        <stream_name>EN_ASSETCURR_VALUE</stream_name>
-      </field>
-    </fields>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>880</xloc>
-      <yloc>400</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
     <name>204融资回购表输入</name>
     <type>TableInput</type>
     <description />
@@ -921,6 +862,65 @@
     <GUI>
       <xloc>512</xloc>
       <yloc>624</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>负债类估值表表输出</name>
+    <type>TableOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <schema />
+    <table>mid_jsz_jjhzgzb</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+      <field>
+        <column_name>FJJDM</column_name>
+        <stream_name>FJJDM</stream_name>
+      </field>
+      <field>
+        <column_name>FDATE</column_name>
+        <stream_name>FDATE</stream_name>
+      </field>
+      <field>
+        <column_name>FKMBM</column_name>
+        <stream_name>FKMBM</stream_name>
+      </field>
+      <field>
+        <column_name>EN_ASSETCURR_VALUE</column_name>
+        <stream_name>EN_ASSETCURR_VALUE</stream_name>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>880</xloc>
+      <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

@@ -5404,7 +5404,7 @@ from ${searchzdname}.tbondproperty t where vc_timestamp>?
       <schema_name />
     </partitioning>
     <connection>begin</connection>
-    <sql>SELECT * FROM ${searchzdname}.tfundinfo</sql>
+    <sql>SELECT * FROM ${searchzdname}.tfundinfo where l_fund_id &lt;&gt; 180</sql>
     <limit>0</limit>
     <lookup />
     <execute_each_row>N</execute_each_row>
@@ -7793,7 +7793,7 @@ FROM ${searchzdname}.TBUSINESSSUMMARY</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>320</xloc>
+      <xloc>304</xloc>
       <yloc>2032</yloc>
       <draw>Y</draw>
     </GUI>

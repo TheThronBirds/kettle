@@ -430,7 +430,7 @@
     <created_date>2019/04/01 16:29:20.933</created_date>
     <modified_user>-</modified_user>
     <modified_date>2019/04/01 16:29:20.933</modified_date>
-    <key_for_session_key />
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -697,7 +697,7 @@
     </hop>
   </order>
   <step>
-    <name>应收款项表输入</name>
+    <name>信用账户表输入</name>
     <type>TableInput</type>
     <description />
     <distribute>Y</distribute>
@@ -708,7 +708,7 @@
       <schema_name />
     </partitioning>
     <connection>risk</connection>
-    <sql>select nvl(max(a.vc_compare),0) as vc_compare  from  gzdata_import_record a where a.riskkmbm  = '101' and a.table_name = upper('jsz_jjhzgzb')</sql>
+    <sql>select nvl(max(a.vc_compare),0) as vc_compare  from  gzdata_import_record a where a.riskkmbm  = '113' and a.table_name = upper('jsz_jjhzgzb')</sql>
     <limit>0</limit>
     <lookup />
     <execute_each_row>N</execute_each_row>
@@ -723,12 +723,12 @@
     </remotesteps>
     <GUI>
       <xloc>176</xloc>
-      <yloc>80</yloc>
+      <yloc>1536</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>应收款项表输入2</name>
+    <name>信用账户表输入 2</name>
     <type>TableInput</type>
     <description />
     <distribute>Y</distribute>
@@ -739,9 +739,9 @@
       <schema_name />
     </partitioning>
     <connection>business</connection>
-    <sql>select c.fjjdm,c.fdate,c.fkmbm,c.fzqsz as EN_ASSETCURR_VALUE from businessorg.jsz_jjhzgzb c  where c.fkmbm in ('1203','1204','1207','1221','1501') and c.fdate > 20170101 and c.fdate > ?</sql>
+    <sql>select c.fjjdm,c.fdate,c.fkmbm,c.fzqsz as EN_ASSETCURR_VALUE from businessorg.jsz_jjhzgzb c  where c.fkmbm = '1051' and c.fdate > 20170101 and c.fdate > ?</sql>
     <limit>0</limit>
-    <lookup>应收款项表输入</lookup>
+    <lookup>信用账户表输入</lookup>
     <execute_each_row>N</execute_each_row>
     <variables_active>Y</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
@@ -754,12 +754,12 @@
     </remotesteps>
     <GUI>
       <xloc>368</xloc>
-      <yloc>80</yloc>
+      <yloc>1536</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>现金资产表输入</name>
+    <name>债券投资表输入</name>
     <type>TableInput</type>
     <description />
     <distribute>Y</distribute>
@@ -770,7 +770,7 @@
       <schema_name />
     </partitioning>
     <connection>risk</connection>
-    <sql>select nvl(max(a.vc_compare),0) as vc_compare  from  gzdata_import_record a where a.riskkmbm  = '102' and a.table_name = upper('jsz_jjhzgzb')</sql>
+    <sql>select nvl(max(a.vc_compare),0) as vc_compare  from  gzdata_import_record a where a.riskkmbm  = '105' and a.table_name = upper('jsz_jjhzgzb')</sql>
     <limit>0</limit>
     <lookup />
     <execute_each_row>N</execute_each_row>
@@ -785,12 +785,12 @@
     </remotesteps>
     <GUI>
       <xloc>176</xloc>
-      <yloc>208</yloc>
+      <yloc>592</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>现金资产表输入2</name>
+    <name>债券表输入2</name>
     <type>TableInput</type>
     <description />
     <distribute>Y</distribute>
@@ -801,9 +801,9 @@
       <schema_name />
     </partitioning>
     <connection>business</connection>
-    <sql>select c.fjjdm,c.fdate,c.fkmbm,c.fzqsz as EN_ASSETCURR_VALUE from businessorg.jsz_jjhzgzb c  where c.fkmbm in ('1203','1204','1207','1221','1501') and c.fdate > 20170101 and c.fdate > ?</sql>
+    <sql>select c.fjjdm,c.fdate,c.fkmbm,c.fzqsz as EN_ASSETCURR_VALUE from businessorg.jsz_jjhzgzb c  where c.fkmbm in ('1103','1132') and c.fdate > 20170101 and c.fdate > ?</sql>
     <limit>0</limit>
-    <lookup>现金资产表输入</lookup>
+    <lookup>债券投资表输入</lookup>
     <execute_each_row>N</execute_each_row>
     <variables_active>Y</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
@@ -816,13 +816,13 @@
     </remotesteps>
     <GUI>
       <xloc>368</xloc>
-      <yloc>208</yloc>
+      <yloc>592</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>资产类估值表输出</name>
-    <type>TableOutput</type>
+    <name>基金投资表输入</name>
+    <type>TableInput</type>
     <description />
     <distribute>Y</distribute>
     <custom_distribution />
@@ -832,40 +832,12 @@
       <schema_name />
     </partitioning>
     <connection>risk</connection>
-    <schema />
-    <table>mid_jsz_jjhzgzb</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field />
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field />
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field />
-    <fields>
-      <field>
-        <column_name>FJJDM</column_name>
-        <stream_name>FJJDM</stream_name>
-      </field>
-      <field>
-        <column_name>FDATE</column_name>
-        <stream_name>FDATE</stream_name>
-      </field>
-      <field>
-        <column_name>FKMBM</column_name>
-        <stream_name>FKMBM</stream_name>
-      </field>
-      <field>
-        <column_name>EN_ASSETCURR_VALUE</column_name>
-        <stream_name>EN_ASSETCURR_VALUE</stream_name>
-      </field>
-    </fields>
+    <sql>select nvl(max(a.vc_compare),0) as vc_compare  from  gzdata_import_record a where a.riskkmbm  = '108' and a.table_name = upper('jsz_jjhzgzb')</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
     <cluster_schema />
     <remotesteps>
       <input>
@@ -874,7 +846,38 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>976</xloc>
+      <xloc>176</xloc>
+      <yloc>976</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>基金投资表输入2</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>business</connection>
+    <sql>select c.fjjdm,c.fdate,c.fkmbm,c.fzqsz as EN_ASSETCURR_VALUE from businessorg.jsz_jjhzgzb c  where c.fkmbm = '1105' and c.fdate > 20170101 and c.fdate > ?</sql>
+    <limit>0</limit>
+    <lookup>基金投资表输入</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>368</xloc>
       <yloc>976</yloc>
       <draw>Y</draw>
     </GUI>
@@ -942,7 +945,7 @@
     </GUI>
   </step>
   <step>
-    <name>股票投资表输入</name>
+    <name>应收款项表输入</name>
     <type>TableInput</type>
     <description />
     <distribute>Y</distribute>
@@ -953,7 +956,7 @@
       <schema_name />
     </partitioning>
     <connection>risk</connection>
-    <sql>select nvl(max(a.vc_compare),0) as vc_compare  from  gzdata_import_record a where a.riskkmbm  = '104' and a.table_name = upper('jsz_jjhzgzb')</sql>
+    <sql>select nvl(max(a.vc_compare),0) as vc_compare  from  gzdata_import_record a where a.riskkmbm  = '101' and a.table_name = upper('jsz_jjhzgzb')</sql>
     <limit>0</limit>
     <lookup />
     <execute_each_row>N</execute_each_row>
@@ -968,12 +971,12 @@
     </remotesteps>
     <GUI>
       <xloc>176</xloc>
-      <yloc>464</yloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>股票投资表输入 2</name>
+    <name>应收款项表输入2</name>
     <type>TableInput</type>
     <description />
     <distribute>Y</distribute>
@@ -984,9 +987,9 @@
       <schema_name />
     </partitioning>
     <connection>business</connection>
-    <sql>select c.fjjdm,c.fdate,c.fkmbm,c.fzqsz as EN_ASSETCURR_VALUE from businessorg.jsz_jjhzgzb c  where c.fkmbm = '1102' and c.fdate > 20170101 and c.fdate > ?</sql>
+    <sql>select c.fjjdm,c.fdate,c.fkmbm,c.fzqsz as EN_ASSETCURR_VALUE from businessorg.jsz_jjhzgzb c  where c.fkmbm in ('1203','1204','1207','1221','1501') and c.fdate > 20170101 and c.fdate > ?</sql>
     <limit>0</limit>
-    <lookup>股票投资表输入</lookup>
+    <lookup>应收款项表输入</lookup>
     <execute_each_row>N</execute_each_row>
     <variables_active>Y</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
@@ -999,12 +1002,12 @@
     </remotesteps>
     <GUI>
       <xloc>368</xloc>
-      <yloc>464</yloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>债券投资表输入</name>
+    <name>收益互换表输入</name>
     <type>TableInput</type>
     <description />
     <distribute>Y</distribute>
@@ -1015,7 +1018,7 @@
       <schema_name />
     </partitioning>
     <connection>risk</connection>
-    <sql>select nvl(max(a.vc_compare),0) as vc_compare  from  gzdata_import_record a where a.riskkmbm  = '105' and a.table_name = upper('jsz_jjhzgzb')</sql>
+    <sql>select nvl(max(a.vc_compare),0) as vc_compare  from  gzdata_import_record a where a.riskkmbm  = '112' and a.table_name = upper('jsz_jjhzgzb')</sql>
     <limit>0</limit>
     <lookup />
     <execute_each_row>N</execute_each_row>
@@ -1030,12 +1033,12 @@
     </remotesteps>
     <GUI>
       <xloc>176</xloc>
-      <yloc>592</yloc>
+      <yloc>1376</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>债券表输入2</name>
+    <name>收益互换表输入2</name>
     <type>TableInput</type>
     <description />
     <distribute>Y</distribute>
@@ -1046,9 +1049,9 @@
       <schema_name />
     </partitioning>
     <connection>business</connection>
-    <sql>select c.fjjdm,c.fdate,c.fkmbm,c.fzqsz as EN_ASSETCURR_VALUE from businessorg.jsz_jjhzgzb c  where c.fkmbm in ('1103','1132') and c.fdate > 20170101 and c.fdate > ?</sql>
+    <sql>select c.fjjdm,c.fdate,c.fkmbm,c.fzqsz as EN_ASSETCURR_VALUE from businessorg.jsz_jjhzgzb c  where c.fkmbm = '1041' and c.fdate > 20170101 and c.fdate > ?</sql>
     <limit>0</limit>
-    <lookup>债券投资表输入</lookup>
+    <lookup>收益互换表输入</lookup>
     <execute_each_row>N</execute_each_row>
     <variables_active>Y</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
@@ -1061,255 +1064,7 @@
     </remotesteps>
     <GUI>
       <xloc>368</xloc>
-      <yloc>592</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>融券回购表输入</name>
-    <type>TableInput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>risk</connection>
-    <sql>select nvl(max(a.vc_compare),0) as vc_compare  from  gzdata_import_record a where a.riskkmbm  = '106' and a.table_name = upper('jsz_jjhzgzb')</sql>
-    <limit>0</limit>
-    <lookup />
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>176</xloc>
-      <yloc>720</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>权证投资表输入</name>
-    <type>TableInput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>risk</connection>
-    <sql>select nvl(max(a.vc_compare),0) as vc_compare  from  gzdata_import_record a where a.riskkmbm  = '107' and a.table_name = upper('jsz_jjhzgzb')</sql>
-    <limit>0</limit>
-    <lookup />
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>176</xloc>
-      <yloc>848</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>基金投资表输入</name>
-    <type>TableInput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>risk</connection>
-    <sql>select nvl(max(a.vc_compare),0) as vc_compare  from  gzdata_import_record a where a.riskkmbm  = '108' and a.table_name = upper('jsz_jjhzgzb')</sql>
-    <limit>0</limit>
-    <lookup />
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>176</xloc>
-      <yloc>976</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>融券回购表输入 2</name>
-    <type>TableInput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>business</connection>
-    <sql>select c.fjjdm,c.fdate,c.fkmbm,c.fzqsz as EN_ASSETCURR_VALUE from businessorg.jsz_jjhzgzb c  where c.fkmbm = '1202' and c.fdate > 20170101 and c.fdate > ?</sql>
-    <limit>0</limit>
-    <lookup>融券回购表输入</lookup>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>Y</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>368</xloc>
-      <yloc>720</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>权证投资表输入 2</name>
-    <type>TableInput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>business</connection>
-    <sql>select c.fjjdm,c.fdate,c.fkmbm,c.fzqsz as EN_ASSETCURR_VALUE from businessorg.jsz_jjhzgzb c  where c.fkmbm = '1106' and c.fdate > 20170101 and c.fdate > ?</sql>
-    <limit>0</limit>
-    <lookup>权证投资表输入</lookup>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>Y</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>368</xloc>
-      <yloc>848</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>基金投资表输入2</name>
-    <type>TableInput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>business</connection>
-    <sql>select c.fjjdm,c.fdate,c.fkmbm,c.fzqsz as EN_ASSETCURR_VALUE from businessorg.jsz_jjhzgzb c  where c.fkmbm = '1105' and c.fdate > 20170101 and c.fdate > ?</sql>
-    <limit>0</limit>
-    <lookup>基金投资表输入</lookup>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>Y</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>368</xloc>
-      <yloc>976</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>理财投资表输入</name>
-    <type>TableInput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>risk</connection>
-    <sql>select nvl(max(a.vc_compare),0) as vc_compare  from  gzdata_import_record a where a.riskkmbm  = '109' and a.table_name = upper('jsz_jjhzgzb')</sql>
-    <limit>0</limit>
-    <lookup />
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>176</xloc>
-      <yloc>1120</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>理财投资表输入 2</name>
-    <type>TableInput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>business</connection>
-    <sql>select c.fjjdm,c.fdate,c.fkmbm,c.fzqsz as EN_ASSETCURR_VALUE from businessorg.jsz_jjhzgzb c  where c.fkmbm = '1108' and c.fdate > 20170101 and c.fdate > ?</sql>
-    <limit>0</limit>
-    <lookup>理财投资表输入</lookup>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>Y</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>368</xloc>
-      <yloc>1120</yloc>
+      <yloc>1376</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1376,7 +1131,7 @@
     </GUI>
   </step>
   <step>
-    <name>收益互换表输入</name>
+    <name>权证投资表输入</name>
     <type>TableInput</type>
     <description />
     <distribute>Y</distribute>
@@ -1387,7 +1142,7 @@
       <schema_name />
     </partitioning>
     <connection>risk</connection>
-    <sql>select nvl(max(a.vc_compare),0) as vc_compare  from  gzdata_import_record a where a.riskkmbm  = '112' and a.table_name = upper('jsz_jjhzgzb')</sql>
+    <sql>select nvl(max(a.vc_compare),0) as vc_compare  from  gzdata_import_record a where a.riskkmbm  = '107' and a.table_name = upper('jsz_jjhzgzb')</sql>
     <limit>0</limit>
     <lookup />
     <execute_each_row>N</execute_each_row>
@@ -1402,12 +1157,43 @@
     </remotesteps>
     <GUI>
       <xloc>176</xloc>
-      <yloc>1376</yloc>
+      <yloc>848</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>信用账户表输入</name>
+    <name>权证投资表输入 2</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>business</connection>
+    <sql>select c.fjjdm,c.fdate,c.fkmbm,c.fzqsz as EN_ASSETCURR_VALUE from businessorg.jsz_jjhzgzb c  where c.fkmbm = '1106' and c.fdate > 20170101 and c.fdate > ?</sql>
+    <limit>0</limit>
+    <lookup>权证投资表输入</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>368</xloc>
+      <yloc>848</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>现金资产表输入</name>
     <type>TableInput</type>
     <description />
     <distribute>Y</distribute>
@@ -1418,7 +1204,7 @@
       <schema_name />
     </partitioning>
     <connection>risk</connection>
-    <sql>select nvl(max(a.vc_compare),0) as vc_compare  from  gzdata_import_record a where a.riskkmbm  = '113' and a.table_name = upper('jsz_jjhzgzb')</sql>
+    <sql>select nvl(max(a.vc_compare),0) as vc_compare  from  gzdata_import_record a where a.riskkmbm  = '102' and a.table_name = upper('jsz_jjhzgzb')</sql>
     <limit>0</limit>
     <lookup />
     <execute_each_row>N</execute_each_row>
@@ -1433,12 +1219,12 @@
     </remotesteps>
     <GUI>
       <xloc>176</xloc>
-      <yloc>1536</yloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>收益互换表输入2</name>
+    <name>现金资产表输入2</name>
     <type>TableInput</type>
     <description />
     <distribute>Y</distribute>
@@ -1449,9 +1235,9 @@
       <schema_name />
     </partitioning>
     <connection>business</connection>
-    <sql>select c.fjjdm,c.fdate,c.fkmbm,c.fzqsz as EN_ASSETCURR_VALUE from businessorg.jsz_jjhzgzb c  where c.fkmbm = '1041' and c.fdate > 20170101 and c.fdate > ?</sql>
+    <sql>select c.fjjdm,c.fdate,c.fkmbm,c.fzqsz as EN_ASSETCURR_VALUE from businessorg.jsz_jjhzgzb c  where c.fkmbm in ('1203','1204','1207','1221','1501') and c.fdate > 20170101 and c.fdate > ?</sql>
     <limit>0</limit>
-    <lookup>收益互换表输入</lookup>
+    <lookup>现金资产表输入</lookup>
     <execute_each_row>N</execute_each_row>
     <variables_active>Y</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
@@ -1464,12 +1250,43 @@
     </remotesteps>
     <GUI>
       <xloc>368</xloc>
-      <yloc>1376</yloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>信用账户表输入 2</name>
+    <name>理财投资表输入</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <sql>select nvl(max(a.vc_compare),0) as vc_compare  from  gzdata_import_record a where a.riskkmbm  = '109' and a.table_name = upper('jsz_jjhzgzb')</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>176</xloc>
+      <yloc>1120</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>理财投资表输入 2</name>
     <type>TableInput</type>
     <description />
     <distribute>Y</distribute>
@@ -1480,9 +1297,9 @@
       <schema_name />
     </partitioning>
     <connection>business</connection>
-    <sql>select c.fjjdm,c.fdate,c.fkmbm,c.fzqsz as EN_ASSETCURR_VALUE from businessorg.jsz_jjhzgzb c  where c.fkmbm = '1051' and c.fdate > 20170101 and c.fdate > ?</sql>
+    <sql>select c.fjjdm,c.fdate,c.fkmbm,c.fzqsz as EN_ASSETCURR_VALUE from businessorg.jsz_jjhzgzb c  where c.fkmbm = '1108' and c.fdate > 20170101 and c.fdate > ?</sql>
     <limit>0</limit>
-    <lookup>信用账户表输入</lookup>
+    <lookup>理财投资表输入</lookup>
     <execute_each_row>N</execute_each_row>
     <variables_active>Y</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
@@ -1495,7 +1312,190 @@
     </remotesteps>
     <GUI>
       <xloc>368</xloc>
-      <yloc>1536</yloc>
+      <yloc>1120</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>股票投资表输入</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <sql>select nvl(max(a.vc_compare),0) as vc_compare  from  gzdata_import_record a where a.riskkmbm  = '104' and a.table_name = upper('jsz_jjhzgzb')</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>176</xloc>
+      <yloc>464</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>股票投资表输入 2</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>business</connection>
+    <sql>select c.fjjdm,c.fdate,c.fkmbm,c.fzqsz as EN_ASSETCURR_VALUE from businessorg.jsz_jjhzgzb c  where c.fkmbm = '1102' and c.fdate > 20170101 and c.fdate > ?</sql>
+    <limit>0</limit>
+    <lookup>股票投资表输入</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>368</xloc>
+      <yloc>464</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>融券回购表输入</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <sql>select nvl(max(a.vc_compare),0) as vc_compare  from  gzdata_import_record a where a.riskkmbm  = '106' and a.table_name = upper('jsz_jjhzgzb')</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>176</xloc>
+      <yloc>720</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>融券回购表输入 2</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>business</connection>
+    <sql>select c.fjjdm,c.fdate,c.fkmbm,c.fzqsz as EN_ASSETCURR_VALUE from businessorg.jsz_jjhzgzb c  where c.fkmbm = '1202' and c.fdate > 20170101 and c.fdate > ?</sql>
+    <limit>0</limit>
+    <lookup>融券回购表输入</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>368</xloc>
+      <yloc>720</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>资产类估值表输出</name>
+    <type>TableOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <schema />
+    <table>mid_jsz_jjhzgzb</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+      <field>
+        <column_name>FJJDM</column_name>
+        <stream_name>FJJDM</stream_name>
+      </field>
+      <field>
+        <column_name>FDATE</column_name>
+        <stream_name>FDATE</stream_name>
+      </field>
+      <field>
+        <column_name>FKMBM</column_name>
+        <stream_name>FKMBM</stream_name>
+      </field>
+      <field>
+        <column_name>EN_ASSETCURR_VALUE</column_name>
+        <stream_name>EN_ASSETCURR_VALUE</stream_name>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>976</xloc>
+      <yloc>976</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
