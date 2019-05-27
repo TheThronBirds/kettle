@@ -6573,8 +6573,8 @@ where TO_CHAR(A.L_DATE) >= ?</sql>
 , EN_FEE_YJ_TRUE
 , EN_FEE_GH_TOTAL
 FROM ${searchzdname}.THISBUSINESSSUMMARY where 
-L_DATE > 20150101 and
-L_DATE>=?
+L_DATE > 20100101 and
+L_DATE>?
 </sql>
     <limit>0</limit>
     <lookup>his_tradesummary表输入</lookup>
