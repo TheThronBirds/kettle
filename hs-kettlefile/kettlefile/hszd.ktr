@@ -1566,7 +1566,7 @@
       <schema_name />
     </partitioning>
     <connection>begin</connection>
-    <sql>SELECT * FROM ${searchzdname}.TCOMBI</sql>
+    <sql>SELECT * FROM ${searchzdname}.TCOMBI where L_FUND_ID != 180</sql>
     <limit>0</limit>
     <lookup />
     <execute_each_row>N</execute_each_row>
@@ -2905,7 +2905,7 @@ FROM ${searchzdname}.TFUTURESINFO t inner join ${searchzdname}.tstockinfo m on t
       <schema_name />
     </partitioning>
     <connection>begin</connection>
-    <sql>SELECT * FROM ${searchzdname}.TGROUPFUNDCOMBI</sql>
+    <sql>SELECT * FROM ${searchzdname}.TGROUPFUNDCOMBI WHERE L_FUND_ID != 180</sql>
     <limit>0</limit>
     <lookup />
     <execute_each_row>N</execute_each_row>
@@ -3078,6 +3078,7 @@ FROM ${searchzdname}.TFUTURESINFO t inner join ${searchzdname}.tstockinfo m on t
                   ,t.L_REDEEM_DAYS --回购天数
                   ,t.L_REDEEM_LAWDATE --购回日期
                   ,t.L_REDEEM_LIQUIDATE --实际购回日期
+				  ,t.C_PURPOSE_TYPE --回购用途类别
                   ,sum(nvl(t.L_DEAL_AMOUNT, 0)) as L_DEAL_AMOUNT --成交数量
                   ,avg(nvl(t.EN_DEAL_PRICE, 0)) as EN_DEAL_PRICE --成交价格
                   ,sum(nvl(t.EN_DEAL_BALANCE, 0)) as EN_DEAL_BALANCE --回购金额
@@ -3097,6 +3098,7 @@ FROM ${searchzdname}.TFUTURESINFO t inner join ${searchzdname}.tstockinfo m on t
                   ,t.L_REDEEM_DAYS --回购天数
                   ,t.L_REDEEM_LAWDATE --购回日期
                   ,t.L_REDEEM_LIQUIDATE --实际购回日期
+				  ,t.C_PURPOSE_TYPE
 
 </sql>
     <limit>0</limit>
@@ -4343,7 +4345,7 @@ FROM ${searchzdname}.TTRADESTOCK t inner join ${searchzdname}.tstockinfo m on t.
       <schema_name />
     </partitioning>
     <connection>begin</connection>
-    <sql>SELECT * FROM ${searchzdname}.tasset</sql>
+    <sql>SELECT * FROM ${searchzdname}.tasset where L_FUND_ID != 180</sql>
     <limit>0</limit>
     <lookup />
     <execute_each_row>N</execute_each_row>
@@ -5404,7 +5406,7 @@ from ${searchzdname}.tbondproperty t where vc_timestamp>?
       <schema_name />
     </partitioning>
     <connection>begin</connection>
-    <sql>SELECT * FROM ${searchzdname}.tfundinfo where l_fund_id &lt;&gt; 180</sql>
+    <sql>SELECT * FROM ${searchzdname}.tfundinfo where L_FUND_ID != 180</sql>
     <limit>0</limit>
     <lookup />
     <execute_each_row>N</execute_each_row>
@@ -6147,6 +6149,10 @@ FROM ${searchzdname}.thgratio
       <field>
         <column_name>VC_BASECOMBI_ID</column_name>
         <stream_name>L_BASECOMBI_ID</stream_name>
+      </field>
+      <field>
+        <column_name>C_PURPOSE_TYPE</column_name>
+        <stream_name>C_PURPOSE_TYPE</stream_name>
       </field>
     </fields>
     <cluster_schema />
@@ -6897,7 +6903,7 @@ L_DATE>?
 ,t. EN_UNIT_BIND_PRICE
 ,t. L_ETF_OCCUPY_AMOUNT
 ,m.vc_report_code 
-from ${searchzdname}.TUNITSTOCK t inner join ${searchzdname}.tstockinfo m on t.vc_inter_code=m.vc_inter_code
+from ${searchzdname}.TUNITSTOCK t inner join ${searchzdname}.tstockinfo m on t.vc_inter_code=m.vc_inter_code WHERE t.L_FUND_ID != 180
 
 </sql>
     <limit>0</limit>
@@ -8338,6 +8344,9 @@ FROM ${searchzdname}.TBUSINESSSUMMARY</sql>
       </field>
       <field>
         <name>EN_BALANCE2</name>
+      </field>
+      <field>
+        <name>C_PURPOSE_TYPE</name>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
