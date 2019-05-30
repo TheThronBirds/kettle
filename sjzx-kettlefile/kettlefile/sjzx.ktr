@@ -764,7 +764,7 @@
     <hop>
       <from>基金净资产表输入2</from>
       <to>估值表输出</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>基金总资产表输入 2</from>
