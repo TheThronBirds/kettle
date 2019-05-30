@@ -1,0 +1,2640 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformation>
+  <info>
+    <name>chjgsj</name>
+    <description />
+    <extended_description />
+    <trans_version />
+    <trans_type>Normal</trans_type>
+    <directory>/</directory>
+    <parameters>
+    </parameters>
+    <log>
+      <trans-log-table>
+        <connection />
+        <schema />
+        <table />
+        <size_limit_lines />
+        <interval />
+        <timeout_days />
+        <field>
+          <id>ID_BATCH</id>
+          <enabled>Y</enabled>
+          <name>ID_BATCH</name>
+        </field>
+        <field>
+          <id>CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>TRANSNAME</id>
+          <enabled>Y</enabled>
+          <name>TRANSNAME</name>
+        </field>
+        <field>
+          <id>STATUS</id>
+          <enabled>Y</enabled>
+          <name>STATUS</name>
+        </field>
+        <field>
+          <id>LINES_READ</id>
+          <enabled>Y</enabled>
+          <name>LINES_READ</name>
+          <subject />
+        </field>
+        <field>
+          <id>LINES_WRITTEN</id>
+          <enabled>Y</enabled>
+          <name>LINES_WRITTEN</name>
+          <subject />
+        </field>
+        <field>
+          <id>LINES_UPDATED</id>
+          <enabled>Y</enabled>
+          <name>LINES_UPDATED</name>
+          <subject />
+        </field>
+        <field>
+          <id>LINES_INPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_INPUT</name>
+          <subject />
+        </field>
+        <field>
+          <id>LINES_OUTPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_OUTPUT</name>
+          <subject />
+        </field>
+        <field>
+          <id>LINES_REJECTED</id>
+          <enabled>Y</enabled>
+          <name>LINES_REJECTED</name>
+          <subject />
+        </field>
+        <field>
+          <id>ERRORS</id>
+          <enabled>Y</enabled>
+          <name>ERRORS</name>
+        </field>
+        <field>
+          <id>STARTDATE</id>
+          <enabled>Y</enabled>
+          <name>STARTDATE</name>
+        </field>
+        <field>
+          <id>ENDDATE</id>
+          <enabled>Y</enabled>
+          <name>ENDDATE</name>
+        </field>
+        <field>
+          <id>LOGDATE</id>
+          <enabled>Y</enabled>
+          <name>LOGDATE</name>
+        </field>
+        <field>
+          <id>DEPDATE</id>
+          <enabled>Y</enabled>
+          <name>DEPDATE</name>
+        </field>
+        <field>
+          <id>REPLAYDATE</id>
+          <enabled>Y</enabled>
+          <name>REPLAYDATE</name>
+        </field>
+        <field>
+          <id>LOG_FIELD</id>
+          <enabled>Y</enabled>
+          <name>LOG_FIELD</name>
+        </field>
+        <field>
+          <id>EXECUTING_SERVER</id>
+          <enabled>N</enabled>
+          <name>EXECUTING_SERVER</name>
+        </field>
+        <field>
+          <id>EXECUTING_USER</id>
+          <enabled>N</enabled>
+          <name>EXECUTING_USER</name>
+        </field>
+        <field>
+          <id>CLIENT</id>
+          <enabled>N</enabled>
+          <name>CLIENT</name>
+        </field>
+      </trans-log-table>
+      <perf-log-table>
+        <connection />
+        <schema />
+        <table />
+        <interval />
+        <timeout_days />
+        <field>
+          <id>ID_BATCH</id>
+          <enabled>Y</enabled>
+          <name>ID_BATCH</name>
+        </field>
+        <field>
+          <id>SEQ_NR</id>
+          <enabled>Y</enabled>
+          <name>SEQ_NR</name>
+        </field>
+        <field>
+          <id>LOGDATE</id>
+          <enabled>Y</enabled>
+          <name>LOGDATE</name>
+        </field>
+        <field>
+          <id>TRANSNAME</id>
+          <enabled>Y</enabled>
+          <name>TRANSNAME</name>
+        </field>
+        <field>
+          <id>STEPNAME</id>
+          <enabled>Y</enabled>
+          <name>STEPNAME</name>
+        </field>
+        <field>
+          <id>STEP_COPY</id>
+          <enabled>Y</enabled>
+          <name>STEP_COPY</name>
+        </field>
+        <field>
+          <id>LINES_READ</id>
+          <enabled>Y</enabled>
+          <name>LINES_READ</name>
+        </field>
+        <field>
+          <id>LINES_WRITTEN</id>
+          <enabled>Y</enabled>
+          <name>LINES_WRITTEN</name>
+        </field>
+        <field>
+          <id>LINES_UPDATED</id>
+          <enabled>Y</enabled>
+          <name>LINES_UPDATED</name>
+        </field>
+        <field>
+          <id>LINES_INPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_INPUT</name>
+        </field>
+        <field>
+          <id>LINES_OUTPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_OUTPUT</name>
+        </field>
+        <field>
+          <id>LINES_REJECTED</id>
+          <enabled>Y</enabled>
+          <name>LINES_REJECTED</name>
+        </field>
+        <field>
+          <id>ERRORS</id>
+          <enabled>Y</enabled>
+          <name>ERRORS</name>
+        </field>
+        <field>
+          <id>INPUT_BUFFER_ROWS</id>
+          <enabled>Y</enabled>
+          <name>INPUT_BUFFER_ROWS</name>
+        </field>
+        <field>
+          <id>OUTPUT_BUFFER_ROWS</id>
+          <enabled>Y</enabled>
+          <name>OUTPUT_BUFFER_ROWS</name>
+        </field>
+      </perf-log-table>
+      <channel-log-table>
+        <connection />
+        <schema />
+        <table />
+        <timeout_days />
+        <field>
+          <id>ID_BATCH</id>
+          <enabled>Y</enabled>
+          <name>ID_BATCH</name>
+        </field>
+        <field>
+          <id>CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>LOG_DATE</id>
+          <enabled>Y</enabled>
+          <name>LOG_DATE</name>
+        </field>
+        <field>
+          <id>LOGGING_OBJECT_TYPE</id>
+          <enabled>Y</enabled>
+          <name>LOGGING_OBJECT_TYPE</name>
+        </field>
+        <field>
+          <id>OBJECT_NAME</id>
+          <enabled>Y</enabled>
+          <name>OBJECT_NAME</name>
+        </field>
+        <field>
+          <id>OBJECT_COPY</id>
+          <enabled>Y</enabled>
+          <name>OBJECT_COPY</name>
+        </field>
+        <field>
+          <id>REPOSITORY_DIRECTORY</id>
+          <enabled>Y</enabled>
+          <name>REPOSITORY_DIRECTORY</name>
+        </field>
+        <field>
+          <id>FILENAME</id>
+          <enabled>Y</enabled>
+          <name>FILENAME</name>
+        </field>
+        <field>
+          <id>OBJECT_ID</id>
+          <enabled>Y</enabled>
+          <name>OBJECT_ID</name>
+        </field>
+        <field>
+          <id>OBJECT_REVISION</id>
+          <enabled>Y</enabled>
+          <name>OBJECT_REVISION</name>
+        </field>
+        <field>
+          <id>PARENT_CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>PARENT_CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>ROOT_CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>ROOT_CHANNEL_ID</name>
+        </field>
+      </channel-log-table>
+      <step-log-table>
+        <connection />
+        <schema />
+        <table />
+        <timeout_days />
+        <field>
+          <id>ID_BATCH</id>
+          <enabled>Y</enabled>
+          <name>ID_BATCH</name>
+        </field>
+        <field>
+          <id>CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>LOG_DATE</id>
+          <enabled>Y</enabled>
+          <name>LOG_DATE</name>
+        </field>
+        <field>
+          <id>TRANSNAME</id>
+          <enabled>Y</enabled>
+          <name>TRANSNAME</name>
+        </field>
+        <field>
+          <id>STEPNAME</id>
+          <enabled>Y</enabled>
+          <name>STEPNAME</name>
+        </field>
+        <field>
+          <id>STEP_COPY</id>
+          <enabled>Y</enabled>
+          <name>STEP_COPY</name>
+        </field>
+        <field>
+          <id>LINES_READ</id>
+          <enabled>Y</enabled>
+          <name>LINES_READ</name>
+        </field>
+        <field>
+          <id>LINES_WRITTEN</id>
+          <enabled>Y</enabled>
+          <name>LINES_WRITTEN</name>
+        </field>
+        <field>
+          <id>LINES_UPDATED</id>
+          <enabled>Y</enabled>
+          <name>LINES_UPDATED</name>
+        </field>
+        <field>
+          <id>LINES_INPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_INPUT</name>
+        </field>
+        <field>
+          <id>LINES_OUTPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_OUTPUT</name>
+        </field>
+        <field>
+          <id>LINES_REJECTED</id>
+          <enabled>Y</enabled>
+          <name>LINES_REJECTED</name>
+        </field>
+        <field>
+          <id>ERRORS</id>
+          <enabled>Y</enabled>
+          <name>ERRORS</name>
+        </field>
+        <field>
+          <id>LOG_FIELD</id>
+          <enabled>N</enabled>
+          <name>LOG_FIELD</name>
+        </field>
+      </step-log-table>
+      <metrics-log-table>
+        <connection />
+        <schema />
+        <table />
+        <timeout_days />
+        <field>
+          <id>ID_BATCH</id>
+          <enabled>Y</enabled>
+          <name>ID_BATCH</name>
+        </field>
+        <field>
+          <id>CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>LOG_DATE</id>
+          <enabled>Y</enabled>
+          <name>LOG_DATE</name>
+        </field>
+        <field>
+          <id>METRICS_DATE</id>
+          <enabled>Y</enabled>
+          <name>METRICS_DATE</name>
+        </field>
+        <field>
+          <id>METRICS_CODE</id>
+          <enabled>Y</enabled>
+          <name>METRICS_CODE</name>
+        </field>
+        <field>
+          <id>METRICS_DESCRIPTION</id>
+          <enabled>Y</enabled>
+          <name>METRICS_DESCRIPTION</name>
+        </field>
+        <field>
+          <id>METRICS_SUBJECT</id>
+          <enabled>Y</enabled>
+          <name>METRICS_SUBJECT</name>
+        </field>
+        <field>
+          <id>METRICS_TYPE</id>
+          <enabled>Y</enabled>
+          <name>METRICS_TYPE</name>
+        </field>
+        <field>
+          <id>METRICS_VALUE</id>
+          <enabled>Y</enabled>
+          <name>METRICS_VALUE</name>
+        </field>
+      </metrics-log-table>
+    </log>
+    <maxdate>
+      <connection />
+      <table />
+      <field />
+      <offset>0.0</offset>
+      <maxdiff>0.0</maxdiff>
+    </maxdate>
+    <size_rowset>10000</size_rowset>
+    <sleep_time_empty>50</sleep_time_empty>
+    <sleep_time_full>50</sleep_time_full>
+    <unique_connections>N</unique_connections>
+    <feedback_shown>Y</feedback_shown>
+    <feedback_size>50000</feedback_size>
+    <using_thread_priorities>Y</using_thread_priorities>
+    <shared_objects_file />
+    <capture_step_performance>N</capture_step_performance>
+    <step_performance_capturing_delay>1000</step_performance_capturing_delay>
+    <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
+    <dependencies>
+    </dependencies>
+    <partitionschemas>
+    </partitionschemas>
+    <slaveservers>
+    </slaveservers>
+    <clusterschemas>
+    </clusterschemas>
+    <created_user>-</created_user>
+    <created_date>2018/08/03 10:38:27.773</created_date>
+    <modified_user>-</modified_user>
+    <modified_date>2018/08/03 10:38:27.773</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
+    <is_key_private>N</is_key_private>
+  </info>
+  <notepads>
+    <notepad>
+      <note>财汇机构数据（chjg）</note>
+      <xloc>368</xloc>
+      <yloc>16</yloc>
+      <width>130</width>
+      <heigth>26</heigth>
+      <fontname>微软雅黑</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>机构基本信息 只处理非分支机构</note>
+      <xloc>160</xloc>
+      <yloc>64</yloc>
+      <width>182</width>
+      <heigth>26</heigth>
+      <fontname>微软雅黑</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>机构评级信息</note>
+      <xloc>128</xloc>
+      <yloc>384</yloc>
+      <width>82</width>
+      <heigth>26</heigth>
+      <fontname>微软雅黑</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>机构资产信息 取报表类型REPORTSTYLE = '11'（11代表合并期末）</note>
+      <xloc>128</xloc>
+      <yloc>576</yloc>
+      <width>374</width>
+      <heigth>26</heigth>
+      <fontname>微软雅黑</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>机构现金流信息  取ReportStyle报表类型=11,目前没用</note>
+      <xloc>144</xloc>
+      <yloc>880</yloc>
+      <width>303</width>
+      <heigth>26</heigth>
+      <fontname>微软雅黑</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>银行信息</note>
+      <xloc>128</xloc>
+      <yloc>1184</yloc>
+      <width>58</width>
+      <heigth>26</heigth>
+      <fontname>微软雅黑</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>公司融资情况</note>
+      <xloc>144</xloc>
+      <yloc>1360</yloc>
+      <width>82</width>
+      <heigth>26</heigth>
+      <fontname>微软雅黑</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>导入机构数据 针对00704（其他类型） 因为这个数据量太大 所以需要单独特殊处理</note>
+      <xloc>128</xloc>
+      <yloc>192</yloc>
+      <width>453</width>
+      <heigth>26</heigth>
+      <fontname>微软雅黑</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+  </notepads>
+  <connection>
+    <name>fcdb</name>
+    <server />
+    <type>GENERIC</type>
+    <access>Native</access>
+    <database />
+    <port>1521</port>
+    <username>${start_generic_user}</username>
+    <password>${start_generic_password}</password>
+    <servername />
+    <data_tablespace />
+    <index_tablespace />
+    <attributes>
+      <attribute>
+        <code>CUSTOM_DRIVER_CLASS</code>
+        <attribute>${start_generic_driver}</attribute>
+      </attribute>
+      <attribute>
+        <code>CUSTOM_URL</code>
+        <attribute>${start_generic_url}</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>1521</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>risk</name>
+    <server />
+    <type>GENERIC</type>
+    <access>Native</access>
+    <database />
+    <port>1521</port>
+    <username>${end_generic_user}</username>
+    <password>${end_generic_password}</password>
+    <servername />
+    <data_tablespace />
+    <index_tablespace />
+    <attributes>
+      <attribute>
+        <code>CUSTOM_DRIVER_CLASS</code>
+        <attribute>${end_generic_driver}</attribute>
+      </attribute>
+      <attribute>
+        <code>CUSTOM_URL</code>
+        <attribute>${end_generic_url}</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>1521</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
+  <order>
+    <hop>
+      <from>AffiliatedCorp表输入2</from>
+      <to>AffiliatedCorp表输入</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>AffiliatedCorp表输入</from>
+      <to>AffiliatedCorp表输出</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>icrate表输入2</from>
+      <to>icrate表输入</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>icrate表输入</from>
+      <to>icrate表输出</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>FIBSHEET_NEW表输入 2</from>
+      <to>FIBSHEET_NEW表输入</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>FIBSHEET_NEW表输入</from>
+      <to>FIBSHEET_NEW表输出</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>CBSheet_New表输入 2</from>
+      <to>CBSheet_New表输入</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>CBSheet_New表输入</from>
+      <to>CBSheet_New表输出</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>BSHEET_I表输入 2</from>
+      <to>BSHEET_I表输入</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>BSHEET_I表输入</from>
+      <to>BSHEET_I表输出 </to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>FICFST_NEW表输入2</from>
+      <to>FICFST_NEW表输入</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>FICFST_NEW表输入</from>
+      <to>FICFST_NEW表输出</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>CFST_NEW表输入2</from>
+      <to>CFST_NEW表输入</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>CFST_NEW表输入</from>
+      <to>CFST_NEW表输出</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>CFST_I表输入2</from>
+      <to>CFST_I表输入</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>CFST_I表输入</from>
+      <to>CFST_I表输出</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>bank表输入</from>
+      <to>bank表输入 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>bank表输入 2</from>
+      <to>表输出</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>SIBASEINFO表输入 2</from>
+      <to>字段选择</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>字段选择</from>
+      <to>SIBASEINFO表输出</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>SIBASEINFO表输入</from>
+      <to>SIBASEINFO表输入 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>AffiliatedCorp表输入3</from>
+      <to>AffiliatedCorp表输入4</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>AffiliatedCorp表输入4</from>
+      <to>AffiliatedCorp表输出2</to>
+      <enabled>Y</enabled>
+    </hop>
+  </order>
+  <step>
+    <name>AffiliatedCorp表输入</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>fcdb</connection>
+    <sql>select 
+m.COMPANYCODE,
+m.COMPANYNAME ,
+m.ITProfile1,
+m.ITProfile2  ,
+m.ITProfile4  ,
+m.ITProfile5  ,
+m.ITPROFILE44 ,
+m.ITProfile18 ,
+m.ITProfile20  ,
+m.ITProfile21 ,
+m.ITProfile22 ,
+m.ITProfile40 ,
+m.ITProfile42 ,
+m.ITProfile43 ,
+concat(to_char(m.ENTRYDATE,'yyyymmdd'),m.ENTRYTIME) as   VC_COMPARE
+from ITPROFILE m
+inner join 
+(
+select  companycode from   
+(select t.companycode from itprofile t inner join securitycode a on t.companycode=a.companycode where t.itprofile5 = '0'
+union all
+ select t.bonddt10 from bonddt t
+union all
+ select t.companycode from itprofile t where t.itprofile4 like '001%' and t.itprofile5 = '0'
+union all
+ select t.companycode from itprofile t where t.itprofile4 in ('002001','002002','002003','002004','002005','002006','002007','002008','002009','002010','002011','003001','003002','003003','003004','003005',
+   '003006','003007','003008','004001','005001','005002','005004','005005','005008','005009','006003','006004','007001','007002','010001') and t.itprofile5 = '0') x  group by companycode
+)n
+on m.companycode=n.companycode
+where concat(to_char(m.ENTRYDATE,'yyyymmdd'),m.ENTRYTIME)>=?</sql>
+    <limit>0</limit>
+    <lookup>AffiliatedCorp表输入2</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>368</xloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>AffiliatedCorp表输入2</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <sql>select nvl(max(t.VC_COMPARE),0) as  VC_COMPARE
+from DATA_IMPORT_RECORD t 
+where t.table_name=upper('t_mid_ch_zl_AffiliatedCorp')</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>160</xloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>AffiliatedCorp表输出</name>
+    <type>TableOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <schema />
+    <table>t_mid_ch_zl_AffiliatedCorp</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+      <field>
+        <column_name>COMPANYCODE</column_name>
+        <stream_name>COMPANYCODE</stream_name>
+      </field>
+      <field>
+        <column_name>COMPANYNAME</column_name>
+        <stream_name>COMPANYNAME</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE2</column_name>
+        <stream_name>ITPROFILE2</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE4</column_name>
+        <stream_name>ITPROFILE4</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE5</column_name>
+        <stream_name>ITPROFILE5</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE44</column_name>
+        <stream_name>ITPROFILE44</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE18</column_name>
+        <stream_name>ITPROFILE18</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE20</column_name>
+        <stream_name>ITPROFILE20</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE21</column_name>
+        <stream_name>ITPROFILE21</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE22</column_name>
+        <stream_name>ITPROFILE22</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE40</column_name>
+        <stream_name>ITPROFILE40</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE42</column_name>
+        <stream_name>ITPROFILE42</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE43</column_name>
+        <stream_name>ITPROFILE43</stream_name>
+      </field>
+      <field>
+        <column_name>VC_COMPARE</column_name>
+        <stream_name>VC_COMPARE</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE1</column_name>
+        <stream_name>ITPROFILE1</stream_name>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>576</xloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>BSHEET_I表输入</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>fcdb</connection>
+    <sql>select 
+CompanyCode,
+ReportDate,
+ReportStyle,
+AdjustYear,
+to_number(to_char(ENTRYDATE, 'yyyyMMdd')) as  ENTRYDATE,
+ENTRYTIME,
+BSHEET_I48 as  EN_TOTAL_ASSET,
+BSHEET_I79 as EN_TOTAL_DEBT,
+concat(to_char(ENTRYDATE,'yyyymmdd'),ENTRYTIME) as   VC_COMPARE
+from
+BSHEET_I
+where to_char(UPDATEDATE, 'yyyyMMdd')>='20150101' and REPORTSTYLE = '11' and to_char(REPORTDATE,'yyyyMMdd')>='20170101'
+and 
+concat(to_char(ENTRYDATE,'yyyymmdd'),ENTRYTIME) >=?</sql>
+    <limit>0</limit>
+    <lookup>BSHEET_I表输入 2</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>352</xloc>
+      <yloc>800</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>BSHEET_I表输入 2</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <sql>select nvl(max(t.VC_COMPARE),0) as  VC_COMPARE
+from DATA_IMPORT_RECORD t 
+where t.table_name=upper('t_mid_ch_zl_BSHEET_I')</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>144</xloc>
+      <yloc>800</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>BSHEET_I表输出 </name>
+    <type>TableOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <schema />
+    <table>t_mid_ch_zl_BSHEET_I</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+      <field>
+        <column_name>REPORTDATE</column_name>
+        <stream_name>REPORTDATE</stream_name>
+      </field>
+      <field>
+        <column_name>ADJUSTYEAR</column_name>
+        <stream_name>ADJUSTYEAR</stream_name>
+      </field>
+      <field>
+        <column_name>ENTRYDATE</column_name>
+        <stream_name>ENTRYDATE</stream_name>
+      </field>
+      <field>
+        <column_name>ENTRYTIME</column_name>
+        <stream_name>ENTRYTIME</stream_name>
+      </field>
+      <field>
+        <column_name>EN_TOTAL_ASSET</column_name>
+        <stream_name>EN_TOTAL_ASSET</stream_name>
+      </field>
+      <field>
+        <column_name>EN_TOTAL_DEBT</column_name>
+        <stream_name>EN_TOTAL_DEBT</stream_name>
+      </field>
+      <field>
+        <column_name>VC_COMPARE</column_name>
+        <stream_name>VC_COMPARE</stream_name>
+      </field>
+      <field>
+        <column_name>VC_AFFCORPCODE</column_name>
+        <stream_name>COMPANYCODE</stream_name>
+      </field>
+      <field>
+        <column_name>VC_REPORTSTYLE</column_name>
+        <stream_name>REPORTSTYLE</stream_name>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>560</xloc>
+      <yloc>800</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>CBSheet_New表输入</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>fcdb</connection>
+    <sql>select 
+CompanyCode,
+ReportDate,
+ReportStyle,
+AdjustYear,
+to_number(to_char(ENTRYDATE, 'yyyyMMdd')) as  ENTRYDATE,
+ENTRYTIME,
+CBSheet46 as  EN_TOTAL_ASSET,
+CBSheet77 as EN_TOTAL_DEBT,
+concat(to_char(ENTRYDATE,'yyyymmdd'),ENTRYTIME) as   VC_COMPARE
+from
+CBSheet_New 
+where to_char(UPDATEDATE, 'yyyyMMdd')>='20150101' and REPORTSTYLE = '11' and to_char(REPORTDATE,'yyyyMMdd')>='20170101'
+and 
+concat(to_char(ENTRYDATE,'yyyymmdd'),ENTRYTIME) >=?
+</sql>
+    <limit>0</limit>
+    <lookup>CBSheet_New表输入 2</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>352</xloc>
+      <yloc>720</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>CBSheet_New表输入 2</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <sql>select nvl(max(t.VC_COMPARE),0) as  VC_COMPARE
+from DATA_IMPORT_RECORD t 
+where t.table_name=upper('t_mid_ch_zl_CBSheet_New')</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>144</xloc>
+      <yloc>720</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>CBSheet_New表输出</name>
+    <type>TableOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <schema />
+    <table>t_mid_ch_zl_CBSheet_New</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+      <field>
+        <column_name>REPORTDATE</column_name>
+        <stream_name>REPORTDATE</stream_name>
+      </field>
+      <field>
+        <column_name>ADJUSTYEAR</column_name>
+        <stream_name>ADJUSTYEAR</stream_name>
+      </field>
+      <field>
+        <column_name>ENTRYDATE</column_name>
+        <stream_name>ENTRYDATE</stream_name>
+      </field>
+      <field>
+        <column_name>ENTRYTIME</column_name>
+        <stream_name>ENTRYTIME</stream_name>
+      </field>
+      <field>
+        <column_name>EN_TOTAL_ASSET</column_name>
+        <stream_name>EN_TOTAL_ASSET</stream_name>
+      </field>
+      <field>
+        <column_name>EN_TOTAL_DEBT</column_name>
+        <stream_name>EN_TOTAL_DEBT</stream_name>
+      </field>
+      <field>
+        <column_name>VC_COMPARE</column_name>
+        <stream_name>VC_COMPARE</stream_name>
+      </field>
+      <field>
+        <column_name>VC_AFFCORPCODE</column_name>
+        <stream_name>COMPANYCODE</stream_name>
+      </field>
+      <field>
+        <column_name>VC_REPORTSTYLE</column_name>
+        <stream_name>REPORTSTYLE</stream_name>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>560</xloc>
+      <yloc>720</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>CFST_I表输入</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>fcdb</connection>
+    <sql>select COMPANYCODE,
+to_number(to_char(REPORTDATE,'yyyymmdd'))REPORTDATE,
+REPORTSTYLE,
+ADJUSTYEAR,
+CFST_I10  as CFST10,
+CFST_I33 as CFST33,
+to_number(to_char(ENTRYDATE,'yyyymmdd'))ENTRYDATE,
+ENTRYTIME 
+,concat(to_char(t.ENTRYDATE,'yyyymmdd'),t.ENTRYTIME) as   VC_COMPARE
+from CFST_I t 
+where to_number(to_char(t.reportdate,'yyyy')) > to_number(to_char(sysdate,'yyyy')) - 5  and t.ReportStyle='11'
+and concat(to_char(t.ENTRYDATE,'yyyymmdd'),t.ENTRYTIME) >=?</sql>
+    <limit>0</limit>
+    <lookup>CFST_I表输入2</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>336</xloc>
+      <yloc>1120</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>CFST_I表输入2</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <sql>select nvl(max(t.VC_COMPARE),0) as  VC_COMPARE
+from DATA_IMPORT_RECORD t 
+where t.table_name=upper('T_MID_CH_ZL_CFST_I')</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>144</xloc>
+      <yloc>1120</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>CFST_I表输出</name>
+    <type>TableOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <schema />
+    <table>T_MID_CH_ZL_CFST_I</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+      <field>
+        <column_name>COMPANYCODE</column_name>
+        <stream_name>COMPANYCODE</stream_name>
+      </field>
+      <field>
+        <column_name>REPORTDATE</column_name>
+        <stream_name>REPORTDATE</stream_name>
+      </field>
+      <field>
+        <column_name>REPORTSTYLE</column_name>
+        <stream_name>REPORTSTYLE</stream_name>
+      </field>
+      <field>
+        <column_name>ADJUSTYEAR</column_name>
+        <stream_name>ADJUSTYEAR</stream_name>
+      </field>
+      <field>
+        <column_name>CFST10</column_name>
+        <stream_name>CFST10</stream_name>
+      </field>
+      <field>
+        <column_name>CFST33</column_name>
+        <stream_name>CFST33</stream_name>
+      </field>
+      <field>
+        <column_name>ENTRYDATE</column_name>
+        <stream_name>ENTRYDATE</stream_name>
+      </field>
+      <field>
+        <column_name>ENTRYTIME</column_name>
+        <stream_name>ENTRYTIME</stream_name>
+      </field>
+      <field>
+        <column_name>VC_COMPARE</column_name>
+        <stream_name>VC_COMPARE</stream_name>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>528</xloc>
+      <yloc>1120</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>CFST_NEW表输入</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>fcdb</connection>
+    <sql>select COMPANYCODE,
+to_number(to_char(REPORTDATE,'yyyymmdd'))REPORTDATE,
+REPORTSTYLE,
+ADJUSTYEAR,
+CFST10,
+CFST33,
+to_number(to_char(ENTRYDATE,'yyyymmdd'))ENTRYDATE,
+ENTRYTIME 
+,concat(to_char(t.ENTRYDATE,'yyyymmdd'),t.ENTRYTIME) as   VC_COMPARE
+from CFST_NEW t 
+where to_number(to_char(t.reportdate,'yyyy')) > to_number(to_char(sysdate,'yyyy')) - 5  and t.ReportStyle='11'
+and concat(to_char(t.ENTRYDATE,'yyyymmdd'),t.ENTRYTIME) >=?</sql>
+    <limit>0</limit>
+    <lookup>CFST_NEW表输入2</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>336</xloc>
+      <yloc>1040</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>CFST_NEW表输入2</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <sql>select nvl(max(t.VC_COMPARE),0) as  VC_COMPARE
+from DATA_IMPORT_RECORD t 
+where t.table_name=upper('T_MID_CH_ZL_CFST_NEW')</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>144</xloc>
+      <yloc>1040</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>CFST_NEW表输出</name>
+    <type>TableOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <schema />
+    <table>T_MID_CH_ZL_CFST_NEW</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+      <field>
+        <column_name>COMPANYCODE</column_name>
+        <stream_name>COMPANYCODE</stream_name>
+      </field>
+      <field>
+        <column_name>REPORTDATE</column_name>
+        <stream_name>REPORTDATE</stream_name>
+      </field>
+      <field>
+        <column_name>REPORTSTYLE</column_name>
+        <stream_name>REPORTSTYLE</stream_name>
+      </field>
+      <field>
+        <column_name>ADJUSTYEAR</column_name>
+        <stream_name>ADJUSTYEAR</stream_name>
+      </field>
+      <field>
+        <column_name>CFST10</column_name>
+        <stream_name>CFST10</stream_name>
+      </field>
+      <field>
+        <column_name>CFST33</column_name>
+        <stream_name>CFST33</stream_name>
+      </field>
+      <field>
+        <column_name>ENTRYDATE</column_name>
+        <stream_name>ENTRYDATE</stream_name>
+      </field>
+      <field>
+        <column_name>ENTRYTIME</column_name>
+        <stream_name>ENTRYTIME</stream_name>
+      </field>
+      <field>
+        <column_name>VC_COMPARE</column_name>
+        <stream_name>VC_COMPARE</stream_name>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>528</xloc>
+      <yloc>1040</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>FIBSHEET_NEW表输入</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>fcdb</connection>
+    <sql>select 
+CompanyCode,
+ReportDate,
+ReportStyle,
+AdjustYear,
+to_number(to_char(ENTRYDATE, 'yyyyMMdd')) as  ENTRYDATE,
+ENTRYTIME,
+FIBSheet_NEW46 as  EN_TOTAL_ASSET,
+FIBSheet_NEW80 as EN_TOTAL_DEBT,
+concat(to_char(ENTRYDATE,'yyyymmdd'),ENTRYTIME) as   VC_COMPARE
+from
+FIBSHEET_NEW
+where to_char(UPDATEDATE, 'yyyyMMdd')>='20150101' and REPORTSTYLE = '11' and to_char(REPORTDATE,'yyyyMMdd')>='20170101'
+and 
+concat(to_char(ENTRYDATE,'yyyymmdd'),ENTRYTIME) >=?
+</sql>
+    <limit>0</limit>
+    <lookup>FIBSHEET_NEW表输入 2</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>352</xloc>
+      <yloc>640</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>FIBSHEET_NEW表输入 2</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <sql>select nvl(max(t.VC_COMPARE),0) as  VC_COMPARE
+from DATA_IMPORT_RECORD t 
+where t.table_name=upper('t_mid_ch_zl_FIBSHEET_NEW')</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>144</xloc>
+      <yloc>640</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>FIBSHEET_NEW表输出</name>
+    <type>TableOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <schema />
+    <table>t_mid_ch_zl_FIBSHEET_NEW</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+      <field>
+        <column_name>VC_REPORTSTYLE</column_name>
+        <stream_name>REPORTSTYLE</stream_name>
+      </field>
+      <field>
+        <column_name>VC_AFFCORPCODE</column_name>
+        <stream_name>COMPANYCODE</stream_name>
+      </field>
+      <field>
+        <column_name>REPORTDATE</column_name>
+        <stream_name>REPORTDATE</stream_name>
+      </field>
+      <field>
+        <column_name>ADJUSTYEAR</column_name>
+        <stream_name>ADJUSTYEAR</stream_name>
+      </field>
+      <field>
+        <column_name>ENTRYDATE</column_name>
+        <stream_name>ENTRYDATE</stream_name>
+      </field>
+      <field>
+        <column_name>ENTRYTIME</column_name>
+        <stream_name>ENTRYTIME</stream_name>
+      </field>
+      <field>
+        <column_name>EN_TOTAL_ASSET</column_name>
+        <stream_name>EN_TOTAL_ASSET</stream_name>
+      </field>
+      <field>
+        <column_name>EN_TOTAL_DEBT</column_name>
+        <stream_name>EN_TOTAL_DEBT</stream_name>
+      </field>
+      <field>
+        <column_name>VC_COMPARE</column_name>
+        <stream_name>VC_COMPARE</stream_name>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>560</xloc>
+      <yloc>640</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>FICFST_NEW表输入</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>fcdb</connection>
+    <sql>select COMPANYCODE,
+to_number(to_char(REPORTDATE,'yyyymmdd'))REPORTDATE,
+REPORTSTYLE,
+ADJUSTYEAR,
+FICFST_NEW59  as CFST10,
+FICFST_NEW102 as CFST33,
+to_number(to_char(ENTRYDATE,'yyyymmdd'))ENTRYDATE,
+ENTRYTIME 
+,concat(to_char(t.ENTRYDATE,'yyyymmdd'),t.ENTRYTIME) as   VC_COMPARE
+from FICFST_NEW t 
+where to_number(to_char(t.reportdate,'yyyy')) > to_number(to_char(sysdate,'yyyy')) - 5  and t.ReportStyle='11'
+and concat(to_char(t.ENTRYDATE,'yyyymmdd'),t.ENTRYTIME) >=?</sql>
+    <limit>0</limit>
+    <lookup>FICFST_NEW表输入2</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>320</xloc>
+      <yloc>944</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>FICFST_NEW表输入2</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <sql>select nvl(max(t.VC_COMPARE),0) as  VC_COMPARE
+from DATA_IMPORT_RECORD t 
+where t.table_name=upper('T_MID_CH_ZL_FICFST_NEW')</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>144</xloc>
+      <yloc>944</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>FICFST_NEW表输出</name>
+    <type>TableOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <schema />
+    <table>T_MID_CH_ZL_FICFST_NEW</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+      <field>
+        <column_name>COMPANYCODE</column_name>
+        <stream_name>COMPANYCODE</stream_name>
+      </field>
+      <field>
+        <column_name>REPORTDATE</column_name>
+        <stream_name>REPORTDATE</stream_name>
+      </field>
+      <field>
+        <column_name>REPORTSTYLE</column_name>
+        <stream_name>REPORTSTYLE</stream_name>
+      </field>
+      <field>
+        <column_name>ADJUSTYEAR</column_name>
+        <stream_name>ADJUSTYEAR</stream_name>
+      </field>
+      <field>
+        <column_name>CFST10</column_name>
+        <stream_name>CFST10</stream_name>
+      </field>
+      <field>
+        <column_name>CFST33</column_name>
+        <stream_name>CFST33</stream_name>
+      </field>
+      <field>
+        <column_name>ENTRYDATE</column_name>
+        <stream_name>ENTRYDATE</stream_name>
+      </field>
+      <field>
+        <column_name>ENTRYTIME</column_name>
+        <stream_name>ENTRYTIME</stream_name>
+      </field>
+      <field>
+        <column_name>VC_COMPARE</column_name>
+        <stream_name>VC_COMPARE</stream_name>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>528</xloc>
+      <yloc>944</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>SIBASEINFO表输入</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <sql>select nvl(max(t.VC_COMPARE),0) as  VC_COMPARE
+from DATA_IMPORT_RECORD t 
+where t.table_name=upper('t_mid_ch_zl_SIBASEINFO')</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>144</xloc>
+      <yloc>1424</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>SIBASEINFO表输入 2</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>fcdb</connection>
+    <sql> select 
+        a.declaredate,
+        a.companycode,
+        sum(a.sibaseinfo10) sibaseinfo10,
+        concat(to_char(max(a.ENTRYDATE),'yyyymmdd'),max(a.ENTRYTIME)) as   VC_COMPARE 
+  from SIBASEINFO a inner join (select a.companycode,max(a.declaredate) declaredate from sibaseinfo a group by a.companycode) b
+  on a.declaredate = b.declaredate and a.companycode = b.companycode
+  
+  where concat(to_char(ENTRYDATE,'yyyymmdd'),ENTRYTIME) > ? 
+	group by a.companycode,a.declaredate</sql>
+    <limit>0</limit>
+    <lookup>SIBASEINFO表输入</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>336</xloc>
+      <yloc>1424</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>SIBASEINFO表输出</name>
+    <type>TableOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <schema />
+    <table>t_mid_ch_zl_SIBASEINFO</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+      <field>
+        <column_name>DECLAREDATE</column_name>
+        <stream_name>DECLAREDATE</stream_name>
+      </field>
+      <field>
+        <column_name>COMPANYCODE</column_name>
+        <stream_name>COMPANYCODE</stream_name>
+      </field>
+      <field>
+        <column_name>SIBASEINFO10</column_name>
+        <stream_name>SIBASEINFO10</stream_name>
+      </field>
+      <field>
+        <column_name>VC_COMPARE</column_name>
+        <stream_name>VC_COMPARE</stream_name>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>736</xloc>
+      <yloc>1424</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>bank表输入</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <sql>select nvl(max(t.VC_COMPARE),0) as  VC_COMPARE
+from DATA_IMPORT_RECORD t 
+where t.table_name=upper('t_mid_chjc_bank')</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>128</xloc>
+      <yloc>1248</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>bank表输入 2</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>fcdb</connection>
+    <sql>select companycode, companyname, itprofile4
+,concat(to_char(ENTRYDATE,'yyyymmdd'),ENTRYTIME) as   VC_COMPARE  
+from ITProfile t 
+where  t.ITProfile4 like '001%' and t.ITProfile5=0
+and concat(to_char(ENTRYDATE,'yyyymmdd'),ENTRYTIME) >=?</sql>
+    <limit>0</limit>
+    <lookup>bank表输入</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>336</xloc>
+      <yloc>1248</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>icrate表输入</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>fcdb</connection>
+    <sql>SELECT
+  ICRATEID
+, DECLAREDATE
+, COMPANYCODE
+, COMPANYNAME
+, ICRATE1  
+, ICRATE2
+, ICRATE3
+, ICRATE4
+, ICRATE5
+, ICRATE6
+, ICRATE7
+, to_number(to_char(ENTRYDATE, 'yyyyMMdd'))ENTRYDATE
+, ENTRYTIME
+, ICRATE8
+, ICRATE9
+, concat(to_char(ENTRYDATE, 'yyyyMMdd'),ENTRYTIME)  as VC_COMPARE
+FROM ICRATE t where  to_char(t.ICRate1,'yyyymmdd')>='20150101'  and  concat(to_char(ENTRYDATE, 'yyyyMMdd'),ENTRYTIME) >=?
+</sql>
+    <limit>0</limit>
+    <lookup>icrate表输入2</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>368</xloc>
+      <yloc>448</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>icrate表输入2</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <sql>select nvl(max(t.VC_COMPARE),0) as  VC_COMPARE
+ from DATA_IMPORT_RECORD t 
+where t.table_name=upper('t_mid_ch_zl_icrate')</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>144</xloc>
+      <yloc>448</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>icrate表输出</name>
+    <type>TableOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <schema />
+    <table>t_mid_ch_zl_icrate</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+      <field>
+        <column_name>L_COMPANY_ID</column_name>
+        <stream_name>COMPANYCODE</stream_name>
+      </field>
+      <field>
+        <column_name>VC_COMPANY_NAME</column_name>
+        <stream_name>COMPANYNAME</stream_name>
+      </field>
+      <field>
+        <column_name>L_COMPANY_GRADE</column_name>
+        <stream_name>ICRATE6</stream_name>
+      </field>
+      <field>
+        <column_name>L_FORWARD_GRADE</column_name>
+        <stream_name>ICRATE9</stream_name>
+      </field>
+      <field>
+        <column_name>VC_SOURCE</column_name>
+        <stream_name>ICRATE8</stream_name>
+      </field>
+      <field>
+        <column_name>L_GRADE_TYPE</column_name>
+        <stream_name>ICRATE5</stream_name>
+      </field>
+      <field>
+        <column_name>L_SOURCE_TYPE</column_name>
+        <stream_name>ICRATE7</stream_name>
+      </field>
+      <field>
+        <column_name>L_CREDITORG_ID</column_name>
+        <stream_name>ICRATE2</stream_name>
+      </field>
+      <field>
+        <column_name>VC_COMPARE</column_name>
+        <stream_name>VC_COMPARE</stream_name>
+      </field>
+      <field>
+        <column_name>DECLARE_DATE</column_name>
+        <stream_name>DECLAREDATE</stream_name>
+      </field>
+      <field>
+        <column_name>INPUT_DATE</column_name>
+        <stream_name>ICRATE1</stream_name>
+      </field>
+      <field>
+        <column_name>ENTRYDATE</column_name>
+        <stream_name>ENTRYDATE</stream_name>
+      </field>
+      <field>
+        <column_name>ENTRYTIME</column_name>
+        <stream_name>ENTRYTIME</stream_name>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>592</xloc>
+      <yloc>448</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>字段选择</name>
+    <type>SelectValues</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <name>DECLAREDATE</name>
+      </field>
+      <field>
+        <name>COMPANYCODE</name>
+      </field>
+      <field>
+        <name>SIBASEINFO10</name>
+        <length>22</length>
+        <precision>4</precision>
+      </field>
+      <field>
+        <name>VC_COMPARE</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>528</xloc>
+      <yloc>1424</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>表输出</name>
+    <type>TableOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <schema />
+    <table>t_mid_ch_zl_bank</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+      <field>
+        <column_name>COMPANYCODE</column_name>
+        <stream_name>COMPANYCODE</stream_name>
+      </field>
+      <field>
+        <column_name>COMPANYNAME</column_name>
+        <stream_name>COMPANYNAME</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE4</column_name>
+        <stream_name>ITPROFILE4</stream_name>
+      </field>
+      <field>
+        <column_name>VC_COMPARE</column_name>
+        <stream_name>VC_COMPARE</stream_name>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>528</xloc>
+      <yloc>1248</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>AffiliatedCorp表输入3</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <sql>select nvl(max(t.VC_COMPARE),0) as  VC_COMPARE
+from DATA_IMPORT_RECORD t 
+where t.table_name=upper('t_mid_ch_zl_AffiliatedCorp')</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>144</xloc>
+      <yloc>272</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>AffiliatedCorp表输入4</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>fcdb</connection>
+    <sql>select 
+m.COMPANYCODE,
+m.COMPANYNAME ,
+m.ITProfile1,
+m.ITProfile2  ,
+m.ITProfile4  ,
+m.ITProfile5  ,
+m.ITPROFILE44 ,
+m.ITProfile18 ,
+m.ITProfile20  ,
+m.ITProfile21 ,
+m.ITProfile22 ,
+m.ITProfile40 ,
+m.ITProfile42 ,
+m.ITProfile43 ,
+concat(to_char(m.ENTRYDATE,'yyyymmdd'),m.ENTRYTIME) as   VC_COMPARE
+from ITPROFILE m 
+where m.itprofile4 = '007004'
+and concat(to_char(m.ENTRYDATE,'yyyymmdd'),m.ENTRYTIME)>=?</sql>
+    <limit>0</limit>
+    <lookup>AffiliatedCorp表输入3</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>368</xloc>
+      <yloc>272</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>AffiliatedCorp表输出2</name>
+    <type>TableOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <schema />
+    <table>T_MID_CH_ZL_AFFILIATEDCORP_QT</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+      <field>
+        <column_name>COMPANYCODE</column_name>
+        <stream_name>COMPANYCODE</stream_name>
+      </field>
+      <field>
+        <column_name>COMPANYNAME</column_name>
+        <stream_name>COMPANYNAME</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE2</column_name>
+        <stream_name>ITPROFILE2</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE4</column_name>
+        <stream_name>ITPROFILE4</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE5</column_name>
+        <stream_name>ITPROFILE5</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE44</column_name>
+        <stream_name>ITPROFILE44</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE18</column_name>
+        <stream_name>ITPROFILE18</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE20</column_name>
+        <stream_name>ITPROFILE20</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE21</column_name>
+        <stream_name>ITPROFILE21</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE22</column_name>
+        <stream_name>ITPROFILE22</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE40</column_name>
+        <stream_name>ITPROFILE40</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE42</column_name>
+        <stream_name>ITPROFILE42</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE43</column_name>
+        <stream_name>ITPROFILE43</stream_name>
+      </field>
+      <field>
+        <column_name>VC_COMPARE</column_name>
+        <stream_name>VC_COMPARE</stream_name>
+      </field>
+      <field>
+        <column_name>ITPROFILE1</column_name>
+        <stream_name>ITPROFILE1</stream_name>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>576</xloc>
+      <yloc>272</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step_error_handling>
+  </step_error_handling>
+  <slave-step-copy-partition-distribution>
+  </slave-step-copy-partition-distribution>
+  <slave_transformation>N</slave_transformation>
+</transformation>
