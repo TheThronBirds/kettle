@@ -1581,6 +1581,14 @@ where t.table_name=upper('t_mid_ch_zl_BSHEET_I')</sql>
         <column_name>VC_REPORTSTYLE</column_name>
         <stream_name>REPORTSTYLE</stream_name>
       </field>
+      <field>
+        <column_name>BSHEET_I88</column_name>
+        <stream_name>BSHEET_I88</stream_name>
+      </field>
+      <field>
+        <column_name>BSHEET_I80</column_name>
+        <stream_name>BSHEET_I80</stream_name>
+      </field>
     </fields>
     <cluster_schema />
     <remotesteps>
@@ -1740,6 +1748,14 @@ where t.table_name=upper('t_mid_ch_zl_CBSheet_New')</sql>
       <field>
         <column_name>VC_REPORTSTYLE</column_name>
         <stream_name>REPORTSTYLE</stream_name>
+      </field>
+      <field>
+        <column_name>CBSHEET86</column_name>
+        <stream_name>CBSHEET86</stream_name>
+      </field>
+      <field>
+        <column_name>CBSHEET79</column_name>
+        <stream_name>CBSHEET79</stream_name>
       </field>
     </fields>
     <cluster_schema />
@@ -2208,6 +2224,14 @@ where t.table_name=upper('t_mid_ch_zl_FIBSHEET_NEW')</sql>
       <field>
         <column_name>VC_COMPARE</column_name>
         <stream_name>VC_COMPARE</stream_name>
+      </field>
+      <field>
+        <column_name>FIBSHEET_NEW95</column_name>
+        <stream_name>FIBSHEET_NEW95</stream_name>
+      </field>
+      <field>
+        <column_name>FIBSHEET_NEW96</column_name>
+        <stream_name>FIBSHEET_NEW96</stream_name>
       </field>
     </fields>
     <cluster_schema />

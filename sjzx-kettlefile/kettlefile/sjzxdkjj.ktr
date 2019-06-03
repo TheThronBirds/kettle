@@ -430,14 +430,14 @@
     <created_date>2019/05/29 10:29:19.044</created_date>
     <modified_user>-</modified_user>
     <modified_date>2019/05/29 10:29:19.044</modified_date>
-    <key_for_session_key />
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
     <notepad>
       <note>定开基金信息</note>
-      <xloc>304</xloc>
-      <yloc>320</yloc>
+      <xloc>464</xloc>
+      <yloc>16</yloc>
       <width>82</width>
       <heigth>26</heigth>
       <fontname>微软雅黑</fontname>
@@ -457,18 +457,26 @@
     </notepad>
   </notepads>
   <connection>
-    <name>riskdev</name>
-    <server>10.71.21.151</server>
-    <type>ORACLE</type>
+    <name>risk</name>
+    <server />
+    <type>GENERIC</type>
     <access>Native</access>
-    <database>jytest</database>
+    <database />
     <port>1521</port>
-    <username>riskdev</username>
-    <password>Encrypted 2be98afc818ce818faf1cb84f8cc2fe82</password>
+    <username>${end_generic_user}</username>
+    <password>${end_generic_password}</password>
     <servername />
     <data_tablespace />
     <index_tablespace />
     <attributes>
+      <attribute>
+        <code>CUSTOM_DRIVER_CLASS</code>
+        <attribute>${end_generic_driver}</attribute>
+      </attribute>
+      <attribute>
+        <code>CUSTOM_URL</code>
+        <attribute>${end_generic_url}</attribute>
+      </attribute>
       <attribute>
         <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
         <attribute>N</attribute>
@@ -525,7 +533,7 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <connection>riskdev</connection>
+    <connection>risk</connection>
     <sql>SELECT * FROM appdata.T_INFO_PORT_OPEN</sql>
     <limit>0</limit>
     <lookup />
@@ -540,8 +548,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>301</xloc>
-      <yloc>374</yloc>
+      <xloc>288</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -556,7 +564,7 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <connection>riskdev</connection>
+    <connection>risk</connection>
     <schema />
     <table>mid_T_INFO_PORT_OPEN</table>
     <commit>1000</commit>
@@ -639,8 +647,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>768</xloc>
-      <yloc>368</yloc>
+      <xloc>720</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

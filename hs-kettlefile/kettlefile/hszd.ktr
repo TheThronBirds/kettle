@@ -6150,10 +6150,6 @@ FROM ${searchzdname}.thgratio
         <column_name>VC_BASECOMBI_ID</column_name>
         <stream_name>L_BASECOMBI_ID</stream_name>
       </field>
-      <field>
-        <column_name>C_PURPOSE_TYPE</column_name>
-        <stream_name>C_PURPOSE_TYPE</stream_name>
-      </field>
     </fields>
     <cluster_schema />
     <remotesteps>
