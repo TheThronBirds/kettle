@@ -705,57 +705,6 @@
     </attributes>
   </connection>
   <connection>
-    <name>fcdb_server</name>
-    <server>10.71.21.151</server>
-    <type>ORACLE</type>
-    <access>Native</access>
-    <database>jytest</database>
-    <port>1521</port>
-    <username>fcdb</username>
-    <password>Encrypted 2be98afc86aa7f282a81dac4f8cc2fe8d</password>
-    <servername />
-    <data_tablespace />
-    <index_tablespace />
-    <attributes>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>IS_CLUSTERED</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>PORT_NUMBER</code>
-        <attribute>1521</attribute>
-      </attribute>
-      <attribute>
-        <code>PRESERVE_RESERVED_WORD_CASE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>QUOTE_ALL_FIELDS</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>USE_POOLING</code>
-        <attribute>N</attribute>
-      </attribute>
-    </attributes>
-  </connection>
-  <connection>
     <name>risk</name>
     <server />
     <type>GENERIC</type>
@@ -2848,7 +2797,7 @@ where t.table_name=upper('t_mid_ch_zl_SIBASEINFO')</sql>
       <method>none</method>
       <schema_name />
     </partitioning>
-    <connection>fcdb_server</connection>
+    <connection>fcdb</connection>
     <sql>SELECT A.* FROM TQ_PF_BASICINFO A</sql>
     <limit>0</limit>
     <lookup />
