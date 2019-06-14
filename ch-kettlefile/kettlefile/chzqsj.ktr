@@ -4069,6 +4069,10 @@ where t.table_name=upper('t_mid_ch_zl_bonddt')</sql>
         <column_name>BONDDT3</column_name>
         <stream_name>BONDDT3</stream_name>
       </field>
+      <field>
+        <column_name>BONDDT20</column_name>
+        <stream_name>BONDDT20</stream_name>
+      </field>
     </fields>
     <cluster_schema />
     <remotesteps>
