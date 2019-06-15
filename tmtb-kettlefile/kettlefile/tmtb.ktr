@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>hstm</name>
+    <name>tmtb</name>
     <description />
     <extended_description />
     <trans_version />
     <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
     <directory>/</directory>
     <parameters>
     </parameters>
@@ -430,7 +431,7 @@
     <created_date>2019/06/11 14:12:46.195</created_date>
     <modified_user>-</modified_user>
     <modified_date>2019/06/11 14:12:46.195</modified_date>
-    <key_for_session_key />
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -651,6 +652,412 @@
       <enabled>Y</enabled>
     </hop>
   </order>
+  <step>
+    <name>维度定义表输入</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>tradeqry</connection>
+    <sql>SELECT * FROM FMP.TTRADETYPES</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>192</xloc>
+      <yloc>352</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>维度定义表输出</name>
+    <type>TableOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <schema />
+    <table>MID_TTRADETYPES</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+      <field>
+        <column_name>L_SERIAL_ID</column_name>
+        <stream_name>L_SERIAL_ID</stream_name>
+      </field>
+      <field>
+        <column_name>C_TRADE_TYPE</column_name>
+        <stream_name>C_TRADE_TYPE</stream_name>
+      </field>
+      <field>
+        <column_name>VC_TRADE_LEVEL</column_name>
+        <stream_name>VC_TRADE_LEVEL</stream_name>
+      </field>
+      <field>
+        <column_name>L_PARENT_ID</column_name>
+        <stream_name>L_PARENT_ID</stream_name>
+      </field>
+      <field>
+        <column_name>L_FUND_ID</column_name>
+        <stream_name>L_FUND_ID</stream_name>
+      </field>
+      <field>
+        <column_name>VC_TRADE_NO</column_name>
+        <stream_name>VC_TRADE_NO</stream_name>
+      </field>
+      <field>
+        <column_name>VC_TRADE_NAME</column_name>
+        <stream_name>VC_TRADE_NAME</stream_name>
+      </field>
+      <field>
+        <column_name>C_CALCULATE_TYPE</column_name>
+        <stream_name>C_CALCULATE_TYPE</stream_name>
+      </field>
+      <field>
+        <column_name>C_CALCULATE_MODEL</column_name>
+        <stream_name>C_CALCULATE_MODEL</stream_name>
+      </field>
+      <field>
+        <column_name>L_CALCULATE_CIRCLE</column_name>
+        <stream_name>L_CALCULATE_CIRCLE</stream_name>
+      </field>
+      <field>
+        <column_name>L_LAST_DATE</column_name>
+        <stream_name>L_LAST_DATE</stream_name>
+      </field>
+      <field>
+        <column_name>C_TRADE_STATUS</column_name>
+        <stream_name>C_TRADE_STATUS</stream_name>
+      </field>
+      <field>
+        <column_name>L_OPERATOR_NO</column_name>
+        <stream_name>L_OPERATOR_NO</stream_name>
+      </field>
+      <field>
+        <column_name>C_SHARE_FLAG</column_name>
+        <stream_name>C_SHARE_FLAG</stream_name>
+      </field>
+      <field>
+        <column_name>VC_REMARKS</column_name>
+        <stream_name>VC_REMARKS</stream_name>
+      </field>
+      <field>
+        <column_name>C_STOCKPOOL_TYPE</column_name>
+        <stream_name>C_STOCKPOOL_TYPE</stream_name>
+      </field>
+      <field>
+        <column_name>EN_TRADE_POWER</column_name>
+        <stream_name>EN_TRADE_POWER</stream_name>
+      </field>
+      <field>
+        <column_name>L_ROOT_ID</column_name>
+        <stream_name>L_ROOT_ID</stream_name>
+      </field>
+      <field>
+        <column_name>L_MAX_AMOUNT</column_name>
+        <stream_name>L_MAX_AMOUNT</stream_name>
+      </field>
+      <field>
+        <column_name>VC_DYNAMIC_SQL</column_name>
+        <stream_name>VC_DYNAMIC_SQL</stream_name>
+      </field>
+      <field>
+        <column_name>L_COMPANY_ID</column_name>
+        <stream_name>L_COMPANY_ID</stream_name>
+      </field>
+      <field>
+        <column_name>VC_PARAM1_VALUE</column_name>
+        <stream_name>VC_PARAM1_VALUE</stream_name>
+      </field>
+      <field>
+        <column_name>VC_PARAM2_VALUE</column_name>
+        <stream_name>VC_PARAM2_VALUE</stream_name>
+      </field>
+      <field>
+        <column_name>VC_PARAM3_VALUE</column_name>
+        <stream_name>VC_PARAM3_VALUE</stream_name>
+      </field>
+      <field>
+        <column_name>VC_PARAM1_NAME</column_name>
+        <stream_name>VC_PARAM1_NAME</stream_name>
+      </field>
+      <field>
+        <column_name>VC_PARAM2_NAME</column_name>
+        <stream_name>VC_PARAM2_NAME</stream_name>
+      </field>
+      <field>
+        <column_name>VC_PARAM3_NAME</column_name>
+        <stream_name>VC_PARAM3_NAME</stream_name>
+      </field>
+      <field>
+        <column_name>L_DATE</column_name>
+        <stream_name>L_DATE</stream_name>
+      </field>
+      <field>
+        <column_name>VC_FILE_PATH</column_name>
+        <stream_name>VC_FILE_PATH</stream_name>
+      </field>
+      <field>
+        <column_name>C_COMPANY_RALATION</column_name>
+        <stream_name>C_COMPANY_RALATION</stream_name>
+      </field>
+      <field>
+        <column_name>VC_UNDERLYING_INDEX</column_name>
+        <stream_name>VC_UNDERLYING_INDEX</stream_name>
+      </field>
+      <field>
+        <column_name>L_DIMLAYER_ID</column_name>
+        <stream_name>L_DIMLAYER_ID</stream_name>
+      </field>
+      <field>
+        <column_name>VC_DYNAMIC_CONDITION</column_name>
+        <stream_name>VC_DYNAMIC_CONDITION</stream_name>
+      </field>
+      <field>
+        <column_name>VC_COMPANY_MUTEX_IDS</column_name>
+        <stream_name>VC_COMPANY_MUTEX_IDS</stream_name>
+      </field>
+      <field>
+        <column_name>VC_RELATION_TRADE_IDS</column_name>
+        <stream_name>VC_RELATION_TRADE_IDS</stream_name>
+      </field>
+      <field>
+        <column_name>VC_TIMESTAMP</column_name>
+        <stream_name>VC_TIMESTAMP</stream_name>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>448</xloc>
+      <yloc>352</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>风控设置关系表输入</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>tradeqry</connection>
+    <sql>SELECT * FROM FMP.TRISKRELATION</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>192</xloc>
+      <yloc>464</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>风控设置关系表输出</name>
+    <type>TableOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <schema />
+    <table>MID_TRISKRELATION</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+      <field>
+        <column_name>L_RISK_NO1</column_name>
+        <stream_name>L_RISK_NO1</stream_name>
+      </field>
+      <field>
+        <column_name>L_RISK_NO2</column_name>
+        <stream_name>L_RISK_NO2</stream_name>
+      </field>
+      <field>
+        <column_name>C_RELATION_TYPE</column_name>
+        <stream_name>C_RELATION_TYPE</stream_name>
+      </field>
+      <field>
+        <column_name>L_DATE</column_name>
+        <stream_name>L_DATE</stream_name>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>448</xloc>
+      <yloc>464</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>风险控制参数表输入</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>tradeqry</connection>
+    <sql>SELECT * FROM FMP.TRISKCONTROLPARAM</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>192</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>风险控制参数表输出</name>
+    <type>TableOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <schema />
+    <table>MID_TRISKCONTROLPARAM</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+      <field>
+        <column_name>L_SERIAL_NO</column_name>
+        <stream_name>L_SERIAL_NO</stream_name>
+      </field>
+      <field>
+        <column_name>C_PARAM_TYPE</column_name>
+        <stream_name>C_PARAM_TYPE</stream_name>
+      </field>
+      <field>
+        <column_name>VC_PARAM_VALUE</column_name>
+        <stream_name>VC_PARAM_VALUE</stream_name>
+      </field>
+      <field>
+        <column_name>C_PARAM_DIRECTION</column_name>
+        <stream_name>C_PARAM_DIRECTION</stream_name>
+      </field>
+      <field>
+        <column_name>VC_PARAM_PARAM1</column_name>
+        <stream_name>VC_PARAM_PARAM1</stream_name>
+      </field>
+      <field>
+        <column_name>L_DATE</column_name>
+        <stream_name>L_DATE</stream_name>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>448</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
   <step>
     <name>风险控制表输入</name>
     <type>TableInput</type>
@@ -878,412 +1285,6 @@
     <GUI>
       <xloc>448</xloc>
       <yloc>112</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>风险控制参数表输入</name>
-    <type>TableInput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>tradeqry</connection>
-    <sql>SELECT * FROM FMP.TRISKCONTROLPARAM</sql>
-    <limit>0</limit>
-    <lookup />
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>192</xloc>
-      <yloc>224</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>风险控制参数表输出</name>
-    <type>TableOutput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>risk</connection>
-    <schema />
-    <table>MID_TRISKCONTROLPARAM</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field />
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field />
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field />
-    <fields>
-      <field>
-        <column_name>L_SERIAL_NO</column_name>
-        <stream_name>L_SERIAL_NO</stream_name>
-      </field>
-      <field>
-        <column_name>C_PARAM_TYPE</column_name>
-        <stream_name>C_PARAM_TYPE</stream_name>
-      </field>
-      <field>
-        <column_name>VC_PARAM_VALUE</column_name>
-        <stream_name>VC_PARAM_VALUE</stream_name>
-      </field>
-      <field>
-        <column_name>C_PARAM_DIRECTION</column_name>
-        <stream_name>C_PARAM_DIRECTION</stream_name>
-      </field>
-      <field>
-        <column_name>VC_PARAM_PARAM1</column_name>
-        <stream_name>VC_PARAM_PARAM1</stream_name>
-      </field>
-      <field>
-        <column_name>L_DATE</column_name>
-        <stream_name>L_DATE</stream_name>
-      </field>
-    </fields>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>448</xloc>
-      <yloc>224</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>维度定义表输出</name>
-    <type>TableOutput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>risk</connection>
-    <schema />
-    <table>MID_TTRADETYPES</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field />
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field />
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field />
-    <fields>
-      <field>
-        <column_name>L_SERIAL_ID</column_name>
-        <stream_name>L_SERIAL_ID</stream_name>
-      </field>
-      <field>
-        <column_name>C_TRADE_TYPE</column_name>
-        <stream_name>C_TRADE_TYPE</stream_name>
-      </field>
-      <field>
-        <column_name>VC_TRADE_LEVEL</column_name>
-        <stream_name>VC_TRADE_LEVEL</stream_name>
-      </field>
-      <field>
-        <column_name>L_PARENT_ID</column_name>
-        <stream_name>L_PARENT_ID</stream_name>
-      </field>
-      <field>
-        <column_name>L_FUND_ID</column_name>
-        <stream_name>L_FUND_ID</stream_name>
-      </field>
-      <field>
-        <column_name>VC_TRADE_NO</column_name>
-        <stream_name>VC_TRADE_NO</stream_name>
-      </field>
-      <field>
-        <column_name>VC_TRADE_NAME</column_name>
-        <stream_name>VC_TRADE_NAME</stream_name>
-      </field>
-      <field>
-        <column_name>C_CALCULATE_TYPE</column_name>
-        <stream_name>C_CALCULATE_TYPE</stream_name>
-      </field>
-      <field>
-        <column_name>C_CALCULATE_MODEL</column_name>
-        <stream_name>C_CALCULATE_MODEL</stream_name>
-      </field>
-      <field>
-        <column_name>L_CALCULATE_CIRCLE</column_name>
-        <stream_name>L_CALCULATE_CIRCLE</stream_name>
-      </field>
-      <field>
-        <column_name>L_LAST_DATE</column_name>
-        <stream_name>L_LAST_DATE</stream_name>
-      </field>
-      <field>
-        <column_name>C_TRADE_STATUS</column_name>
-        <stream_name>C_TRADE_STATUS</stream_name>
-      </field>
-      <field>
-        <column_name>L_OPERATOR_NO</column_name>
-        <stream_name>L_OPERATOR_NO</stream_name>
-      </field>
-      <field>
-        <column_name>C_SHARE_FLAG</column_name>
-        <stream_name>C_SHARE_FLAG</stream_name>
-      </field>
-      <field>
-        <column_name>VC_REMARKS</column_name>
-        <stream_name>VC_REMARKS</stream_name>
-      </field>
-      <field>
-        <column_name>C_STOCKPOOL_TYPE</column_name>
-        <stream_name>C_STOCKPOOL_TYPE</stream_name>
-      </field>
-      <field>
-        <column_name>EN_TRADE_POWER</column_name>
-        <stream_name>EN_TRADE_POWER</stream_name>
-      </field>
-      <field>
-        <column_name>L_ROOT_ID</column_name>
-        <stream_name>L_ROOT_ID</stream_name>
-      </field>
-      <field>
-        <column_name>L_MAX_AMOUNT</column_name>
-        <stream_name>L_MAX_AMOUNT</stream_name>
-      </field>
-      <field>
-        <column_name>VC_DYNAMIC_SQL</column_name>
-        <stream_name>VC_DYNAMIC_SQL</stream_name>
-      </field>
-      <field>
-        <column_name>L_COMPANY_ID</column_name>
-        <stream_name>L_COMPANY_ID</stream_name>
-      </field>
-      <field>
-        <column_name>VC_PARAM1_VALUE</column_name>
-        <stream_name>VC_PARAM1_VALUE</stream_name>
-      </field>
-      <field>
-        <column_name>VC_PARAM2_VALUE</column_name>
-        <stream_name>VC_PARAM2_VALUE</stream_name>
-      </field>
-      <field>
-        <column_name>VC_PARAM3_VALUE</column_name>
-        <stream_name>VC_PARAM3_VALUE</stream_name>
-      </field>
-      <field>
-        <column_name>VC_PARAM1_NAME</column_name>
-        <stream_name>VC_PARAM1_NAME</stream_name>
-      </field>
-      <field>
-        <column_name>VC_PARAM2_NAME</column_name>
-        <stream_name>VC_PARAM2_NAME</stream_name>
-      </field>
-      <field>
-        <column_name>VC_PARAM3_NAME</column_name>
-        <stream_name>VC_PARAM3_NAME</stream_name>
-      </field>
-      <field>
-        <column_name>L_DATE</column_name>
-        <stream_name>L_DATE</stream_name>
-      </field>
-      <field>
-        <column_name>VC_FILE_PATH</column_name>
-        <stream_name>VC_FILE_PATH</stream_name>
-      </field>
-      <field>
-        <column_name>C_COMPANY_RALATION</column_name>
-        <stream_name>C_COMPANY_RALATION</stream_name>
-      </field>
-      <field>
-        <column_name>VC_UNDERLYING_INDEX</column_name>
-        <stream_name>VC_UNDERLYING_INDEX</stream_name>
-      </field>
-      <field>
-        <column_name>L_DIMLAYER_ID</column_name>
-        <stream_name>L_DIMLAYER_ID</stream_name>
-      </field>
-      <field>
-        <column_name>VC_DYNAMIC_CONDITION</column_name>
-        <stream_name>VC_DYNAMIC_CONDITION</stream_name>
-      </field>
-      <field>
-        <column_name>VC_COMPANY_MUTEX_IDS</column_name>
-        <stream_name>VC_COMPANY_MUTEX_IDS</stream_name>
-      </field>
-      <field>
-        <column_name>VC_RELATION_TRADE_IDS</column_name>
-        <stream_name>VC_RELATION_TRADE_IDS</stream_name>
-      </field>
-      <field>
-        <column_name>VC_TIMESTAMP</column_name>
-        <stream_name>VC_TIMESTAMP</stream_name>
-      </field>
-    </fields>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>448</xloc>
-      <yloc>352</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>维度定义表输入</name>
-    <type>TableInput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>tradeqry</connection>
-    <sql>SELECT * FROM FMP.TTRADETYPES</sql>
-    <limit>0</limit>
-    <lookup />
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>192</xloc>
-      <yloc>352</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>风控设置关系表输入</name>
-    <type>TableInput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>tradeqry</connection>
-    <sql>SELECT * FROM FMP.TRISKRELATION</sql>
-    <limit>0</limit>
-    <lookup />
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>192</xloc>
-      <yloc>464</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>风控设置关系表输出</name>
-    <type>TableOutput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>risk</connection>
-    <schema />
-    <table>MID_TRISKRELATION</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field />
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field />
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field />
-    <fields>
-      <field>
-        <column_name>L_RISK_NO1</column_name>
-        <stream_name>L_RISK_NO1</stream_name>
-      </field>
-      <field>
-        <column_name>L_RISK_NO2</column_name>
-        <stream_name>L_RISK_NO2</stream_name>
-      </field>
-      <field>
-        <column_name>C_RELATION_TYPE</column_name>
-        <stream_name>C_RELATION_TYPE</stream_name>
-      </field>
-      <field>
-        <column_name>L_DATE</column_name>
-        <stream_name>L_DATE</stream_name>
-      </field>
-    </fields>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>448</xloc>
-      <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

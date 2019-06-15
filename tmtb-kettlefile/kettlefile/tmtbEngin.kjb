@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <job>
-  <name>tmEngin</name>
+  <name>tmtbEngin</name>
   <description />
   <extended_description />
   <job_version />
+  <job_status>0</job_status>
   <directory>/</directory>
   <created_user>-</created_user>
   <created_date>2019/06/11 17:02:06.218</created_date>
@@ -423,7 +424,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>880</xloc>
+      <xloc>720</xloc>
       <yloc>176</yloc>
     </entry>
     <entry>
@@ -492,7 +493,7 @@
       <type>TRANS</type>
       <specification_method>filename</specification_method>
       <trans_object_id />
-      <filename>${Internal.Entry.Current.Directory}/hstm.ktr</filename>
+      <filename>${Internal.Entry.Current.Directory}/tmtb.ktr</filename>
       <transname />
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -520,32 +521,6 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>560</xloc>
-      <yloc>176</yloc>
-    </entry>
-    <entry>
-      <name>SQL</name>
-      <description />
-      <type>SQL</type>
-      <sql>declare
-ITEM_ALL_NUM     NUMBER := 0;
-ITEM_SUCCESS_NUM NUMBER := 0;
-ITEM_ERROR_NUM   NUMBER := 0;
-ITEM_ERROR_NO    VARCHAR2(4096) := '';
-ITEM_ERROR_MSG   CLOB := '';
-RUN_RETURNCODE 	 NUMBER := 0;
-RUN_RETURNMSG  	 CLOB := '';
-begin    
-SP_8802_HSRISK_RUNIMPORT(null,null,1,ITEM_ALL_NUM,ITEM_SUCCESS_NUM,ITEM_ERROR_NUM,ITEM_ERROR_NO,ITEM_ERROR_MSG,RUN_RETURNCODE,RUN_RETURNMSG);
-end;</sql>
-      <useVariableSubstitution>F</useVariableSubstitution>
-      <sqlfromfile>F</sqlfromfile>
-      <sqlfilename />
-      <sendOneStatement>T</sendOneStatement>
-      <connection>risk</connection>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>720</xloc>
       <yloc>176</yloc>
     </entry>
   </entries>
@@ -597,15 +572,6 @@ end;</sql>
     </hop>
     <hop>
       <from>恒生条目</from>
-      <to>SQL</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>SQL</from>
       <to>成功</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
