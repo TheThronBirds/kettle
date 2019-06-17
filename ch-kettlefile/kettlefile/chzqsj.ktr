@@ -917,6 +917,27 @@
       <bordercolorblue>100</bordercolorblue>
       <drawshadow>Y</drawshadow>
     </notepad>
+    <notepad>
+      <note>港股分红信息</note>
+      <xloc>176</xloc>
+      <yloc>3584</yloc>
+      <width>82</width>
+      <heigth>26</heigth>
+      <fontname>微软雅黑</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
   </notepads>
   <connection>
     <name>fcdb</name>
@@ -1260,6 +1281,16 @@
     <hop>
       <from>TQ_PF_BASICINFO表输入</from>
       <to>MID_TQ_PF_BASICINFO表输出</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>hkbonus表输入 2</from>
+      <to>hkbonus表输入</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>hkbonus表输入</from>
+      <to>HKBONUS表输出</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -2445,6 +2476,149 @@ and ISSTAT='-1'</sql>
     <GUI>
       <xloc>976</xloc>
       <yloc>2480</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>HKBONUS表输出</name>
+    <type>TableOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <schema />
+    <table>T_MID_CH_ZL_HKBONUS</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+      <field>
+        <column_name>DECLAREDATE</column_name>
+        <stream_name>DECLAREDATE</stream_name>
+      </field>
+      <field>
+        <column_name>UPDATEDATE</column_name>
+        <stream_name>UPDATEDATE</stream_name>
+      </field>
+      <field>
+        <column_name>SECODE</column_name>
+        <stream_name>SECODE</stream_name>
+      </field>
+      <field>
+        <column_name>COMPCODE</column_name>
+        <stream_name>COMPCODE</stream_name>
+      </field>
+      <field>
+        <column_name>BONUSYEAR</column_name>
+        <stream_name>BONUSYEAR</stream_name>
+      </field>
+      <field>
+        <column_name>DIVIDTYPE</column_name>
+        <stream_name>DIVIDTYPE</stream_name>
+      </field>
+      <field>
+        <column_name>DIVITYPE</column_name>
+        <stream_name>DIVITYPE</stream_name>
+      </field>
+      <field>
+        <column_name>DIVIIMPMARK</column_name>
+        <stream_name>DIVIIMPMARK</stream_name>
+      </field>
+      <field>
+        <column_name>BEGDATE</column_name>
+        <stream_name>BEGDATE</stream_name>
+      </field>
+      <field>
+        <column_name>ENDDATE</column_name>
+        <stream_name>ENDDATE</stream_name>
+      </field>
+      <field>
+        <column_name>SCRIPTYPE</column_name>
+        <stream_name>SCRIPTYPE</stream_name>
+      </field>
+      <field>
+        <column_name>CUR</column_name>
+        <stream_name>CUR</stream_name>
+      </field>
+      <field>
+        <column_name>EXDATE</column_name>
+        <stream_name>EXDATE</stream_name>
+      </field>
+      <field>
+        <column_name>ISSUEDATE</column_name>
+        <stream_name>ISSUEDATE</stream_name>
+      </field>
+      <field>
+        <column_name>LISTDATE</column_name>
+        <stream_name>LISTDATE</stream_name>
+      </field>
+      <field>
+        <column_name>EFFECTDATE</column_name>
+        <stream_name>EFFECTDATE</stream_name>
+      </field>
+      <field>
+        <column_name>ISSUEOBJECT</column_name>
+        <stream_name>ISSUEOBJECT</stream_name>
+      </field>
+      <field>
+        <column_name>ISSUEBASESHARE</column_name>
+        <stream_name>ISSUEBASESHARE</stream_name>
+      </field>
+      <field>
+        <column_name>DIVIDEND</column_name>
+        <stream_name>DIVIDEND</stream_name>
+      </field>
+      <field>
+        <column_name>DIVIDENDSP</column_name>
+        <stream_name>DIVIDENDSP</stream_name>
+      </field>
+      <field>
+        <column_name>SCRIPPRICE</column_name>
+        <stream_name>SCRIPPRICE</stream_name>
+      </field>
+      <field>
+        <column_name>TOTDIVIAMT</column_name>
+        <stream_name>TOTDIVIAMT</stream_name>
+      </field>
+      <field>
+        <column_name>ISVALID</column_name>
+        <stream_name>ISVALID</stream_name>
+      </field>
+      <field>
+        <column_name>VC_COMPARE</column_name>
+        <stream_name>VC_COMPARE</stream_name>
+      </field>
+      <field>
+        <column_name>SYMBOL</column_name>
+        <stream_name>SYMBOL</stream_name>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>720</xloc>
+      <yloc>3648</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -4514,6 +4688,101 @@ concat(to_char(ENTRYDATE,'yyyymmdd'),ENTRYTIME) >?</sql>
     <GUI>
       <xloc>448</xloc>
       <yloc>2336</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>hkbonus表输入</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>fcdb</connection>
+    <sql>select 
+  b.symbol,
+  b.exchange,
+  t.declaredate,   
+  t.updatedate,    
+  t.secode,        
+  t.compcode,      
+  t.bonusyear,     
+  t.dividtype,     
+  t.divitype,      
+  t.diviimpmark,   
+  t.begdate,       
+  t.enddate,       
+  t.scriptype,     
+  t.cur,           
+  t.exdate,        
+  t.issuedate,     
+  t.listdate,      
+  t.effectdate,    
+  t.issueobject,   
+  t.issuebaseshare,
+  t.dividend,      
+  t.dividendsp,    
+  t.scripprice,    
+  t.totdiviamt,    
+  t.isvalid,       
+  concat(to_char(t.ENTRYDATE,'yyyymmdd'),t.ENTRYTIME) as   VC_COMPARE
+ from tq_sk_hkbonus t
+ inner join tq_sk_hkbasicinfo b on t.secode = b.secode
+ where t.isvalid = 1 and t.divitype = '2' and t.diviimpmark = '1' and t.issueobject = '1'
+ and b.liststatus = '1'
+ and concat(to_char(t.ENTRYDATE,'yyyymmdd'),t.ENTRYTIME) > ?</sql>
+    <limit>0</limit>
+    <lookup>hkbonus表输入 2</lookup>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>448</xloc>
+      <yloc>3648</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>hkbonus表输入 2</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <sql>select nvl(max(t.VC_COMPARE), 0) as VC_COMPARE
+  from DATA_IMPORT_RECORD t
+ where t.table_name = upper('T_MID_CH_ZL_HKBONUS')</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>176</xloc>
+      <yloc>3648</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
