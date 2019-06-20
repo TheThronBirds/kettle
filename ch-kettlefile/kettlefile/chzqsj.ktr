@@ -3821,6 +3821,7 @@ bonddt t where t.BONDDT16 is not  null  and
 to_char(t.BONDDT49,'yyyymmdd')>='20150101' and  
 t.BONDDT11='人民币'--沪市债券
 and BONDDT21 is not null -- 起息日期不为空
+and BNAME not like '%发行失败%' and BNAME not like '%推迟发行%'
 and concat(to_char(t.ENTRYDATE,'yyyymmdd'),t.ENTRYTIME) >=?
 union all
 select
@@ -3873,6 +3874,7 @@ bonddt t where t.BONDDT17 is not  null and
 to_char(t.BONDDT49,'yyyymmdd')>='20150101' 
 and  t.BONDDT11='人民币'--深市债券
 and BONDDT21 is not null--起息日期不为空
+and BNAME not like '%发行失败%' and BNAME not like '%推迟发行%'
 and concat(to_char(t.ENTRYDATE,'yyyymmdd'),t.ENTRYTIME) >=?
 union all
 select
@@ -3925,6 +3927,7 @@ bonddt t where t.BONDDT47 is not  null and
 to_char(t.BONDDT49,'yyyymmdd')>='20150101' and 
  t.BONDDT11='人民币'--银行间
 and BONDDT21 is not null --起息日期不为空
+and BNAME not like '%发行失败%' and BNAME not like '%推迟发行%'
 and concat(to_char(t.ENTRYDATE,'yyyymmdd'),t.ENTRYTIME) >=?
 union all
 select
@@ -3983,6 +3986,7 @@ and t.bonddt47 is null--不是银行间
 and t.bonddt2 in ('01','02','03','04','05','06','08','10','13','14','15','16','17','18','19','20') -- 排除大额存单
 and b.bondissue44 in  ('1','2','3','4','5','6')--预交易市场  1	银行间 4	上交所、银行间 5	深交所、银行间 6	银行间、上交所、深交所
 and t.BONDDT21 is not null--起息日期不为空
+and BNAME not like '%发行失败%' and BNAME not like '%推迟发行%'
 and concat(to_char(t.ENTRYDATE,'yyyymmdd'),t.ENTRYTIME) >=?
 
 </sql>
