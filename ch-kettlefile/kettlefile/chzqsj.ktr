@@ -3822,7 +3822,7 @@ to_char(t.BONDDT49,'yyyymmdd')>='20150101' and
 t.BONDDT11='人民币'--沪市债券
 and BONDDT21 is not null -- 起息日期不为空
 and BNAME not like '%发行失败%' and BNAME not like '%推迟发行%'
-and concat(to_char(t.ENTRYDATE,'yyyymmdd'),t.ENTRYTIME) >=?
+and concat(to_char(t.ENTRYDATE + 3,'yyyymmdd'),t.ENTRYTIME) >=?
 union all
 select
 bonddt68,
@@ -3875,7 +3875,7 @@ to_char(t.BONDDT49,'yyyymmdd')>='20150101'
 and  t.BONDDT11='人民币'--深市债券
 and BONDDT21 is not null--起息日期不为空
 and BNAME not like '%发行失败%' and BNAME not like '%推迟发行%'
-and concat(to_char(t.ENTRYDATE,'yyyymmdd'),t.ENTRYTIME) >=?
+and concat(to_char(t.ENTRYDATE + 3,'yyyymmdd'),t.ENTRYTIME) >=?
 union all
 select
 bonddt68,
@@ -3928,7 +3928,7 @@ to_char(t.BONDDT49,'yyyymmdd')>='20150101' and
  t.BONDDT11='人民币'--银行间
 and BONDDT21 is not null --起息日期不为空
 and BNAME not like '%发行失败%' and BNAME not like '%推迟发行%'
-and concat(to_char(t.ENTRYDATE,'yyyymmdd'),t.ENTRYTIME) >=?
+and concat(to_char(t.ENTRYDATE + 3,'yyyymmdd'),t.ENTRYTIME) >=?
 union all
 select
 bonddt68,
@@ -3974,7 +3974,7 @@ BONDDT18||' '||'Z' as BONDDT18,
 BONDDT46,
 BONDDT9,
 BONDDT55 as VC_REPORT_CODE
-,concat(to_char(t.ENTRYDATE,'yyyymmdd'),t.ENTRYTIME) as   VC_COMPARE
+,concat(to_char(t.ENTRYDATE + 3,'yyyymmdd'),t.ENTRYTIME) as   VC_COMPARE
 from 
 bonddt t
 inner join BONDISSUE b on t.bcode=b.bcode --债券发行总表
