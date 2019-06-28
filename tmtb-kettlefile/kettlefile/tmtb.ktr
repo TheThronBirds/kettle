@@ -521,25 +521,25 @@
     </notepad>
   </notepads>
   <connection>
-    <name>risk</name>
-    <server />
+    <name>begin</name>
+    <server>${beginip}</server>
     <type>GENERIC</type>
     <access>Native</access>
-    <database />
-    <port>1521</port>
-    <username>${end_generic_user}</username>
-    <password>${end_generic_password}</password>
+    <database>${begindata}</database>
+    <port>${beginport}</port>
+    <username>${begin_generic_user}</username>
+    <password>${begin_generic_password}</password>
     <servername />
     <data_tablespace />
     <index_tablespace />
     <attributes>
       <attribute>
         <code>CUSTOM_DRIVER_CLASS</code>
-        <attribute>${end_generic_driver}</attribute>
+        <attribute>${begin_generic_driver}</attribute>
       </attribute>
       <attribute>
         <code>CUSTOM_URL</code>
-        <attribute>${end_generic_url}</attribute>
+        <attribute>${begin_generic_url}</attribute>
       </attribute>
       <attribute>
         <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
@@ -555,7 +555,7 @@
       </attribute>
       <attribute>
         <code>PORT_NUMBER</code>
-        <attribute>1521</attribute>
+        <attribute>${beginport}</attribute>
       </attribute>
       <attribute>
         <code>PRESERVE_RESERVED_WORD_CASE</code>
@@ -580,18 +580,26 @@
     </attributes>
   </connection>
   <connection>
-    <name>tradeqry</name>
-    <server>10.71.21.151</server>
-    <type>ORACLE</type>
+    <name>risk</name>
+    <server />
+    <type>GENERIC</type>
     <access>Native</access>
-    <database>jytest</database>
+    <database />
     <port>1521</port>
-    <username>fmp</username>
-    <password>Encrypted 2be98c9a51af8989dbf1cbd648cc2fe82</password>
+    <username>${end_generic_user}</username>
+    <password>${end_generic_password}</password>
     <servername />
     <data_tablespace />
     <index_tablespace />
     <attributes>
+      <attribute>
+        <code>CUSTOM_DRIVER_CLASS</code>
+        <attribute>${end_generic_driver}</attribute>
+      </attribute>
+      <attribute>
+        <code>CUSTOM_URL</code>
+        <attribute>${end_generic_url}</attribute>
+      </attribute>
       <attribute>
         <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
         <attribute>N</attribute>
@@ -663,7 +671,7 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <connection>tradeqry</connection>
+    <connection>begin</connection>
     <sql>SELECT * FROM FMP.TTRADETYPES</sql>
     <limit>0</limit>
     <lookup />
@@ -881,7 +889,7 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <connection>tradeqry</connection>
+    <connection>begin</connection>
     <sql>SELECT * FROM FMP.TRISKRELATION</sql>
     <limit>0</limit>
     <lookup />
@@ -971,7 +979,7 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <connection>tradeqry</connection>
+    <connection>begin</connection>
     <sql>SELECT * FROM FMP.TRISKCONTROLPARAM</sql>
     <limit>0</limit>
     <lookup />
@@ -1069,7 +1077,7 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <connection>tradeqry</connection>
+    <connection>begin</connection>
     <sql>SELECT * FROM FMP.TRISKCONTROL</sql>
     <limit>0</limit>
     <lookup />
