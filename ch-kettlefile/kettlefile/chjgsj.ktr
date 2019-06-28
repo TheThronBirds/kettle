@@ -2929,7 +2929,7 @@ where t.table_name=upper('t_mid_ch_zl_icrate')</sql>
                COMPCODE,
                NCAP2013,
                ROW_NUMBER() OVER(PARTITION BY COMPCODE ORDER BY REPORTYEAR DESC, REPORTTYPE DESC, PUBLISHDATE DESC) RW
-          FROM FCDB.TQ_FIN_PROBANKFININDIC A
+          FROM TQ_FIN_PROBANKFININDIC A
          WHERE A.NCAP2013 IS NOT NULL)
  WHERE RW = 1</sql>
     <limit>0</limit>
