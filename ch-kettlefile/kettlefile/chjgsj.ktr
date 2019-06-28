@@ -623,6 +623,27 @@
       <bordercolorblue>100</bordercolorblue>
       <drawshadow>Y</drawshadow>
     </notepad>
+    <notepad>
+      <note>银行净资本</note>
+      <xloc>200</xloc>
+      <yloc>1511</yloc>
+      <width>70</width>
+      <heigth>26</heigth>
+      <fontname>微软雅黑</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
   </notepads>
   <connection>
     <name>fcdb</name>
@@ -866,6 +887,11 @@
     <hop>
       <from>AffiliatedCorp表输入5</from>
       <to>AFFILIATEDCORP表输出3</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>TQ_FIN_PROBANKFININDIC表输入</from>
+      <to>T_MID_CH_PROBANKFININDIC表输出</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -2875,6 +2901,115 @@ where t.table_name=upper('t_mid_ch_zl_icrate')</sql>
     <GUI>
       <xloc>528</xloc>
       <yloc>1248</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>TQ_FIN_PROBANKFININDIC表输入</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>fcdb</connection>
+    <sql>SELECT 
+	REPORTYEAR,
+    REPORTTYPE,
+    PUBLISHDATE,
+    COMPCODE,
+    NCAP2013
+
+  FROM (SELECT REPORTYEAR,
+               REPORTTYPE,
+               PUBLISHDATE,
+               COMPCODE,
+               NCAP2013,
+               ROW_NUMBER() OVER(PARTITION BY COMPCODE ORDER BY REPORTYEAR DESC, REPORTTYPE DESC, PUBLISHDATE DESC) RW
+          FROM FCDB.TQ_FIN_PROBANKFININDIC A
+         WHERE A.NCAP2013 IS NOT NULL)
+ WHERE RW = 1</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>144</xloc>
+      <yloc>1536</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>T_MID_CH_PROBANKFININDIC表输出</name>
+    <type>TableOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>risk</connection>
+    <schema />
+    <table>T_MID_CH_PROBANKFININDIC</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+      <field>
+        <column_name>REPORTYEAR</column_name>
+        <stream_name>REPORTYEAR</stream_name>
+      </field>
+      <field>
+        <column_name>REPORTTYPE</column_name>
+        <stream_name>REPORTTYPE</stream_name>
+      </field>
+      <field>
+        <column_name>PUBLISHDATE</column_name>
+        <stream_name>PUBLISHDATE</stream_name>
+      </field>
+      <field>
+        <column_name>COMPCODE</column_name>
+        <stream_name>COMPCODE</stream_name>
+      </field>
+      <field>
+        <column_name>NCAP2013</column_name>
+        <stream_name>NCAP2013</stream_name>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>640</xloc>
+      <yloc>1536</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
